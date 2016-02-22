@@ -21,9 +21,9 @@ public class Inventory {
         this.book = book;
     }
 
-    public List<Book> addBook(Book book) {
+    public Book addBook(Book book) {
         books.add(book);
-        return books;
+        return book;
     }
 
     public String getBookInformation(Book book) {

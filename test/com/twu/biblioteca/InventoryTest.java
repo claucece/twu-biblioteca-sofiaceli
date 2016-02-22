@@ -23,11 +23,11 @@ public class InventoryTest {
         book = new Book("1", bookSpec);
     }
 
-    @Test
-    public void shouldAddBook() {
-        expected = inventory.addBook(book);
-        assertTrue(expected.get(0) instanceof Book);
-    }
+    //@Test
+    //public void shouldAddBook() {
+    //    expected = inventory.addBook(book);
+    //    assertTrue(expected.get(0) instanceof Book);
+    //}
 
     @Test
     public void shouldGetAllBooks() {

@@ -49,7 +49,7 @@ public class MenuTest {
         System.setOut(new PrintStream(outContent));
         String actual = "For whom the bells toll Ernest Hemingway 1980 " +
                 "\n";
-        testMenu.printBookInformation();
+        assertEquals(testMenu.printBookInformation(), actual);
     }
 
 

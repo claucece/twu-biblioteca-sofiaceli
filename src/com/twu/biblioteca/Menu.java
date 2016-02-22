@@ -1,12 +1,14 @@
 package com.twu.biblioteca;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Menu {
 
     private Inventory bibliotecaInventory;
     private Columns column;
     private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"));
+    ArrayList<Book> listOfBooks;
 
     public Menu() {
         bibliotecaInventory = new Inventory();
@@ -30,9 +32,20 @@ public class Menu {
         return toPrint;
     }
 
-    public String printBookInformation() {
-        //List<Book> books = bibliotecaInventory.addBook(new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
-        return bibliotecaInventory.getBookInformation(book);
+    public ArrayList<Book> addBooks() {
+        Book book1 = bibliotecaInventory.addBook(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
+        Book book2 = bibliotecaInventory.addBook(new Book("2", new BookSpec("Demian", "Herman Hesse", "1980")));
+        Book book3 = bibliotecaInventory.addBook(new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980")));
+        listOfBooks = new ArrayList<Book>(Arrays.asList(book1, book2, book3));
+        return listOfBooks;
+    }
+
+    public ArrayList<Book> printBookInformation() {
+        addBooks();
+        for (Book book : listOfBooks) {
+            bibliotecaInventory.getBookInformation(book);
+        }
+        return listOfBooks;
     }
 
     //public List<String> listBooks(List<String> bookList) {
