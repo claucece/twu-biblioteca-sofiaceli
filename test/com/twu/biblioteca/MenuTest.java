@@ -7,7 +7,6 @@ import org.junit.experimental.theories.suppliers.TestedOn;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -17,23 +16,11 @@ public class MenuTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
     private Inventory inventory;
-    //List<String> bookList;
 
     @Before
     public void setUp() {
         testMenu = new Menu();
-        //bookList = new ArrayList<String>();
         inventory = new Inventory();
-    }
-
-    @Test
-    public void shouldPrintWelcomeMessage() {
-        System.setOut(new PrintStream(outContent));
-        String testWelcome = "Hello and welcome to 'Menu', the Library Management " +
-                "System from The Bangalore Public Library!" +
-                "Keep reading to see the lists of books available";
-        testMenu.printWelcomeMessage();
-        assertEquals(testWelcome, outContent.toString());
     }
 
     @Test

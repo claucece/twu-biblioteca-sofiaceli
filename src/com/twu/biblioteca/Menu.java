@@ -15,14 +15,6 @@ public class Menu {
         column = new Columns();
     }
 
-    public String printWelcomeMessage() {
-        String welcome = "Hello and welcome to 'Menu', the Library Management " +
-                "System from The Bangalore Public Library!" +
-                "Keep reading to see the lists of books available";
-        System.out.print(welcome);
-        return welcome;
-    }
-
     public String printHeader() {
         String heading1 = "Book_name";
         String heading2 = "Author_name";
@@ -53,5 +45,6 @@ public class Menu {
         }
         return columns;
     }
+
 
 }
