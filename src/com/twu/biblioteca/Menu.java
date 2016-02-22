@@ -32,7 +32,12 @@ public class Menu {
         return toPrint;
     }
 
-    public ArrayList<Book> addBooks() {
+    public Inventory setInventory(Inventory bibliotecaInventory) {
+        this.bibliotecaInventory = bibliotecaInventory;
+        return bibliotecaInventory;
+    }
+
+    public ArrayList<Book> initializeInventory() {
         Book book1 = bibliotecaInventory.addBook(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
         Book book2 = bibliotecaInventory.addBook(new Book("2", new BookSpec("Demian", "Herman Hesse", "1980")));
         Book book3 = bibliotecaInventory.addBook(new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980")));
@@ -40,43 +45,13 @@ public class Menu {
         return listOfBooks;
     }
 
-    public ArrayList<Book> printBookInformation() {
-        addBooks();
+    public String printBookInformation() {
+        initializeInventory();
+        String columns = null;
         for (Book book : listOfBooks) {
-            bibliotecaInventory.getBookInformation(book);
+             columns = bibliotecaInventory.getBookInformation(book);
         }
-        return listOfBooks;
+        return columns;
     }
-
-    //public List<String> listBooks(List<String> bookList) {
-    //    bookList.add("For whom the bell tolls, Ernest Hemmingway, 1930");
-    //    bookList.add("Waiting for Godot, Samuel Beckett, 1940");
-    //    return bookList;
-    //}
-
-    //public List<String> getBooks() {
-    //    listBooks(bookList);
-    //    for (String book : bookList) {
-    //        System.out.println(book);
-    //    }
-    //    return bookList;
-    //}
-
-    public Inventory setInventory(Inventory bibliotecaInventory) {
-        this.bibliotecaInventory = bibliotecaInventory;
-        return bibliotecaInventory;
-    }
-
-    public Inventory initializeInventory(Inventory inventory) {
-        inventory.addBook(new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
-        inventory.addBook(new Book("two", new BookSpec("bla", "Herman Hesse", "1990")));
-        return inventory;
-    }
-
-    public Inventory getAllBooks() {
-        getAllBooks();
-        return bibliotecaInventory;
-    }
-
 
 }

@@ -48,6 +48,10 @@ public class MenuTest {
     public void shouldPrintBookInformationInColumns() {
         System.setOut(new PrintStream(outContent));
         String actual = "For whom the bells toll Ernest Hemingway 1980 " +
+                "\n" +
+                "Demian                  Herman Hesse     1980 " +
+                "\n" +
+                "Moby Dick               Herman Melville  1980 " +
                 "\n";
         assertEquals(testMenu.printBookInformation(), actual);
     }

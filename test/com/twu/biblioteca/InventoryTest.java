@@ -14,7 +14,6 @@ public class InventoryTest {
     private Inventory inventory;
     private BookSpec bookSpec;
     private Book book;
-    private List<Book> expected = new ArrayList<Book>();
 
     @Before
     public void setUp() {
@@ -23,11 +22,11 @@ public class InventoryTest {
         book = new Book("1", bookSpec);
     }
 
-    //@Test
-    //public void shouldAddBook() {
-    //    expected = inventory.addBook(book);
-    //    assertTrue(expected.get(0) instanceof Book);
-    //}
+    @Test
+    public void shouldAddBook() {
+        Book expected = inventory.addBook(book);
+        assertEquals(expected, book);
+    }
 
     @Test
     public void shouldGetAllBooks() {
