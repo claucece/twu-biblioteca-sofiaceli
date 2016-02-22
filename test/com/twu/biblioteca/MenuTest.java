@@ -9,7 +9,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import static org.junit.Assert.*;
 
@@ -17,13 +16,14 @@ public class MenuTest {
 
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
-    Inventory inventory = new Inventory();
-    List<String> bookList;
+    private Inventory inventory;
+    //List<String> bookList;
 
     @Before
     public void setUp() {
         testMenu = new Menu();
-        bookList = new ArrayList<String>();
+        //bookList = new ArrayList<String>();
+        inventory = new Inventory();
     }
 
     @Test
@@ -39,18 +39,9 @@ public class MenuTest {
     @Test
     public void shouldHaveAHeadingColumn() {
         System.setOut(new PrintStream(outContent));
-        String actual = "Book_name Author_name Date_name " +
+        String actual = "Book_name Author_name Published_Year " +
                 "\n";
         assertEquals(testMenu.printHeader(), actual);
-    }
-
-    @Test
-    public void shouldHaveBooks() {
-        List<String> expected = new ArrayList<String>();
-        expected.add("For whom the bell tolls, Ernest Hemmingway, 1930");
-        expected.add("Waiting for Godot, Samuel Beckett, 1940");
-        List<String> actual = testMenu.listBooks(bookList);
-        assertEquals(expected, actual);
     }
 
     @Test

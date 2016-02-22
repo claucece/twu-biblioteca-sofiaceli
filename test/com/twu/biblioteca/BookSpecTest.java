@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by sceli on 2/22/16.
- */
 public class BookSpecTest {
 
     private String title;

@@ -27,7 +27,7 @@ public class Menu {
     public String printHeader() {
         String heading1 = "Book_name";
         String heading2 = "Author_name";
-        String heading3 = "Date_name";
+        String heading3 = "Published_Year";
         column.addLine(heading1, heading2, heading3);
         String toPrint = column.toString();
         return toPrint;
@@ -47,19 +47,16 @@ public class Menu {
         return bookList;
     }
 
-    //public Inventory setInventory(Inventory bibliotecaInventory) {
-    //    this.bibliotecaInventory = bibliotecaInventory;
-    //    return bibliotecaInventory;
-    //}
+    public Inventory setInventory(Inventory bibliotecaInventory) {
+        this.bibliotecaInventory = bibliotecaInventory;
+        return bibliotecaInventory;
+    }
 
-    //public Inventory initializeInventory(Inventory inventory) {
-    //    inventory.addBook(new BookSpec("Hemingway", 1980));
-    //    inventory.addBook(new BookSpec("Hesse", 1990));
-    //    return inventory;
-    //}
+    public Inventory initializeInventory(Inventory inventory) {
+        inventory.addBook(new BookSpec("For whom the bells toll", "Ernest Hemingway", 1980));
+        inventory.addBook(new BookSpec("Demian", "Herman Hesse", 1990));
+        return inventory;
+    }
 
-    //public Inventory getInventory() {
-    //    initializeInventory(bibliotecaInventory);
-    //    return bibliotecaInventory;
-    //}
+
 }
