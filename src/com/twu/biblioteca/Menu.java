@@ -10,7 +10,7 @@ public class Menu {
     private List<String> bookList;
     private Columns column;
 
-    public Menu () {
+    public Menu() {
         bibliotecaInventory = new Inventory();
         bookList = new ArrayList<String>();
         column = new Columns();

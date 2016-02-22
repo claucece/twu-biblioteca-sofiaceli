@@ -11,8 +11,7 @@ public class Inventory {
         books = new LinkedList<Book>();
     }
 
-    public void addBook(
-            BookSpec spec) {
+    public void addBook(BookSpec spec) {
         Book book = new Book(spec);
         books.add(book);
     }
