@@ -4,9 +4,9 @@ public class BookSpec {
 
     private String title;
     private String author;
-    private int publishedYear;
+    private String publishedYear;
 
-    public BookSpec(String title, String author, int publishedYear) {
+    public BookSpec(String title, String author, String publishedYear) {
         this.title = title;
         this.author = author;
         this.publishedYear = publishedYear;
@@ -20,7 +20,7 @@ public class BookSpec {
         return author;
     }
 
-    public int getPublishedYear() {
+    public String getPublishedYear() {
         return publishedYear;
     }
 }

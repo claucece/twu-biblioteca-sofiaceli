@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import static org.junit.Assert.*;
 
@@ -18,7 +19,7 @@ public class InventoryTest {
     @Before
     public void setUp() {
         inventory = new Inventory();
-        bookSpec = new BookSpec("Hemingway", "Killers", 1960);
+        bookSpec = new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980");
         book = new Book("1", bookSpec);
     }
 
@@ -30,9 +31,10 @@ public class InventoryTest {
 
     @Test
     public void shouldGetAllBooks() {
-        inventory.getAllBooks();
         inventory.addBook(book);
-        System.out.println(inventory.getAllBooks());
-        //assertEquals(inventory.getBook("1"), book);
+        String expected = inventory.getBookInformation(book);
+        String actual = "For whom the bells toll Ernest Hemingway 1980 " +
+                "\n";
+        assertEquals(expected, actual);
     }
 }

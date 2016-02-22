@@ -10,7 +10,7 @@ public class BookSpecTest {
     private String title;
     private BookSpec specOfBook;
     private String author;
-    private int publishedYear;
+    private String publishedYear;
 
     @Before
     public void setUp() {
@@ -33,8 +33,8 @@ public class BookSpecTest {
 
     @Test
     public void shouldGetPublishedYear() {
-        int expected = specOfBook.getPublishedYear();
-        int actual = publishedYear;
+        String expected = specOfBook.getPublishedYear();
+        String actual = publishedYear;
         assertEquals(expected, actual);
     }
 }

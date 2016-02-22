@@ -1,19 +1,15 @@
 package com.twu.biblioteca;
 
-import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
 
     private Inventory bibliotecaInventory;
-    //private List<String> bookList;
     private Columns column;
-    private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", 1980));
+    private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"));
 
     public Menu() {
         bibliotecaInventory = new Inventory();
-        //bookList = new ArrayList<String>();
         column = new Columns();
     }
 
@@ -34,13 +30,9 @@ public class Menu {
         return toPrint;
     }
 
-    public String printListOfBooks() {
-        String title = book.getSpec().getTitle();
-        String author = book.getSpec().getAuthor();
-        String published_year = "lo";
-        column.addLine(title, author, published_year);
-        String toPrint = column.toString();
-        return toPrint;
+    public String printBookInformation() {
+        //List<Book> books = bibliotecaInventory.addBook(new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
+        return bibliotecaInventory.getBookInformation(book);
     }
 
     //public List<String> listBooks(List<String> bookList) {
@@ -63,8 +55,8 @@ public class Menu {
     }
 
     public Inventory initializeInventory(Inventory inventory) {
-        inventory.addBook(new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", 1980)));
-        inventory.addBook(new Book("two", new BookSpec("bla", "Herman Hesse", 1990)));
+        inventory.addBook(new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
+        inventory.addBook(new Book("two", new BookSpec("bla", "Herman Hesse", "1990")));
         return inventory;
     }
 
