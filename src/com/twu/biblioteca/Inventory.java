@@ -1,9 +1,7 @@
 package com.twu.biblioteca;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class Inventory {
 
@@ -21,8 +19,15 @@ public class Inventory {
         this.book = book;
     }
 
-    public List<Book> addBook(BookSpec spec) {
+    public List<Book> addBook(Book book) {
         books.add(book);
+        return books;
+    }
+
+    public List<Book> getAllBooks() {
+        for (Book book : books) {
+            System.out.println(book.getSpec().getTitle() + " " + book.getSpec().getAuthor() + " " + book.getSpec().getPublishedYear());
+        }
         return books;
     }
 
@@ -35,15 +40,15 @@ public class Inventory {
         return null;
     }
 
-    //public List<DogPet> search(DogPetSpec searchSpec) {
-    //    List<DogPet> matchingDogs = new LinkedList<>();
-    //    for (DogPet i : dogs) { //for-each loop. Looks better.
-    //        DogPet dog = i;
-    //        if (dog.getSpec().matches(searchSpec))
-    //            matchingDogs.add(dog);
+    //public List<Book> search(BookSpec searchSpec) {
+    //    List<Book> matchingBooks = new LinkedList<Book>();
+    //    for (Book i : books) { //for-each loop. Looks better.
+    //        Book book = i;
+    //        if (book.getSpec().matches(searchSpec))
+    //            matchingBooks.add(book);
     //    }
-    //    return matchingDogs;
-    //}
+    //    return matchingBooks;
+   // }
 
 
 }

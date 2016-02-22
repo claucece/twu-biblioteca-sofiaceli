@@ -24,14 +24,15 @@ public class InventoryTest {
 
     @Test
     public void shouldAddBook() {
-        expected = inventory.addBook(bookSpec);
+        expected = inventory.addBook(book);
         assertTrue(expected.get(0) instanceof Book);
     }
 
     @Test
-    public void shouldGetBookById() {
-        inventory.addBook(bookSpec);
-        System.out.println(inventory.getBook("1"));
+    public void shouldGetAllBooks() {
+        inventory.getAllBooks();
+        inventory.addBook(book);
+        System.out.println(inventory.getAllBooks());
         //assertEquals(inventory.getBook("1"), book);
     }
 }

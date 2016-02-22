@@ -34,7 +34,7 @@ public class MenuTest {
                 "Keep reading to see the lists of books available";
         testMenu.printWelcomeMessage();
         assertEquals(testWelcome, outContent.toString());
-        }
+    }
 
     @Test
     public void shouldHaveAHeadingColumn() {
@@ -45,16 +45,25 @@ public class MenuTest {
     }
 
     @Test
-    public void shouldPrintAllBooks() {
+    public void shouldPrintBookInformationInColumns() {
         System.setOut(new PrintStream(outContent));
-        String printedBookList = "For whom the bell tolls, Ernest Hemmingway, 1930" +
-                "\nWaiting for Godot, Samuel Beckett, 1940" +
+        String actual = "For whom the bells toll Ernest Hemingway lo " +
                 "\n";
-        testMenu.getBooks();
-        assertEquals(printedBookList, outContent.toString());
+        assertEquals(testMenu.printListOfBooks(), actual);
     }
+}
 
-    }
+    //@Test
+    //public void shouldPrintAllBooks() {
+    //    System.setOut(new PrintStream(outContent));
+    //    String printedBookList = "For whom the bell tolls, Ernest Hemmingway, 1930" +
+    //            "\nWaiting for Godot, Samuel Beckett, 1940" +
+    //            "\n";
+    //    testMenu.getBooks();
+    //    assertEquals(printedBookList, outContent.toString());
+    //}
+
+    //}
 
     //@Test
     //public void shouldHaveTheInventoryOfBooks() {
