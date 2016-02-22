@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Menu {
 
@@ -9,10 +10,28 @@ public class Menu {
     private Columns column;
     private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"));
     ArrayList<Book> listOfBooks;
+    Scanner input = new Scanner(System.in);
 
     public Menu() {
         bibliotecaInventory = new Inventory();
         column = new Columns();
+    }
+
+    public String printMenu() {
+        String option1 = "--> List books  ";
+        String option2 = "--> Search books  ";
+        String option3 = "--> Quit  ";
+        column.addLine(option1, option2, option3);
+        String toMenu = column.toString();
+        System.out.println(toMenu);
+        return toMenu;
+    }
+
+
+    public String getInputFromUser() {
+        System.out.println("Enter your choise:");
+        String choise = input.nextLine();
+        return choise;
     }
 
     public String printHeader() {
@@ -21,6 +40,7 @@ public class Menu {
         String heading3 = "Published_Year";
         column.addLine(heading1, heading2, heading3);
         String toPrint = column.toString();
+        System.out.println(toPrint);
         return toPrint;
     }
 

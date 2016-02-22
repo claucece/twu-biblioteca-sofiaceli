@@ -21,6 +21,7 @@ public class HomeTest {
         System.setOut(new PrintStream(outContent));
         String testWelcome = "Hello and welcome to 'Alexandros', the Library Management " +
                 "System from The Bangalore Public Library!" +
+                "\n" +
                 "Keep reading to see the lists of books available";
         home.printWelcomeMessage();
         String welcome = testWelcome;

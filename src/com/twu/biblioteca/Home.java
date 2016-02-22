@@ -2,11 +2,10 @@ package com.twu.biblioteca;
 
 public class Home {
 
-    private Menu menu;
-
     public String printWelcomeMessage() {
         String welcome = "Hello and welcome to 'Alexandros', the Library Management " +
                 "System from The Bangalore Public Library!" +
+                "\n" +
                 "Keep reading to see the lists of books available";
         System.out.print(welcome);
         return welcome;
@@ -21,12 +20,15 @@ public class Home {
         return logo;
     }
 
-    public Menu setMenu(Menu menu) {
-        this.menu = menu;
-        return menu;
+    public String printBreak() {
+        String breakLine = "===================================================";
+        System.out.println(breakLine);
+        return breakLine;
     }
 
-    public Menu getMenu() {
+    public String selectFromMenu() {
+        String menu = "Please, select an option from the menu below:";
+        System.out.println(menu);
         return menu;
     }
 
