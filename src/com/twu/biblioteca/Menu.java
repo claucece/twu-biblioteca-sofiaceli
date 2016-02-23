@@ -10,11 +10,20 @@ public class Menu {
     private Columns column;
     private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"));
     ArrayList<Book> listOfBooks;
-    Scanner input = new Scanner(System.in);
 
     public Menu() {
         bibliotecaInventory = new Inventory();
         column = new Columns();
+    }
+
+    public String printHeader() {
+        String heading1 = "Book_name";
+        String heading2 = "Author_name";
+        String heading3 = "Published_Year";
+        column.addLine(heading1, heading2, heading3);
+        String toPrint = column.toString();
+        System.out.println(toPrint);
+        return toPrint;
     }
 
     public String printMenu() {
@@ -27,22 +36,20 @@ public class Menu {
         return toMenu;
     }
 
-
-    public String getInputFromUser() {
-        System.out.println("Enter your choise:");
-        String choise = input.nextLine();
-        return choise;
+    public void processUserInput() {
+        getInputFromUser(new Scanner(System.in));
     }
 
-    public String printHeader() {
-        String heading1 = "Book_name";
-        String heading2 = "Author_name";
-        String heading3 = "Published_Year";
-        column.addLine(heading1, heading2, heading3);
-        String toPrint = column.toString();
-        System.out.println(toPrint);
-        return toPrint;
+    public String getInputFromUser(Scanner scanner) {
+        System.out.println("Please, select an option:");
+        String input = scanner.nextLine();
+        return input;
     }
+
+    //public Object setScene() {
+    //    getInputFromUser();
+    //    return Object;
+    //}
 
     public Inventory setInventory(Inventory bibliotecaInventory) {
         this.bibliotecaInventory = bibliotecaInventory;

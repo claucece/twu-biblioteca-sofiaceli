@@ -5,9 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.theories.suppliers.TestedOn;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -16,6 +16,7 @@ public class MenuTest {
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
     private Inventory inventory;
+    Scanner input = new Scanner(System.in);
 
     @Before
     public void setUp() {
@@ -26,11 +27,25 @@ public class MenuTest {
     @Test
     public void shouldHaveAHeadingColumn() {
         System.setOut(new PrintStream(outContent));
+        String actual = "--> List books   --> Search books   --> Quit   " +
+                "\n";
+        assertEquals(testMenu.printMenu(), actual);
+    }
+
+    @Test
+    public void shouldProcessUserInput() {
+        String input = "list books";
+        assertEquals("list books", testMenu.getInputFromUser(
+                new Scanner(input)));
+    }
+
+    @Test
+    public void shouldHaveAMainList() {
+        System.setOut(new PrintStream(outContent));
         String actual = "Book_name Author_name Published_Year " +
                 "\n";
         assertEquals(testMenu.printHeader(), actual);
     }
-
     @Test
     public void shouldPrintBookInformationInColumns() {
         System.setOut(new PrintStream(outContent));

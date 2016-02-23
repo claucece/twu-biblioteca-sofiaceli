@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class BibliotecaLauncher {
 
     public static void main(String[] args) {
@@ -13,7 +15,8 @@ public class BibliotecaLauncher {
         Menu menu = new Menu();
         menu.printMenu();
         home.printBreak();
-        menu.getInputFromUser();
+        Scanner scanner = new Scanner(System.in);
+        menu.getInputFromUser(scanner);
 
       }
 
