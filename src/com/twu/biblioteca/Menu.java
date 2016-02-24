@@ -1,29 +1,22 @@
 package com.twu.biblioteca;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Menu {
 
     private Inventory bibliotecaInventory;
     private Columns column;
-    private Book book = new Book("one", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"));
-    ArrayList<Book> listOfBooks;
+    private Scanner scanner = new Scanner(System.in);
+    private String input;
+    private ListOfBooks listOfBooks;
+    private boolean keepGoing = false;
 
     public Menu() {
         bibliotecaInventory = new Inventory();
         column = new Columns();
-    }
-
-    public String printHeader() {
-        String heading1 = "Book_name";
-        String heading2 = "Author_name";
-        String heading3 = "Published_Year";
-        column.addLine(heading1, heading2, heading3);
-        String toPrint = column.toString();
-        System.out.println(toPrint);
-        return toPrint;
+        listOfBooks = new ListOfBooks();
     }
 
     public String printMenu() {
@@ -36,42 +29,47 @@ public class Menu {
         return toMenu;
     }
 
-    public void processUserInput() {
-        getInputFromUser(new Scanner(System.in));
+    public String printHeader() {
+        String heading1 = "Book_name";
+        String heading2 = "Author_name";
+        String heading3 = "Published_Year";
+        column.addLine(heading1, heading2, heading3);
+        String toPrint = column.toString();
+        System.out.println(toPrint);
+        return toPrint;
     }
 
+    //public String processUserInput() {
+    //    return input = getInputFromUser(new Scanner(System.in));
+    //}
+
     public String getInputFromUser(Scanner scanner) {
-        System.out.println("Please, select an option:");
-        String input = scanner.nextLine();
+        System.out.println("Please, select a choise");
+        input = scanner.nextLine();
         return input;
     }
 
-    //public Object setScene() {
-    //    getInputFromUser();
-    //    return Object;
-    //}
-
-    public Inventory setInventory(Inventory bibliotecaInventory) {
-        this.bibliotecaInventory = bibliotecaInventory;
-        return bibliotecaInventory;
-    }
-
-    public ArrayList<Book> initializeInventory() {
-        Book book1 = bibliotecaInventory.addBook(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
-        Book book2 = bibliotecaInventory.addBook(new Book("2", new BookSpec("Demian", "Herman Hesse", "1980")));
-        Book book3 = bibliotecaInventory.addBook(new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980")));
-        listOfBooks = new ArrayList<Book>(Arrays.asList(book1, book2, book3));
-        return listOfBooks;
-    }
-
-    public String printBookInformation() {
-        initializeInventory();
-        String columns = null;
-        for (Book book : listOfBooks) {
-             columns = bibliotecaInventory.getBookInformation(book);
+    public String setScene(String input) {
+        keepGoing = true;
+        while (keepGoing == true) {
+            if (input.equals("list books")) {
+                return listOfBooks.printBookInformation();
+            } else if (input.equals("quit")) {
+                String bye = "Thanks for your visit. Bye!";
+                System.out.println(bye);
+                keepGoing = false;
+                return bye;
+            } else {
+                String error = "Select a valid option!";
+                System.out.println(error);
+                return error;
+            }
         }
-        return columns;
+        return null;
     }
 
+    public boolean keepGoing() {
+        return true;
+    }
 
 }

@@ -26,12 +26,15 @@ public class Inventory {
         return book;
     }
 
-    public String getBookInformation(Book book) {
-        String title = book.getSpec().getTitle();
-        String author = book.getSpec().getAuthor();
-        String published_year = book.getSpec().getPublishedYear();
-        column.addLine(title, author, published_year);
-        String toPrint = column.toString();
+    public String getBookInformation() {
+        String toPrint = null;
+        for (Book book : books) {
+            String title = book.getSpec().getTitle();
+            String author = book.getSpec().getAuthor();
+            String published_year = book.getSpec().getPublishedYear();
+            column.addLine(title, author, published_year);
+            toPrint = column.toString();
+        }
         System.out.println(toPrint);
         return toPrint;
     }

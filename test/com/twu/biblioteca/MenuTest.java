@@ -1,35 +1,39 @@
 package com.twu.biblioteca;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.suppliers.TestedOn;
-
 import java.io.*;
-import java.util.List;
 import java.util.Scanner;
-
 import static org.junit.Assert.*;
 
 public class MenuTest {
 
     final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
-    private Inventory inventory;
-    Scanner input = new Scanner(System.in);
+    private Scanner input;
+    private ListOfBooks listOfBooks;
 
     @Before
     public void setUp() {
         testMenu = new Menu();
-        inventory = new Inventory();
+        input = new Scanner(System.in);
+        listOfBooks = new ListOfBooks();
     }
 
     @Test
-    public void shouldHaveAHeadingColumn() {
+    public void shouldPrintMenuItems() {
         System.setOut(new PrintStream(outContent));
         String actual = "--> List books   --> Search books   --> Quit   " +
                 "\n";
         assertEquals(testMenu.printMenu(), actual);
+    }
+
+    @Test
+    public void shouldPrintAHeader() {
+        System.setOut(new PrintStream(outContent));
+        String actual = "Book_name Author_name Published_Year " +
+                "\n";
+        assertEquals(testMenu.printHeader(), actual);
     }
 
     @Test
@@ -40,54 +44,38 @@ public class MenuTest {
     }
 
     @Test
-    public void shouldHaveAMainList() {
-        System.setOut(new PrintStream(outContent));
-        String actual = "Book_name Author_name Published_Year " +
-                "\n";
-        assertEquals(testMenu.printHeader(), actual);
-    }
-    @Test
-    public void shouldPrintBookInformationInColumns() {
-        System.setOut(new PrintStream(outContent));
-        String actual = "For whom the bells toll Ernest Hemingway 1980 " +
-                "\n" +
-                "Demian                  Herman Hesse     1980 " +
-                "\n" +
-                "Moby Dick               Herman Melville  1980 " +
-                "\n";
-        assertEquals(testMenu.printBookInformation(), actual);
+    public void shouldReturnListOfBooksWhenChosen() {
+        String expected = listOfBooks.printBookInformation();
+        String input = "list books";
+        String actual = testMenu.setScene(input);
+        assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldQuitWhenChosen() {
+        String expected = "Thanks for your visit. Bye!";
+        String input = "quit";
+        String actual = testMenu.setScene(input);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldPrintErrorWhenNotChosen() {
+        String expected = "Select a valid option!";
+        String input = "lo";
+        String actual = testMenu.setScene(input);
+        assertEquals(expected, actual);
+    }
+
+
+
+
+    //@Test
+    //public void shouldReturnBookList() {
+    //    String input = "list books";
+    //    assertEquals(testMenu.getInputFromUser(new Scanner(input)), );
+    //}
 
 }
 
-    //@Test
-    //public void shouldPrintAllBooks() {
-    //    System.setOut(new PrintStream(outContent));
-    //    String printedBookList = "For whom the bell tolls, Ernest Hemmingway, 1930" +
-    //            "\nWaiting for Godot, Samuel Beckett, 1940" +
-    //            "\n";
-    //    testMenu.getBooks();
-    //    assertEquals(printedBookList, outContent.toString());
-    //}
-
-    //}
-
-    //@Test
-    //public void shouldHaveTheInventoryOfBooks() {
-    //    assertTrue(testMenu.getInventory() instanceof Object);
-    //}
-
-    //@Test
-    //public void shouldHaveBooks() {
-    //    Inventory expected = inventory;
-    //    Inventory actual = testMenu.getInventory();
-    //    assertEquals(expected, actual);
-    //}
-
-
-    //@Test
-    //public void shouldContainBook() {
-    //    assertTrue(testMenu.initializeInventory(inventory).);
-    //}
 

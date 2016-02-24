@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import sun.security.provider.SystemSigner;
+
 import java.util.Scanner;
 
 public class BibliotecaLauncher {
@@ -16,7 +18,7 @@ public class BibliotecaLauncher {
         menu.printMenu();
         home.printBreak();
         Scanner scanner = new Scanner(System.in);
-        menu.getInputFromUser(scanner);
+        menu.setScene(menu.getInputFromUser(scanner));
 
       }
 
