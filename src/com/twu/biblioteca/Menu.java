@@ -68,6 +68,7 @@ public class Menu {
         return null;
     }
 
+    // toreview and add test
     public boolean keepGoing() {
         return true;
     }

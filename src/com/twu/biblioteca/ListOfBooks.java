@@ -1,8 +1,5 @@
 package com.twu.biblioteca;
 
-/**
- * Created by sceli on 2/22/16.
- */
 public class ListOfBooks {
 
     private Inventory bibliotecaInventory;
@@ -10,6 +7,7 @@ public class ListOfBooks {
     public ListOfBooks() {
         bibliotecaInventory = new Inventory();
     }
+
     public Inventory setInventory(Inventory bibliotecaInventory) {
         this.bibliotecaInventory = bibliotecaInventory;
         return bibliotecaInventory;
