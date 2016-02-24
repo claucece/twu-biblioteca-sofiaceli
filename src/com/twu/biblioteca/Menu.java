@@ -46,7 +46,7 @@ public class Menu {
     public String getInputFromUser(Scanner scanner) {
         System.out.println("Please, select a choise");
         input = scanner.nextLine();
-        return input;
+        return input.toLowerCase();
     }
 
     public String setScene(String input) {
