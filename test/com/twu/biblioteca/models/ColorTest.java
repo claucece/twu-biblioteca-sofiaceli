@@ -24,7 +24,7 @@ public class ColorTest {
     @Test
     public void shouldReturnColorName() {
         String expected = color.getColorName();
-        String actual = "red";
+        String actual = "RED";
         assertEquals(expected, actual);
     }
 }

@@ -35,7 +35,7 @@ public class Color {
     }
 
     public String getColorName() {
-        return colorName.toLowerCase();
+        return colorName;
     }
 
 

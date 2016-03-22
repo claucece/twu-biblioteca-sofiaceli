@@ -1,10 +1,9 @@
 package com.twu.biblioteca;
 
-import org.junit.Before;
-import org.junit.Test;
+import com.twu.biblioteca.models.ListOfBooks;
+
 import java.io.*;
 import java.util.Scanner;
-import static org.junit.Assert.*;
 
 public class MenuTest {
 

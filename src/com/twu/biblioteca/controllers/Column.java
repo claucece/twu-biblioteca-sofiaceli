@@ -17,26 +17,26 @@ public class Column {
     }
 
     public Column addLine(String... line) {
-        if (numColumns == -1){
+        if (numColumns == -1) {
             numColumns = line.length;
-            for(int i = 0; i < numColumns; i++) {
+            for (int i = 0; i < numColumns; i++) {
                 maxLength.add(0);
             }
         }
         if (numColumns != line.length) {
             throw new IllegalArgumentException();
         }
-        for(int i = 0; i < numColumns; i++) {
-            maxLength.set(i, Math.max(maxLength.get(i), line[i].length()) );
+        for (int i = 0; i < numColumns; i++) {
+            maxLength.set(i, Math.max(maxLength.get(i), line[i].length()));
         }
         lines.add(Arrays.asList(line));
         return this;
     }
 
-    public String toString(){
+    public String toString() {
         String result = "";
-        for(List<String> line : lines) {
-            for(int i = 0; i < numColumns; i++) {
+        for (List<String> line : lines) {
+            for (int i = 0; i < numColumns; i++) {
                 result += pad(line.get(i), maxLength.get(i) + 1);
             }
             result += System.getProperty("line.separator");
@@ -44,7 +44,7 @@ public class Column {
         return result;
     }
 
-    private String pad(String word, int newLength){
+    private String pad(String word, int newLength) {
         while (word.length() < newLength) {
             word += " ";
         }

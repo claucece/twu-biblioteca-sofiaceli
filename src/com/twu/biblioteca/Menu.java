@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.controllers.Column;
+import com.twu.biblioteca.models.ListOfBooks;
 
 import java.util.Scanner;
 
