@@ -1,5 +1,13 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.BookSpec;
+import com.twu.biblioteca.models.Color;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class ListOfBooks {
 
     private Inventory bibliotecaInventory;
@@ -13,15 +21,23 @@ public class ListOfBooks {
         return bibliotecaInventory;
     }
 
-    public Inventory initializeInventory() {
-        bibliotecaInventory.addBook(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
-        bibliotecaInventory.addBook(new Book("2", new BookSpec("Demian", "Herman Hesse", "1980")));
-        bibliotecaInventory.addBook(new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980")));
-        return bibliotecaInventory;
-    }
+    private static final Book[] PRIVATE_VALUES = {(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980"))),
+            (new Book("2", new BookSpec("Demian", "Herman Hesse", "1980"))),
+            (new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980"))),
+    };
 
-    public String printBookInformation() {
-        initializeInventory();
-        return bibliotecaInventory.getBookInformation();
-    }
+    public static final List<Book> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+
+    //public Inventory initializeInventory() {
+    //    bibliotecaInventory.addBook(new Book("1", new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980")));
+    //    bibliotecaInventory.addBook(new Book("2", new BookSpec("Demian", "Herman Hesse", "1980")));
+    //    bibliotecaInventory.addBook(new Book("3", new BookSpec("Moby Dick", "Herman Melville", "1980")));
+    //    return bibliotecaInventory;
+    //}
+
+    // probably not here
+    //public String printBookInformation() {
+    //    initializeInventory();
+    //    return bibliotecaInventory.getBookInformation();
+    //}
 }

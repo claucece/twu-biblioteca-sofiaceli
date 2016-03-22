@@ -1,13 +1,13 @@
 package com.twu.biblioteca;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
+import com.twu.biblioteca.controllers.Column;
+
 import java.util.Scanner;
 
 public class Menu {
 
     private Inventory bibliotecaInventory;
-    private Columns column;
+    private Column column;
     private Scanner scanner = new Scanner(System.in);
     private String input;
     private ListOfBooks listOfBooks;
@@ -15,7 +15,7 @@ public class Menu {
 
     public Menu() {
         bibliotecaInventory = new Inventory();
-        column = new Columns();
+        column = new Column();
         listOfBooks = new ListOfBooks();
     }
 
@@ -53,7 +53,7 @@ public class Menu {
         keepGoing = true;
         while (keepGoing == true) {
             if (input.equals("list books")) {
-                return listOfBooks.printBookInformation();
+                return bibliotecaInventory.getBookInformation();
             } else if (input.equals("quit")) {
                 String bye = "Thanks for your visit. Bye!";
                 System.out.println(bye);

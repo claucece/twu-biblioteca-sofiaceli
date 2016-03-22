@@ -1,5 +1,9 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.controllers.Column;
+import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.BookSpec;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,24 +13,27 @@ public class Inventory {
     private Book book;
     private BookSpec bookspec;
     private String id;
-    private Columns column;
+    private Column column;
 
     public Inventory() {
         books = new LinkedList<Book>();
         book = new Book(id, bookspec);
-        column = new Columns();
+        column = new Column();
     }
 
     public void setBook(Book book) {
         this.book = book;
     }
 
-    public Book addBook(Book book) {
-        books.add(book);
+    public Book addBook() {
+        for (Book book : ListOfBooks.VALUES) {
+            books.add(book);
+        }
         return book;
     }
 
     public String getBookInformation() {
+        addBook();
         String toPrint = null;
         for (Book book : books) {
             String title = book.getSpec().getTitle();

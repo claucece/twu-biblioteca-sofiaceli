@@ -1,33 +1,35 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.controllers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Columns {
+public class Column {
 
-    List<List<String>> lines = new ArrayList<List<String>>();
-    List<Integer> maxLengths = new ArrayList<Integer>();
-    int numColumns = -1;
+    private List<List<String>> lines;
+    private List<Integer> maxLength;
+    private int numColumns;
 
-    public Columns addLine(String... line) {
+    public Column() {
+        lines = new ArrayList<List<String>>();
+        maxLength = new ArrayList<Integer>();
+        numColumns = -1;
+    }
+
+    public Column addLine(String... line) {
         if (numColumns == -1){
             numColumns = line.length;
             for(int i = 0; i < numColumns; i++) {
-                maxLengths.add(0);
+                maxLength.add(0);
             }
         }
-
         if (numColumns != line.length) {
             throw new IllegalArgumentException();
         }
-
         for(int i = 0; i < numColumns; i++) {
-            maxLengths.set(i, Math.max( maxLengths.get(i), line[i].length() )  );
+            maxLength.set(i, Math.max(maxLength.get(i), line[i].length()) );
         }
-
-        lines.add(Arrays.asList(line) );
-
+        lines.add(Arrays.asList(line));
         return this;
     }
 
@@ -35,7 +37,7 @@ public class Columns {
         String result = "";
         for(List<String> line : lines) {
             for(int i = 0; i < numColumns; i++) {
-                result += pad( line.get(i), maxLengths.get(i) + 1 );
+                result += pad(line.get(i), maxLength.get(i) + 1);
             }
             result += System.getProperty("line.separator");
         }

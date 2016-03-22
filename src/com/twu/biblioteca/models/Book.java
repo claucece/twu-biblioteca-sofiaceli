@@ -1,8 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 public class Book {
 
-    private String id;
+    private static String id;
     private BookSpec spec;
 
     public Book(String id, BookSpec spec) {

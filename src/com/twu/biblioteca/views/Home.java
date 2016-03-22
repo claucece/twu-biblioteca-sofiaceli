@@ -1,14 +1,19 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.views;
+
+import com.twu.biblioteca.models.ColorInventory;
 
 public class Home {
 
+    private String resetColor = ColorInventory.getColor("RESET");
+
     public String printWelcomeMessage() {
-        String welcome = "Hello and welcome to 'Alexandros', the Library Management " +
+        String welcomeMessage = "Hello and welcome to 'Alexandros', the Library Management " +
                 "System from The Bangalore Public Library!" +
                 "\n" +
                 "Keep reading to see the lists of books available";
-        System.out.print(welcome);
-        return welcome;
+        String color = ColorInventory.getColor("BOLD");
+        System.out.print(color + welcomeMessage + resetColor);
+        return welcomeMessage;
     }
 
     public String printHomeLogo() {
@@ -20,9 +25,10 @@ public class Home {
         return logo;
     }
 
-    public String printBreak() {
+    public String printLineBreak() {
+        String color = ColorInventory.getColor("CYAN");
         String breakLine = "===================================================";
-        System.out.println(breakLine);
+        System.out.println(color + breakLine + resetColor);
         return breakLine;
     }
 

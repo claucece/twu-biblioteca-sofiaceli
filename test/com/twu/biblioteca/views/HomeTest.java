@@ -1,5 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.views;
 
+import com.twu.biblioteca.views.Home;
 import org.junit.Before;
 import org.junit.Test;
 import java.io.ByteArrayOutputStream;
@@ -8,21 +9,22 @@ import static org.junit.Assert.*;
 
 public class HomeTest {
 
-    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private ByteArrayOutputStream outContent;
     private Home home;
 
     @Before
     public void setUp() {
+        outContent = new ByteArrayOutputStream();
         home = new Home();
     }
 
     @Test
     public void shouldPrintWelcomeMessage() {
         System.setOut(new PrintStream(outContent));
-        String testWelcome = "Hello and welcome to 'Alexandros', the Library Management " +
+        String testWelcome = " [1mHello and welcome to 'Alexandros', the Library Management " +
                 "System from The Bangalore Public Library!" +
                 "\n" +
-                "Keep reading to see the lists of books available";
+                "Keep reading to see the lists of books available[0m";
         home.printWelcomeMessage();
         String welcome = testWelcome;
         assertEquals(welcome, outContent.toString());
