@@ -4,10 +4,6 @@ import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.views.Home;
 import com.twu.biblioteca.views.Menu;
 
-import java.io.InputStream;
-import java.io.PrintStream;
-import java.util.Scanner;
-
 public class BibliotecaLauncher {
 
     public static void main(String[] args) {

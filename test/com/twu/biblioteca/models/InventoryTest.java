@@ -1,8 +1,5 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.models.BookSpec;
-import com.twu.biblioteca.models.Inventory;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,15 +8,10 @@ import static org.junit.Assert.*;
 public class InventoryTest {
 
     private Inventory inventory;
-    private BookSpec bookSpec;
-    private Book book;
-    private BookSpec.Genre genre;
 
     @Before
     public void setUp() {
         inventory = new Inventory();
-        bookSpec = new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980", BookSpec.Genre.Type.FICTION);
-        book = new Book("1", bookSpec);
     }
 
     @Test

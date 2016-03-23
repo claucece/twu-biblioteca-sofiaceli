@@ -4,22 +4,16 @@ import com.twu.biblioteca.controllers.Catalogue;
 import com.twu.biblioteca.controllers.Column;
 import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.ListOfBooks;
-
-import java.util.Scanner;
 
 public class Menu {
 
     private Inventory bibliotecaInventory;
     private Column column;
-    //private Scanner scanner = new Scanner(System.in);
-    private ListOfBooks listOfBooks;
     private Catalogue catalogue;
 
     public Menu() {
         bibliotecaInventory = new Inventory();
         column = new Column();
-        listOfBooks = new ListOfBooks();
         catalogue = new Catalogue();
     }
 
@@ -43,10 +37,6 @@ public class Menu {
         System.out.println(toPrint);
         return toPrint;
     }
-
-    //public String processUserInput() {
-    //    return input = getInputFromUser(new Scanner(System.in));
-    //}
 
     public String exit() {
         String bye = "Thanks for your visit. Bye!";

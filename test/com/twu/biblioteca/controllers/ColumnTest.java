@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by sceli on 3/22/16.
- */
 public class ColumnTest {
 
     @Test

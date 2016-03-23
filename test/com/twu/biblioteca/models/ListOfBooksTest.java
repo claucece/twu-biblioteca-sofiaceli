@@ -1,8 +1,5 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.models.Color;
-import com.twu.biblioteca.models.ListOfBooks;
 import org.junit.Before;
 import org.junit.Test;
 

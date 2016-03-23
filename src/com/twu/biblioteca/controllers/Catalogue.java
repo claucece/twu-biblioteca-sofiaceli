@@ -1,10 +1,7 @@
 package com.twu.biblioteca.controllers;
 
-import com.twu.biblioteca.models.BookSpec;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.Book;
-
-import java.util.List;
 
 public class Catalogue {
 

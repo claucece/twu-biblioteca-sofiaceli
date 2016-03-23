@@ -1,10 +1,15 @@
 package com.twu.biblioteca.views;
 
+import com.twu.biblioteca.controllers.Catalogue;
+import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.ListOfBooks;
-import com.twu.biblioteca.views.Menu;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.*;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 
 import java.io.*;
 import java.util.Scanner;
@@ -14,16 +19,14 @@ public class MenuTest {
 
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
-    private Scanner input;
+    Catalogue catalogue;
     Inventory inventory;
-    //private ListOfBooks listOfBooks;
 
     @Before
     public void setUp() {
         testMenu = new Menu();
-        input = new Scanner(System.in);
+        catalogue = new Catalogue();
         inventory = new Inventory();
-        //listOfBooks = new ListOfBooks();
     }
 
     @Test
@@ -43,39 +46,18 @@ public class MenuTest {
     }
 
     @Test
-    public void getsIntegerWhenWithinBoundsOfOneToTen() throws Exception {
-        IntegerAsker asker = mock(IntegerAsker.class);
-        when(asker.ask(anyString())).thenReturn(3);
-
-        assertEquals(getBoundIntegerFromUser(asker), 3);
+    public void shouldQuitWhenAsked() {
+        InputAsker asker = mock(InputAsker.class);
+        when(asker.ask()).thenReturn("quit");
+        assertEquals(testMenu.setScene(asker), "Thanks for your visit. Bye!");
     }
 
     @Test
-    public void asksForNewIntegerWhenOutsideBoundsOfOneToTen() throws Exception {
-        IntegerAsker asker = mock(IntegerAsker.class);
-        when(asker.ask("Give a number between 1 and 10")).thenReturn(99);
-        when(asker.ask("Wrong number, try again.")).thenReturn(3);
-
-        getBoundIntegerFromUser(asker);
-
-        verify(asker).ask("Wrong number, try again.");
+    public void shouldProcessUserInput() {
+        InputAsker asker = mock(InputAsker.class);
+        when(asker.ask()).thenReturn("list books");
+        assertEquals(testMenu.setScene(asker), catalogue.getBookInformation(inventory));
     }
-
-    //@Test
-    //public void shouldProcessUserInput() {
-    //    String input = "list books";
-    //    assertEquals("list books", testMenu.getInputFromUser(
-    //            new Scanner(input)));
-    //}
-
-    //@Test
-    //public void shouldQuitWhenChosen() {
-    //    String expected = "Thanks for your visit. Bye!";
-    //    String input = "quit";
-    //    Scanner scanner = new Scanner(System.in);
-    //    String actual = testMenu.getInputFromUser(scanner);
-    //    assertEquals(expected, actual);
-    //}
 
 //    @Test
 //    public void shouldPrintErrorWhenNotChosen() {
@@ -85,13 +67,6 @@ public class MenuTest {
 //        assertEquals(expected, actual);
 //    }
 //
-
-
-    //@Test
-    //public void shouldReturnBookList() {
-    //    String input = "list books";
-    //    assertEquals(testMenu.getInputFromUser(new Scanner(input)), );
-    //}
 
 }
 

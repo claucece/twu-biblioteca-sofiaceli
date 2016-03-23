@@ -9,7 +9,6 @@ public class BookSpec {
     private String author;
     private String publishedYear;
     private Genre.Type type;
-    //private Genre genre;
 
     public enum Genre {
         DRAMA, NARRATIVE, MYTH, NOVEL, SHORT_STORY;
@@ -40,7 +39,6 @@ public class BookSpec {
         this.author = author;
         this.publishedYear = publishedYear;
         this.type = type;
-        //this.genre = genre;
     }
 
     public String getTitle() {
