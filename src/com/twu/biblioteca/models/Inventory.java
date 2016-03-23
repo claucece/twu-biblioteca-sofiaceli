@@ -7,6 +7,7 @@ import com.twu.biblioteca.models.ListOfBooks;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.SynchronousQueue;
 
 public class Inventory {
 
@@ -23,6 +24,9 @@ public class Inventory {
     }
 
     public List<Book> getInventoryOfBooks() {
+        if (books.isEmpty()) {
+            addBook();
+        }
         return books;
     }
 

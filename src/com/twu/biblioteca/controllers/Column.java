@@ -16,7 +16,7 @@ public class Column {
         numColumns = -1;
     }
 
-    public Column addLine(String... line) {
+    public Column addLine(String ... line) {
         if (numColumns == -1) {
             numColumns = line.length;
             for (int i = 0; i < numColumns; i++) {
