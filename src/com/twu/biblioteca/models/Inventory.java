@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 import com.twu.biblioteca.controllers.Column;
 import com.twu.biblioteca.models.Book;
@@ -22,8 +22,8 @@ public class Inventory {
         column = new Column();
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public List<Book> getInventoryOfBooks() {
+        return books;
     }
 
     public Book addBook() {
@@ -31,20 +31,6 @@ public class Inventory {
             books.add(book);
         }
         return book;
-    }
-
-    public String getBookInformation() {
-        addBook();
-        String toPrint = null;
-        for (Book book : books) {
-            String title = book.getSpec().getTitle();
-            String author = book.getSpec().getAuthor();
-            String published_year = book.getSpec().getPublishedYear();
-            column.addLine(title, author, published_year);
-            toPrint = column.toString();
-        }
-        System.out.println(toPrint);
-        return toPrint;
     }
 
     public Book getBook(String id) {
@@ -64,7 +50,7 @@ public class Inventory {
     //            matchingBooks.add(book);
     //    }
     //    return matchingBooks;
-   // }
+    // }
 
 
 }

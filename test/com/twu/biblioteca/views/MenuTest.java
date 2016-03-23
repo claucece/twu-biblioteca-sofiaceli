@@ -1,13 +1,14 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.models.ListOfBooks;
+import com.twu.biblioteca.views.Menu;
 
 import java.io.*;
 import java.util.Scanner;
 
 public class MenuTest {
 
-    final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private Menu testMenu;
     private Scanner input;
     private ListOfBooks listOfBooks;
@@ -66,7 +67,6 @@ public class MenuTest {
 //        assertEquals(expected, actual);
 //    }
 //
-
 
 
     //@Test

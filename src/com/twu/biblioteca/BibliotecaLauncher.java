@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.views.Home;
+import com.twu.biblioteca.views.Menu;
 
 import java.util.Scanner;
 
@@ -17,10 +18,9 @@ public class BibliotecaLauncher {
         Menu menu = new Menu();
         menu.printMenu();
         home.printLineBreak();
-        Scanner scanner = new Scanner(System.in);
-        menu.setScene(menu.getInputFromUser(scanner));
+        menu.setScene();
 
-      }
+    }
 
 }
 

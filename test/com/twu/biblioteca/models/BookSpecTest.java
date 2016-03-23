@@ -12,10 +12,11 @@ public class BookSpecTest {
     private BookSpec specOfBook;
     private String author;
     private String publishedYear;
+    private BookSpec.Genre.Type type;
 
     @Before
     public void setUp() {
-        specOfBook = new BookSpec(title, author, publishedYear);
+        specOfBook = new BookSpec(title, author, publishedYear, type);
     }
 
     @Test
