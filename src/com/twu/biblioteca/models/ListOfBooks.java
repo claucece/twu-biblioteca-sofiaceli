@@ -17,4 +17,7 @@ public class ListOfBooks {
 
     public static final List<Book> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
 
+    public List<Book> getBooks() {
+        return VALUES;
+    }
 }

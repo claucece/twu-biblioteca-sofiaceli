@@ -6,6 +6,7 @@ import com.twu.biblioteca.models.Inventory;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.*;
+
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -13,6 +14,7 @@ import static org.mockito.Mockito.when;
 
 import java.io.*;
 import java.util.Scanner;
+
 import static org.junit.Assert.*;
 
 public class MenuTest {

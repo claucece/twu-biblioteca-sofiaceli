@@ -33,6 +33,7 @@ public class Column {
         return lines;
     }
 
+    @Override
     public String toString() {
         String result = "";
         for (List<String> line : lines) {

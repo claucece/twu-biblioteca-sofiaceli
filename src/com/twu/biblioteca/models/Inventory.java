@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Inventory {
 
-    private List<Book> books;
+    private static List<Book> books;
     private Book book;
     private BookSpec bookspec;
     private String id;
