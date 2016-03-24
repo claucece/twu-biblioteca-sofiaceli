@@ -47,7 +47,11 @@ public class Menu {
     public String setScene(InputAsker asker) {
         String input = asker.ask();
         if (input.equals("list books")) {
-            catalogue.getBookInformation(bibliotecaInventory);
+            //if (bibliotecaInventory.getInventoryOfBooks().isEmpty()){
+            //    bibliotecaInventory.addBook();
+            //} else{
+                catalogue.getBookInformation(bibliotecaInventory);
+            //}
         } else if (input.equals("quit")) {
             return exit();
         } else {

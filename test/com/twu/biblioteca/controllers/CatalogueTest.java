@@ -25,4 +25,11 @@ public class CatalogueTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void shouldBeAbleToCheckoutBooks() {
+        String expected = "For whom the bells toll Ernest Hemingway 1980 FICTION \n" +
+                "Demian                  Herman Hesse     1980 FICTION \n";
+        String actual = catalogue.checkoutBook("3");
+        assertEquals(expected, actual);
+    }
 }

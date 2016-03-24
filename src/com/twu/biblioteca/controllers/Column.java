@@ -16,7 +16,7 @@ public class Column {
         numColumns = -1;
     }
 
-    public Column addLine(String ... line) {
+    public List<List<String>> addLine(String ... line) {
         if (numColumns == -1) {
             numColumns = line.length;
             for (int i = 0; i < numColumns; i++) {
@@ -30,7 +30,7 @@ public class Column {
             maxLength.set(i, Math.max(maxLength.get(i), line[i].length()));
         }
         lines.add(Arrays.asList(line));
-        return this;
+        return lines;
     }
 
     public String toString() {
@@ -41,12 +41,13 @@ public class Column {
             }
             result += System.getProperty("line.separator");
         }
+        lines.clear();
         return result;
     }
 
     private String pad(String word, int newLength) {
         while (word.length() < newLength) {
-            word += " ";
+             word += " ";
         }
         return word;
     }
