@@ -47,7 +47,7 @@ public class BookCatalogue {
     public String informReturnToMainMenu() {
         String line = "-------------";
         String information = "Returning to main menu...";
-        System.out.println(line + information);
+        System.out.println(line + "\n" + information);
         return information;
     }
 

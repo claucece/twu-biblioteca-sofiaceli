@@ -18,7 +18,6 @@ public class Catalogue {
         column = new Column();
     }
 
-    // this is wrong!!! UPDATE = not wrong, just using same list every time.
     // UPDATE == SOLVED!
     public String getBookInformation() {
         for (Book book : inventory.getInventoryOfBooks()) {
@@ -50,7 +49,6 @@ public class Catalogue {
     }
 
     public List<Book> addBookToInventory(Book book) {
-        System.out.println(inventory.getInventoryOfBooks().size() + "la");
         inventory.getInventoryOfBooks().add(book);
         return inventory.getInventoryOfBooks();
     }
