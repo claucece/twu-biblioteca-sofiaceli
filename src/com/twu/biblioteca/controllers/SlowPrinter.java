@@ -4,7 +4,7 @@ public class SlowPrinter {
 
     public static void slowPrint(String message, long millisPerChar) {
         for (int i = 0; i < message.length(); i++ ) {
-            System.out.println(message.charAt(i));
+            System.out.print(message.charAt(i));
             try {
                 Thread.sleep(millisPerChar);
             } catch (InterruptedException e) {

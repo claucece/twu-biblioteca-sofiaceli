@@ -3,6 +3,7 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.controllers.Catalogue;
 import com.twu.biblioteca.controllers.Column;
 import com.twu.biblioteca.controllers.InputAsker;
+import com.twu.biblioteca.controllers.SlowPrinter;
 import com.twu.biblioteca.models.ColorInventory;
 import com.twu.biblioteca.models.Inventory;
 
@@ -12,11 +13,13 @@ public class BookCatalogue {
     private Inventory inventory;
     private Column column;
     private String resetColor = ColorInventory.getColor("RESET");
+    private SlowPrinter printer;
 
     public BookCatalogue(Catalogue catalogue) {
         inventory = new Inventory();
         this.catalogue = new Catalogue(inventory);
         column = new Column();
+        printer = new SlowPrinter();
     }
 
     public String returnCatalogue() {
@@ -45,7 +48,8 @@ public class BookCatalogue {
     public String informReturnToMainMenu() {
         String line = "-------------";
         String information = "Returning to main menu...";
-        System.out.println(line + "\n" + information);
+        System.out.println(line);
+        printer.slowPrint(information, 30);
         return information;
     }
 
