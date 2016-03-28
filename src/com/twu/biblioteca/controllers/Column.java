@@ -24,6 +24,8 @@ public class Column {
             }
         }
         if (numColumns != line.length) {
+            System.out.println(numColumns);
+            System.out.println(maxLength);
             throw new IllegalArgumentException();
         }
         for (int i = 0; i < numColumns; i++) {

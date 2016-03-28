@@ -5,24 +5,22 @@ import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.ListOfBooks;
 
 import java.util.List;
-import java.util.concurrent.SynchronousQueue;
 
 public class Catalogue {
 
+    private Inventory inventory;
+    private ListOfBooks listOfBooks;
     private Column column;
 
-    private Inventory invet;
-    private ListOfBooks listOfBooks;
-
-    public Catalogue() {
-        column = new Column();
-        invet = new Inventory();
+    public Catalogue(Inventory inventory) {
+        this.inventory = inventory;
         listOfBooks = new ListOfBooks();
+        column = new Column();
     }
 
     // this is wrong!!! UPDATE = not wrong, just using same list every time.
     // UPDATE == SOLVED!
-    public String getBookInformation(Inventory inventory) {
+    public String getBookInformation() {
         for (Book book : inventory.getInventoryOfBooks()) {
             String title = book.getSpec().getTitle();
             String author = book.getSpec().getAuthor();
@@ -30,14 +28,18 @@ public class Catalogue {
             String type = book.getSpec().getType();
             column.addLine(title, author, published_year, type);
         }
-        System.out.println(column.toString());
         return column.toString();
     }
 
-    public Book checkoutBook(String id) {
-        for (Book book : invet.getInventoryOfBooks()) {
-            if (book.getId().matches(id)) {
-                System.out.println(book.getSpec().getTitle());
+    public List<Book> removeBookFromInventory(Book book) {
+        inventory.getInventoryOfBooks().remove(book);
+        return inventory.getInventoryOfBooks();
+    }
+
+    public Book checkoutBook(String title) {
+        for (Book book : inventory.getInventoryOfBooks()) {
+            if (book.getSpec().getTitle().matches(title)) {
+                //System.out.println(book.getSpec().getTitle());
                 removeBookFromInventory(book);
                 return book;
             }
@@ -47,16 +49,17 @@ public class Catalogue {
         return null;
     }
 
-    public List<Book> removeBookFromInventory(Book book) {
-        invet.getInventoryOfBooks().remove(book);
-        return invet.getInventoryOfBooks();
+    public List<Book> addBookToInventory(Book book) {
+        System.out.println(inventory.getInventoryOfBooks().size() + "la");
+        inventory.getInventoryOfBooks().add(book);
+        return inventory.getInventoryOfBooks();
     }
 
-    public Book returnBookToInventory(String id) {
+    public Book returnBook(String title) {
         for (Book book : listOfBooks.VALUES) {
-            System.out.println(book.getId());
-            if (book.getId().matches(id) && !(invet.getInventoryOfBooks().contains(book))) {
-                System.out.println(book.getSpec().getTitle());
+            //System.out.println(book.getSpec().getAuthor());
+            if (book.getSpec().getTitle().matches(title)) {
+                //System.out.println(book.getSpec().getTitle());
                 addBookToInventory(book);
                 return book;
             }
@@ -66,31 +69,4 @@ public class Catalogue {
         return null;
     }
 
-    public List<Book> addBookToInventory(Book book) {
-        System.out.println(invet.getInventoryOfBooks().size() + "la");
-        invet.getInventoryOfBooks().add(book);
-        return invet.getInventoryOfBooks();
-    }
-
-    //public Book returnBook(String id) {
-    //    for (Book book : invet.getInventoryOfBooks()) {
-    //        if (book.getId().matches(id)) {
-    //            System.out.println(book.getSpec().getTitle());
-    //            removeBookFromInventory(book);
-    //            return book;
-    //        }
-    //    }
-    //    String error = "Book not found. Please, select a book from the list";
-    //    System.out.println(error);
-    //    return null;
-    //}
-
-    //public Book getBook(String id) {
-    //    for (Book book : books) {
-    //        if (book.getId().equals(id)) {
-    //            return book;
-//}
-//        }
-//        return null;
-//    }
 }

@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 public class BookSpecTest {
 
-    private String title;
     private BookSpec specOfBook;
+    private String title;
     private String author;
     private String publishedYear;
     private BookSpec.Genre.Type type;

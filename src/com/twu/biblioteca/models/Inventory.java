@@ -1,22 +1,14 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.controllers.Column;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class Inventory {
 
     private static List<Book> books;
-    private Book book;
-    private BookSpec bookspec;
-    private String id;
-    private Column column;
 
     public Inventory() {
         books = new LinkedList<Book>();
-        book = new Book(id, bookspec);
-        column = new Column();
     }
 
     public List<Book> getInventoryOfBooks() {
@@ -26,11 +18,11 @@ public class Inventory {
         return books;
     }
 
-    public Book addBook() {
+    public List<Book> addBook() {
         for (Book book : ListOfBooks.VALUES) {
             books.add(book);
         }
-        return book;
+        return books;
     }
 
     public Book getBook(String id) {

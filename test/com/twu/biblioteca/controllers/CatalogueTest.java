@@ -11,87 +11,81 @@ import static org.junit.Assert.*;
 
 public class CatalogueTest {
 
-    private Catalogue catalogue;
     private Inventory inventory;
+    private Catalogue catalogue;
 
     @Before
     public void setUp() {
-        catalogue = new Catalogue();
         inventory = new Inventory();
+        catalogue = new Catalogue(inventory);
     }
 
     @Test
-    public void shouldReturnBookInformation() {
+    public void shouldGetBookInformation() {
         String expected = "For whom the bells toll Ernest Hemingway 1980 FICTION \n" +
                 "Demian                  Herman Hesse     1980 FICTION \n" +
                 "Moby Dick               Herman Melville  1980 FICTION \n";
-        String actual = catalogue.getBookInformation(inventory);
+        String actual = catalogue.getBookInformation();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldBeAbleToCheckoutBooks() {
         String expected = "Moby Dick";
-        String actual = catalogue.checkoutBook("3").getSpec().getTitle();
+        String actual = catalogue.checkoutBook("Moby Dick").getSpec().getTitle();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
         Book expected = null;
-        Book actual = catalogue.checkoutBook("4");
+        Book actual = catalogue.checkoutBook("The Art Of Love");
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
-        Book notContainedBook = catalogue.checkoutBook("3");
-        List<Book> actualList = catalogue.removeBookFromInventory(notContainedBook);
-        System.out.println(inventory.getInventoryOfBooks());
-        System.out.println(catalogue.removeBookFromInventory(notContainedBook));
-        assertFalse(actualList.contains(notContainedBook));
+        Book checkoutBook = catalogue.checkoutBook("Moby Dick");
+        List<Book> bookList = catalogue.removeBookFromInventory(checkoutBook);
+        assertFalse(bookList.contains(checkoutBook));
     }
 
     @Test
-    public void shouldInventoryRemainStaticEvenWhenObjectsAreRemoved() {
-        Book notContainedBook = catalogue.checkoutBook("3");
-        List<Book> expected = inventory.getInventoryOfBooks();
-        List<Book> actual = catalogue.removeBookFromInventory(notContainedBook);
-        assertEquals(expected, actual);
+    public void shouldInventoryChangeInSizeWhenObjectsAreRemoved() {
+        Book checkoutBook = catalogue.checkoutBook("Moby Dick");
+        List<Book> actual = catalogue.removeBookFromInventory(checkoutBook);
+        System.out.println(actual.size());
+        assertEquals(2, actual.size());
     }
 
     @Test
     public void shouldInventoryRemainStaticEvenWhenObjectsAreNotRemoved() {
-        Book notContainedBook = catalogue.checkoutBook("4");
-        List<Book> expected = inventory.getInventoryOfBooks();
+        Book notContainedBook = catalogue.checkoutBook("Don Quixote");
         List<Book> actual = catalogue.removeBookFromInventory(notContainedBook);
-        assertEquals(expected.size(), actual.size());
+        assertEquals(3, actual.size());
     }
 
     @Test
     public void shouldBeAbleToReturnBooks() {
         String expected = "Moby Dick";
-        String actual = catalogue.returnBookToInventory("3").getSpec().getTitle();
+        String actual = catalogue.returnBook("Moby Dick").getSpec().getTitle();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
         Book expected = null;
-        Book actual = catalogue.returnBookToInventory("4");
+        Book actual = catalogue.returnBook("Hamlet");
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldAddCheckoutBookFromInventory() {
         List<Book> startList = inventory.getInventoryOfBooks();
-        System.out.println(startList.size());
-        Book notContainedBook = catalogue.checkoutBook("3");
-        List<Book> removedElementList = inventory.getInventoryOfBooks();
-        System.out.println(removedElementList.size());
-        Book containedBook = catalogue.returnBookToInventory("3");
+        catalogue.checkoutBook("Moby Dick");
+        catalogue.returnBook("Moby Dick");
         List<Book> finishList = inventory.getInventoryOfBooks();
-        System.out.println(finishList.size());
+        System.out.println(catalogue.getBookInformation());
         assertEquals(startList.size(), finishList.size());
     }
 }

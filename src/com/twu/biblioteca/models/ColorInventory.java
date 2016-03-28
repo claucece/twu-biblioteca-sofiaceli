@@ -16,6 +16,7 @@ public class ColorInventory {
             new Color.Builder().ansiSequence("\u001B[37m").colorName("WHITE").build(),
             new Color.Builder().ansiSequence("\u001B[0m").colorName("RESET").build(),
             new Color.Builder().ansiSequence("\u001B[1m").colorName("BOLD").build(),
+            new Color.Builder().ansiSequence("\u001B[7m").colorName("INVERT").build(),
     };
 
     public static final List<Color> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
