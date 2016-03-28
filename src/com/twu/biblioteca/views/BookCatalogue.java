@@ -62,7 +62,7 @@ public class BookCatalogue {
         } else if (input.equals("main manu")) {
             return informReturnToMainMenu();
         }
-        System.out.println("Invalid Option");
+        System.out.println("Invalid Option. Please, select a valid option!");
         return defineBookMenuOutcome(asker);
     }
 }

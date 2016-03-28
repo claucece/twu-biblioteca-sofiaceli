@@ -42,7 +42,7 @@ public class BookSpec {
     }
 
     public String getTitle() {
-        return title;
+        return title.toLowerCase();
     }
 
     public String getAuthor() {

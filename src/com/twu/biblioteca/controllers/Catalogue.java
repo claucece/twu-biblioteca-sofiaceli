@@ -36,16 +36,17 @@ public class Catalogue {
     }
 
     public String checkoutBook(String title) {
-        System.out.println(title);
         for (Book book : inventory.getInventoryOfBooks()) {
-            if (book.getSpec().getTitle().toLowerCase().matches(title)) {
+            if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeBookFromInventory(book);
-                return book.getSpec().getTitle();
+                String successfullCheckOut = "Thank you! Enjoy the book";
+                System.out.println(successfullCheckOut);
+                return successfullCheckOut;
             }
         }
         String error = "Book not found. Please, select a book from the list";
         System.out.println(error);
-        return null;
+        return error;
     }
 
     public List<Book> addBookToInventory(Book book) {
@@ -55,14 +56,16 @@ public class Catalogue {
 
     public String returnBook(String title) {
         for (Book book : listOfBooks.VALUES) {
-            if (book.getSpec().getTitle().toLowerCase().matches(title)) {
+            if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 addBookToInventory(book);
-                return book.getSpec().getTitle();
+                String successfullReturn = "Thank you for returning the book.";
+                System.out.println(successfullReturn);
+                return successfullReturn;
             }
         }
-        String error = "That book is not available.";
+        String error = "That is not a valid book to return.";
         System.out.println(error);
-        return null;
+        return error;
     }
 
 }

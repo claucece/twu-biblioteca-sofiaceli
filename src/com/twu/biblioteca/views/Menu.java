@@ -3,26 +3,22 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.controllers.Catalogue;
 import com.twu.biblioteca.controllers.Column;
 import com.twu.biblioteca.controllers.InputAsker;
-import com.twu.biblioteca.models.Inventory;
 
 public class Menu {
 
-    private Inventory bibliotecaInventory;
     private Column column;
     private BookCatalogue bookCatalogue;
     private Catalogue catalogue;
 
     public Menu() {
-        bibliotecaInventory = new Inventory();
         column = new Column();
         bookCatalogue = new BookCatalogue(catalogue);
     }
 
     public String printMenu() {
         String option1 = "--> List books  ";
-        String option2 = "--> Search books  ";
-        String option3 = "--> Quit  ";
-        column.addLine(option1, option2, option3);
+        String option2 = "--> Quit  ";
+        column.addLine(option1, option2);
         String toMenu = column.toString();
         System.out.println(toMenu);
         return toMenu;
