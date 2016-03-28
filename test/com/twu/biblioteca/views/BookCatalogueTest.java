@@ -17,11 +17,10 @@ public class BookCatalogueTest {
 
     private Catalogue catalogue;
     private BookCatalogue bookCatalogue;
-    private Inventory inventory;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         bookCatalogue = new BookCatalogue(catalogue);
 
     }
@@ -46,6 +45,6 @@ public class BookCatalogueTest {
     public void shouldQuitWhenAsked() {
         InputAsker asker = mock(InputAsker.class);
         when(asker.ask()).thenReturn("checkout book");
-        assertEquals(bookCatalogue.defineOuput1(asker), "Please, write a book title");
+        assertEquals(bookCatalogue.defineBookMenuOutcome(asker), "Returning to main menu...");
     }
 }

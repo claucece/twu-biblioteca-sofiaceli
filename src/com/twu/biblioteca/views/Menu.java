@@ -38,7 +38,7 @@ public class Menu {
         String input = asker.ask();
             if (input.equals("list books")) {
                 bookCatalogue.printBookCatalogueMenu();
-                bookCatalogue.defineOuput1(asker);
+                bookCatalogue.defineBookMenuOutcome(asker);
             } else if (input.equals("quit")) {
                 return exit();
             } else {
