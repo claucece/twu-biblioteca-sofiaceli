@@ -47,9 +47,9 @@ public class BookCatalogue {
 
     public String informReturnToMainMenu() {
         String line = "-------------";
-        String information = "Returning to main menu...";
+        String information = "Returning to main menu......";
         System.out.println(line);
-        printer.slowPrint(information, 30);
+        printer.slowPrint(information, 50);
         return information;
     }
 
