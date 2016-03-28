@@ -12,13 +12,13 @@ public class BookCatalogue {
     private Inventory inventory;
     private Column column;
     private String resetColor = ColorInventory.getColor("RESET");
-    //private Menu menu;
+    private InputAsker asker;
 
     public BookCatalogue(Catalogue catalogue) {
         inventory = new Inventory();
         this.catalogue = new Catalogue(inventory);
         column = new Column();
-        //menu = new Menu();
+        asker = new InputAsker();
     }
 
     public String returnCatalogue() {
@@ -44,20 +44,26 @@ public class BookCatalogue {
         return bookTitle;
     }
 
+    public String informReturnToMainMenu() {
+        String line = "-------------";
+        String information = "Returning to main menu...";
+        System.out.println(line + information);
+        return information;
+    }
+
     public String defineOuput1(InputAsker asker) {
         String input = asker.ask();
         if (input.equals("checkout book")) {
-            return writeBookName();
+            String titleToCheckout = asker.ask();
+            catalogue.checkoutBook(titleToCheckout);
+            return informReturnToMainMenu();
+        } else if (input.equals("return book")) {
+            String titleToReturn = asker.ask();
+            catalogue.returnBook(titleToReturn);
+            return informReturnToMainMenu();
+        } else if (input.equals("main manu")) {
+            return informReturnToMainMenu();
         }
-            //} else if (input.equals("return book")) {
-            //    writeBookName();
-            //} else if (input.equals("main menu")) {
-            //    menu.defineOuput(asker);
-            //} else {
-            //    String error = "Select a valid option!";
-            //    System.out.println(error);
-            //}
-            return "lo";
-            //}
+        return "Invalid Option";
     }
 }
