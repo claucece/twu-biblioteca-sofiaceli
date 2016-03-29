@@ -17,7 +17,6 @@ public class BibliotecaLauncher {
         Menu menu = new Menu();
         menu.printMenu();
         home.printLineBreak();
-        //InputAsker asker = new InputAsker();
         menu.defineOuput();
     }
 

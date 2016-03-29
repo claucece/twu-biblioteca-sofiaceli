@@ -7,8 +7,12 @@ public class Inventory {
 
     private static List<Book> books;
 
-    public Inventory() {
+    private Inventory() {
         books = new LinkedList<Book>();
+    }
+
+    public static Inventory valueOf() {
+        return new Inventory();
     }
 
     public List<Book> getInventoryOfBooks() {
@@ -24,25 +28,4 @@ public class Inventory {
         }
         return books;
     }
-
-    public Book getBook(String id) {
-        for (Book book : books) {
-            if (book.getId().equals(id)) {
-                return book;
-            }
-        }
-        return null;
-    }
-
-    //public List<Book> search(BookSpec searchSpec) {
-    //    List<Book> matchingBooks = new LinkedList<Book>();
-    //    for (Book i : books) { //for-each loop. Looks better.
-    //        Book book = i;
-    //        if (book.getSpec().matches(searchSpec))
-    //            matchingBooks.add(book);
-    //    }
-    //    return matchingBooks;
-    // }
-
-
 }

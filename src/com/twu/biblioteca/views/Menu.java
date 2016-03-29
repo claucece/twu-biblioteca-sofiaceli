@@ -2,19 +2,19 @@ package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.controllers.Catalogue;
 import com.twu.biblioteca.controllers.Column;
+import com.twu.biblioteca.controllers.ErrorPrinter;
 import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.models.ColorInventory;
 
-public class Menu implements InputAsker{
+public class Menu implements InputAsker, ErrorPrinter {
 
     private Column column;
     private BookCatalogue bookCatalogue;
-    private Catalogue catalogue;
     private String resetColor = ColorInventory.getColor("RESET");
 
     public Menu() {
         column = new Column();
-        bookCatalogue = new BookCatalogue(catalogue);
+        bookCatalogue = new BookCatalogue();
     }
 
     public String printMenu() {
@@ -48,8 +48,6 @@ public class Menu implements InputAsker{
             } else if (input.equals("quit")) {
                 return exit();
             } else {
-                String error = "Select a valid option!";
-                System.out.println(error);
             }
         return defineOuput();
     }
@@ -61,4 +59,10 @@ public class Menu implements InputAsker{
         return input;
     }
 
+    @Override
+    public String printError() {
+        String error = "Select a valid option!";
+        System.out.println(error);
+        return error;
+    }
 }

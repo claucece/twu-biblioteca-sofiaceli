@@ -1,13 +1,10 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.controllers.Column;
-import com.twu.biblioteca.controllers.InputAsker;
-import com.twu.biblioteca.controllers.SlowPrinter;
+import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorInventory;
 import com.twu.biblioteca.models.Inventory;
 
-public class BookCatalogue implements InputAsker {
+public class BookCatalogue implements InputAsker, ErrorPrinter {
 
     private Catalogue catalogue;
     private Inventory inventory;
@@ -15,9 +12,9 @@ public class BookCatalogue implements InputAsker {
     private String resetColor = ColorInventory.getColor("RESET");
     private SlowPrinter printer;
 
-    public BookCatalogue(Catalogue catalogue) {
-        inventory = new Inventory();
-        this.catalogue = new Catalogue(inventory);
+    public BookCatalogue() {
+        inventory = inventory.valueOf();
+        catalogue = new Catalogue(inventory);
         column = new Column();
         printer = new SlowPrinter();
     }
@@ -37,12 +34,6 @@ public class BookCatalogue implements InputAsker {
         String toBookMenu = column.toString();
         System.out.println(color + toBookMenu + resetColor);
         return toBookMenu;
-    }
-
-    public String writeBookName() {
-        String bookTitle = "Please, write a book title";
-        System.out.println(bookTitle);
-        return bookTitle;
     }
 
     public String informReturnToMainMenu() {
@@ -76,5 +67,12 @@ public class BookCatalogue implements InputAsker {
     public String ask() {
         String input = scanner.nextLine().toLowerCase();
         return input;
+    }
+
+    @Override
+    public String printError() {
+        String error = "Invalid Option. Please, select a valid option!";
+        System.out.println(error);
+        return error;
     }
 }

@@ -1,8 +1,5 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.controllers.InputAsker;
-import com.twu.biblioteca.models.Inventory;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,26 +7,23 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class BookCatalogueTest {
 
-    private Catalogue catalogue;
     private BookCatalogue bookCatalogue;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void setUp() {
-        bookCatalogue = new BookCatalogue(catalogue);
-
+        bookCatalogue = new BookCatalogue();
     }
 
     @Test
     public void shouldReturnBookInformation() {
-        String expected = "For whom the bells toll Ernest Hemingway 1980 FICTION \n" +
-                "Demian                  Herman Hesse     1980 FICTION \n" +
-                "Moby Dick               Herman Melville  1980 FICTION \n";
+        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       \n" +
+                "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
+                "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
+                "\n";
         String actual = bookCatalogue.returnCatalogue();
         assertEquals(expected, actual);
     }
@@ -41,10 +35,4 @@ public class BookCatalogueTest {
         assertEquals(bookCatalogue.printBookCatalogueMenu(), actual);
     }
 
-    //@Test
-    //public void shouldQuitWhenAsked() {
-        //InputAsker asker = mock(InputAsker.class);
-    //    when(asker.ask()).thenReturn("checkout book");
-    //    assertEquals(bookCatalogue.defineBookMenuOutcome(), "Returning to main menu...");
-    //}
 }

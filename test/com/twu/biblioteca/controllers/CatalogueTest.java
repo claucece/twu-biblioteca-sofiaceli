@@ -17,15 +17,16 @@ public class CatalogueTest {
 
     @Before
     public void setUp() {
-        inventory = new Inventory();
+        inventory = inventory.valueOf();
         catalogue = new Catalogue(inventory);
     }
 
     @Test
     public void shouldGetBookInformation() {
-        String expected = "For whom the bells toll Ernest Hemingway 1980 FICTION \n" +
-                "Demian                  Herman Hesse     1980 FICTION \n" +
-                "Moby Dick               Herman Melville  1980 FICTION \n";
+        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       \n" +
+                "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
+                "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
+                "\n";
         String actual = catalogue.getBookInformation();
         assertEquals(expected, actual);
     }

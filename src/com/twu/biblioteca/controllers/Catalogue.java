@@ -6,7 +6,7 @@ import com.twu.biblioteca.models.ListOfBooks;
 
 import java.util.List;
 
-public class Catalogue {
+public class Catalogue implements UserCatalogueHelper {
 
     private Inventory inventory;
     private ListOfBooks listOfBooks;
@@ -18,14 +18,14 @@ public class Catalogue {
         column = new Column();
     }
 
-    // UPDATE == SOLVED!
     public String getBookInformation() {
         for (Book book : inventory.getInventoryOfBooks()) {
             String title = book.getSpec().getTitle();
             String author = book.getSpec().getAuthor();
             String published_year = book.getSpec().getPublishedYear();
             String type = book.getSpec().getType();
-            column.addLine(title, author, published_year, type);
+            String genre = book.getSpec().getGenre();
+            column.addLine(title, author, published_year, type, genre);
         }
         return column.toString();
     }
@@ -39,14 +39,10 @@ public class Catalogue {
         for (Book book : inventory.getInventoryOfBooks()) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeBookFromInventory(book);
-                String successfullCheckOut = "Thank you! Enjoy the book";
-                System.out.println(successfullCheckOut);
-                return successfullCheckOut;
+                return printSucessfulCheckout();
             }
         }
-        String error = "Book not found. Please, select a book from the list";
-        System.out.println(error);
-        return error;
+        return printUnsucessfulCheckout();
     }
 
     public List<Book> addBookToInventory(Book book) {
@@ -58,14 +54,37 @@ public class Catalogue {
         for (Book book : listOfBooks.VALUES) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 addBookToInventory(book);
-                String successfullReturn = "Thank you for returning the book.";
-                System.out.println(successfullReturn);
-                return successfullReturn;
+                return printSucessfulReturn();
             }
         }
-        String error = "That is not a valid book to return.";
+        return printUnsucessfulReturn();
+    }
+
+    @Override
+    public String printSucessfulCheckout() {
+        String successfullCheckOut = "Thank you! Enjoy the book";
+        System.out.println(successfullCheckOut);
+        return successfullCheckOut;
+    }
+
+    @Override
+    public String printUnsucessfulCheckout() {
+        String error = "Book not found. Please, select a book from the list";
         System.out.println(error);
         return error;
     }
 
+    @Override
+    public String printSucessfulReturn() {
+        String successfullReturn = "Thank you for returning the book.";
+        System.out.println(successfullReturn);
+        return successfullReturn;
+    }
+
+    @Override
+    public String printUnsucessfulReturn() {
+        String error = "That is not a valid book to return.";
+        System.out.println(error);
+        return error;
+    }
 }
