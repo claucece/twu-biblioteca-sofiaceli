@@ -21,7 +21,7 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         return toMenu;
     }
 
-    public String exit() {
+    private String exit() {
         String bye = "Thanks for your visit. Bye!";
         System.out.println(bye);
         return bye;

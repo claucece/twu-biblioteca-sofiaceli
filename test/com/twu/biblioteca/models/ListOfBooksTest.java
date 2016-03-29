@@ -17,7 +17,7 @@ public class ListOfBooksTest {
     }
 
     @Test
-    public void shouldExistanceOfBookInList() {
+    public void shouldHaveExistanceOfBookInList() {
         List<Book> books = listOfBooks.VALUES;
         String expected = books.get(0).getSpec().getTitle();
         String actual = "for whom the bells toll";

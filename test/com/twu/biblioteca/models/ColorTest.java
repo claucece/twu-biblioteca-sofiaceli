@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class ColorTest {
 
-    Color color;
+    private Color color;
 
     @Before
     public void setUp() {

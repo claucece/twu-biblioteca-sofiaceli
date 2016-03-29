@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class ColorInventoryTest {
 
-    ColorInventory colorInventory;
+    private ColorInventory colorInventory;
 
     @Before
     public void setUp() {
@@ -17,10 +17,10 @@ public class ColorInventoryTest {
     }
 
     @Test
-    public void shouldCheckDecimalOfRomaNumber() {
+    public void shouldHaveProperName() {
         List<Color> colors = colorInventory.VALUES;
         String expected = colors.get(0).getColorName();
-        String actual = "black";
+        String actual = "BLACK";
         assertEquals(expected, actual);
     }
 }
