@@ -36,21 +36,15 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     public String checkIfValidCheckOut() {
         System.out.println("Please, write the title of the book you want to checkout");
         String titleToCheckout = ask();
-        if (catalogue.checkoutBook(titleToCheckout) == true) {
-            return printSeparator();
-        } else {
-            return checkIfValidCheckOut();
-        }
+        String result = (catalogue.checkoutBook(titleToCheckout)) ? printSeparator() : checkIfValidReturn();
+        return result;
     }
 
     public String checkIfValidReturn() {
         System.out.println("Please, write the title of the book you want to return");
         String titleToReturn = ask();
-        if (catalogue.returnBook(titleToReturn) == true) {
-            return printSeparator();
-        } else {
-            return checkIfValidReturn();
-        }
+        String result = (catalogue.returnBook(titleToReturn)) ? printSeparator() : checkIfValidReturn();
+        return result;
     }
 
     public String defineBookMenuOutcome() {
