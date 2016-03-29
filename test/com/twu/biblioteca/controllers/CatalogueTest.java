@@ -46,7 +46,7 @@ public class CatalogueTest {
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
-        Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION));
+        Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL));
         List<Book> bookList = catalogue.removeBookFromInventory(book);
         assertFalse(bookList.contains(book));
     }

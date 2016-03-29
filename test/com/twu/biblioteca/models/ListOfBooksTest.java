@@ -17,10 +17,10 @@ public class ListOfBooksTest {
     }
 
     @Test
-    public void shouldCheckDecimalOfRomaNumber() {
+    public void shouldExistanceOfBookInList() {
         List<Book> books = listOfBooks.VALUES;
         String expected = books.get(0).getSpec().getTitle();
-        String actual = "For whom the bells toll";
+        String actual = "for whom the bells toll";
         assertEquals(expected, actual);
     }
 

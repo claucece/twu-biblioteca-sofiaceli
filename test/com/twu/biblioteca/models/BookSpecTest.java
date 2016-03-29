@@ -12,16 +12,20 @@ public class BookSpecTest {
     private String author;
     private String publishedYear;
     private BookSpec.Genre.Type type;
+    private BookSpec.Genre genre;
 
     @Before
     public void setUp() {
-        specOfBook = new BookSpec(title, author, publishedYear, type);
+        title = "From Whom The Bells Toll";
+        type = BookSpec.Genre.Type.FICTION;
+        genre = BookSpec.Genre.NOVEL;
+        specOfBook = new BookSpec(title, author, publishedYear, type, genre);
     }
 
     @Test
     public void shouldGetTitle() {
         String expected = specOfBook.getTitle();
-        String actual = title;
+        String actual = title.toLowerCase();
         assertEquals(expected, actual);
     }
 
@@ -38,4 +42,19 @@ public class BookSpecTest {
         String actual = publishedYear;
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldGetType() {
+        String expected = specOfBook.getType();
+        String actual = type.toString();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetGenre() {
+        String expected = specOfBook.getGenre();
+        String actual = genre.toString();
+        assertEquals(expected, actual);
+    }
+
 }

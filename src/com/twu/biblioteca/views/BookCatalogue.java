@@ -7,7 +7,7 @@ import com.twu.biblioteca.controllers.SlowPrinter;
 import com.twu.biblioteca.models.ColorInventory;
 import com.twu.biblioteca.models.Inventory;
 
-public class BookCatalogue {
+public class BookCatalogue implements InputAsker {
 
     private Catalogue catalogue;
     private Inventory inventory;
@@ -53,20 +53,28 @@ public class BookCatalogue {
         return information;
     }
 
-    public String defineBookMenuOutcome(InputAsker asker) {
-        String input = asker.ask();
+    public String defineBookMenuOutcome() {
+        System.out.println("Please, select a choice from the menu above:");
+        String input = ask();
         if (input.equals("checkout book")) {
-            String titleToCheckout = asker.ask();
+            System.out.println("Please, write the title of the book you want to checkout");
+            String titleToCheckout = ask();
             catalogue.checkoutBook(titleToCheckout);
             return informReturnToMainMenu();
         } else if (input.equals("return book")) {
-            String titleToReturn = asker.ask();
+            String titleToReturn = ask();
             catalogue.returnBook(titleToReturn);
             return informReturnToMainMenu();
         } else if (input.equals("main manu")) {
             return informReturnToMainMenu();
         }
         System.out.println("Invalid Option. Please, select a valid option!");
-        return defineBookMenuOutcome(asker);
+        return defineBookMenuOutcome();
+    }
+
+    @Override
+    public String ask() {
+        String input = scanner.nextLine().toLowerCase();
+        return input;
     }
 }

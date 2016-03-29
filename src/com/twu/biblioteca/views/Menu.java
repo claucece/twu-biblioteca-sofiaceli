@@ -3,12 +3,14 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.controllers.Catalogue;
 import com.twu.biblioteca.controllers.Column;
 import com.twu.biblioteca.controllers.InputAsker;
+import com.twu.biblioteca.models.ColorInventory;
 
-public class Menu {
+public class Menu implements InputAsker{
 
     private Column column;
     private BookCatalogue bookCatalogue;
     private Catalogue catalogue;
+    private String resetColor = ColorInventory.getColor("RESET");
 
     public Menu() {
         column = new Column();
@@ -30,18 +32,33 @@ public class Menu {
         return bye;
     }
 
-    public String defineOuput(InputAsker asker) {
-        String input = asker.ask();
+    public String printLineBreak() {
+        String color = ColorInventory.getColor("CYAN");
+        String breakLine = "===================================================";
+        System.out.println(color + breakLine + resetColor);
+        return breakLine;
+    }
+
+    public String defineOuput() {
+        String input = ask();
             if (input.equals("list books")) {
+                printLineBreak();
                 bookCatalogue.printBookCatalogueMenu();
-                bookCatalogue.defineBookMenuOutcome(asker);
+                bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
                 return exit();
             } else {
                 String error = "Select a valid option!";
                 System.out.println(error);
             }
-        return defineOuput(asker);
+        return defineOuput();
+    }
+
+    @Override
+    public String ask() {
+        out.println("Please, select a choice");
+        String input = scanner.nextLine().toLowerCase();
+        return input;
     }
 
 }

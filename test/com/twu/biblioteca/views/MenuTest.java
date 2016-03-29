@@ -41,7 +41,7 @@ public class MenuTest {
     public void shouldQuitWhenAsked() {
         InputAsker asker = mock(InputAsker.class);
         when(asker.ask()).thenReturn("quit");
-        assertEquals(testMenu.defineOuput(asker), "Thanks for your visit. Bye!");
+        assertEquals(testMenu.defineOuput(), "Thanks for your visit. Bye!");
     }
 
 }

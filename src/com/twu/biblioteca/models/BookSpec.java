@@ -9,6 +9,7 @@ public class BookSpec {
     private String author;
     private String publishedYear;
     private Genre.Type type;
+    private Genre genre;
 
     public enum Genre {
         DRAMA, NARRATIVE, MYTH, NOVEL, SHORT_STORY;
@@ -34,11 +35,12 @@ public class BookSpec {
         }
     }
 
-    public BookSpec(String title, String author, String publishedYear, Genre.Type type) {
+    public BookSpec(String title, String author, String publishedYear, Genre.Type type, Genre genre) {
         this.title = title;
         this.author = author;
         this.publishedYear = publishedYear;
         this.type = type;
+        this.genre = genre;
     }
 
     public String getTitle() {
@@ -59,6 +61,10 @@ public class BookSpec {
 
     public String getType() {
         return type.toString();
+    }
+
+    public String getGenre() {
+        return genre.toString();
     }
 
 }

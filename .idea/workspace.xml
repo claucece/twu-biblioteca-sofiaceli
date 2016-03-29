@@ -2,8 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e99d9cd-d241-4dce-9d5d-1c58df908021" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/ImageReaderExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaLauncher.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaLauncher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/controllers/InputAsker.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/controllers/InputAsker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec$Genre$Type.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec$Genre$Type.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec$Genre.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec$Genre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookSpec.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/ListOfBooks.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/ListOfBooks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/BookCatalogue.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/BookCatalogue.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/Menu.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/Menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/BookSpecTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/BookSpecTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/BookCatalogueTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/BookCatalogueTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/MenuTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/MenuTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,31 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Home.java">
+      <file leaf-file-name="ImageReaderExample.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/ImageReaderExample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Color.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BibliotecaLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,21 +65,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
+      <file leaf-file-name="ListOfBooks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+            <state relative-caret-position="120">
+              <caret line="10" column="130" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookCatalogue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java">
+      <file leaf-file-name="CatalogueTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="330">
+              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookCatalogueTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,28 +154,29 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/InventoryTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/Home.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/HomeTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/ColumnTest.java" />
         <option value="$PROJECT_DIR$/src/Diamond.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Column.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/IShouldLoop.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/ColorInventory.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/SlowPrinter.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/ImageReaderExample.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
       </list>
     </option>
   </component>
@@ -165,7 +191,6 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="805" />
@@ -195,8 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -374,6 +397,8 @@
       <pane id="Scratches">
         <subPane />
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,20 +431,20 @@
       <recent name="$PROJECT_DIR$/src/com/twu/biblioteca/controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaLauncher">
-    <configuration default="false" name="CatalogueTest.shouldInventoryChangeInSizeWhenObjectsAreRemoved" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ListOfBooksTest.shouldExistanceOfBookInList">
+    <configuration default="false" name="BookSpecTest.shouldGetType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldInventoryChangeInSizeWhenObjectsAreRemoved" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.BookSpecTest" />
+      <option name="METHOD_NAME" value="shouldGetType" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -433,19 +458,45 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldBeAbleToReturnBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BookSpecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldBeAbleToReturnBooks" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.BookSpecTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BookSpecTest.shouldGetGenre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.BookSpecTest" />
+      <option name="METHOD_NAME" value="shouldGetGenre" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -459,20 +510,20 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ListOfBooksTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldNotBeAbleToCheckoutBookThatIsNotOnList" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.ListOfBooksTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -485,19 +536,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldAddCheckoutBookFromInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ListOfBooksTest.shouldExistanceOfBookInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldAddCheckoutBookFromInventory" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.ListOfBooksTest" />
+      <option name="METHOD_NAME" value="shouldExistanceOfBookInList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -509,26 +560,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BibliotecaLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaLauncher" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="biblioteca" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -726,6 +757,36 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -780,6 +841,18 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="biblioteca" />
       <method />
     </configuration>
     <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
@@ -900,20 +973,35 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldInventoryChangeInSizeWhenObjectsAreRemoved" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnBooks" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnList" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldAddCheckoutBookFromInventory" />
-      <item index="4" class="java.lang.String" itemvalue="Application.BibliotecaLauncher" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BookSpecTest.shouldGetType" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BookSpecTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BookSpecTest.shouldGetGenre" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldExistanceOfBookInList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.BibliotecaLauncher" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldAddCheckoutBookFromInventory" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnList" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnBooks" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldInventoryChangeInSizeWhenObjectsAreRemoved" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldExistanceOfBookInList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BookSpecTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BookSpecTest.shouldGetGenre" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BookSpecTest.shouldGetType" />
       </list>
     </recent_temporary>
   </component>
@@ -939,56 +1027,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CatalogueTest_shouldAddCheckoutBookFromInventory - 2016.03.28 at 16h 59m 52s.xml">
-      <configuration name="CatalogueTest.shouldAddCheckoutBookFromInventory" configurationId="JUnit" />
+    <history-entry file="BookSpecTest - 2016.03.29 at 09h 18m 44s.xml">
+      <configuration name="BookSpecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 54m 47s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest - 2016.03.29 at 09h 21m 16s.xml">
+      <configuration name="BookSpecTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 55m 21s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetGenre - 2016.03.29 at 09h 21m 07s.xml">
+      <configuration name="BookSpecTest.shouldGetGenre" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 56m 22s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetTitle - 2016.03.29 at 09h 17m 54s.xml">
+      <configuration name="BookSpecTest.shouldGetTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 56m 32s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetTitle - 2016.03.29 at 09h 18m 16s.xml">
+      <configuration name="BookSpecTest.shouldGetTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 56m 49s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetTitle - 2016.03.29 at 09h 19m 15s.xml">
+      <configuration name="BookSpecTest.shouldGetTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 56m 56s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetType - 2016.03.29 at 09h 20m 36s.xml">
+      <configuration name="BookSpecTest.shouldGetType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.03.28 at 16h 58m 36s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="BookSpecTest_shouldGetType - 2016.03.29 at 09h 21m 05s.xml">
+      <configuration name="BookSpecTest.shouldGetType" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutBookThatIsNotOnList - 2016.03.28 at 16h 59m 17s.xml">
-      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnList" configurationId="JUnit" />
+    <history-entry file="ListOfBooksTest - 2016.03.29 at 09h 22m 22s.xml">
+      <configuration name="ListOfBooksTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutBookThatIsNotOnList - 2016.03.28 at 16h 59m 28s.xml">
-      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnList" configurationId="JUnit" />
+    <history-entry file="ListOfBooksTest_shouldExistanceOfBookInList - 2016.03.29 at 09h 22m 36s.xml">
+      <configuration name="ListOfBooksTest.shouldExistanceOfBookInList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1440" height="805" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="805" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32307693" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32398316" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32398316" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -997,8 +1083,10 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1047,13 +1135,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1236,46 +1317,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Diamond.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/BookTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Diamond.java" />
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#146#147#0" expanded="false" />
-            <element signature="e#178#179#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1298,72 +1346,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/IShouldLoop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/IShouldLoop.java" />
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/HomeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="26" column="73" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-          <folding>
-            <element signature="e#1143#1144#0" expanded="true" />
-            <element signature="e#1185#1186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="103" selection-start-line="10" selection-start-column="103" selection-end-line="10" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1375,57 +1362,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/SlowPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/InputAsker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/MenuTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        <state relative-caret-position="450">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/SlowPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,10 +1419,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Color.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="585">
+          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/BookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/ImageReaderExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#146#147#0" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/BookSpecTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/BookSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+          <folding>
+            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1490#1491#0" expanded="true" />
+            <element signature="e#1528#1529#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1599#1600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfBooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="130" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
           <folding />
         </state>
       </provider>

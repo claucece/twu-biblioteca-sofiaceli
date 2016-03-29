@@ -3,19 +3,11 @@ package com.twu.biblioteca.controllers;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class InputAsker {
+public interface InputAsker {
 
-    private Scanner scanner;
-    private PrintStream out;
+    Scanner scanner = new Scanner(System.in);
+    PrintStream out = new PrintStream(System.out);
 
-    public InputAsker() {
-        scanner =  new Scanner(System.in);
-        out = new PrintStream(System.out);
-    }
+    public String ask();
 
-    public String ask() {
-        out.println("Please, select a choice");
-        String input = scanner.nextLine().toLowerCase();
-        return input;
-    }
 }
