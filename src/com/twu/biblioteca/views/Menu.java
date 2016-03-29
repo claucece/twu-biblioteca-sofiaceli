@@ -35,8 +35,10 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
                 bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
                 return exit();
+            } else {
+                printError();
             }
-        printError();
+        printMenu();
         return defineOuput();
     }
 
