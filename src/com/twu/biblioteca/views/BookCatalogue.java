@@ -4,19 +4,16 @@ import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorInventory;
 import com.twu.biblioteca.models.Inventory;
 
-public class BookCatalogue implements InputAsker, ErrorPrinter {
+public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     private Catalogue catalogue;
     private Inventory inventory;
     private Column column;
-    private String resetColor = ColorInventory.getColor("RESET");
-    private SlowPrinter printer;
 
     public BookCatalogue() {
         inventory = inventory.valueOf();
         catalogue = new Catalogue(inventory);
         column = new Column();
-        printer = new SlowPrinter();
     }
 
     public String returnCatalogue() {
@@ -36,14 +33,6 @@ public class BookCatalogue implements InputAsker, ErrorPrinter {
         return toBookMenu;
     }
 
-    public String informReturnToMainMenu() {
-        String line = "-------------";
-        String information = "Returning to main menu......";
-        System.out.println(line);
-        printer.slowPrint(information, 50);
-        return information;
-    }
-
     public String defineBookMenuOutcome() {
         System.out.println("Please, select a choice from the menu above:");
         String input = ask();
@@ -51,15 +40,16 @@ public class BookCatalogue implements InputAsker, ErrorPrinter {
             System.out.println("Please, write the title of the book you want to checkout");
             String titleToCheckout = ask();
             catalogue.checkoutBook(titleToCheckout);
-            return informReturnToMainMenu();
+            return printSeparator();
         } else if (input.equals("return book")) {
+            System.out.println("Please, write the title of the book you want to return");
             String titleToReturn = ask();
             catalogue.returnBook(titleToReturn);
-            return informReturnToMainMenu();
-        } else if (input.equals("main manu")) {
-            return informReturnToMainMenu();
+            return printSeparator();
+        } else if (input.equals("main menu")) {
+            return printSeparator();
         }
-        System.out.println("Invalid Option. Please, select a valid option!");
+        printError();
         return defineBookMenuOutcome();
     }
 
@@ -74,5 +64,15 @@ public class BookCatalogue implements InputAsker, ErrorPrinter {
         String error = "Invalid Option. Please, select a valid option!";
         System.out.println(error);
         return error;
+    }
+
+    @Override
+    public String printSeparator() {
+        String color = ColorInventory.getColor("CYAN");
+        String breakLine = "===================================================";
+        String information = "Returning to main menu......";
+        System.out.println(color + breakLine + resetColor);
+        printer.slowPrint(information, 50);
+        return information;
     }
 }

@@ -1,16 +1,12 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.controllers.Column;
-import com.twu.biblioteca.controllers.ErrorPrinter;
-import com.twu.biblioteca.controllers.InputAsker;
+import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorInventory;
 
-public class Menu implements InputAsker, ErrorPrinter {
+public class Menu implements InputAsker, ErrorPrinter, Separator {
 
     private Column column;
     private BookCatalogue bookCatalogue;
-    private String resetColor = ColorInventory.getColor("RESET");
 
     public Menu() {
         column = new Column();
@@ -32,17 +28,10 @@ public class Menu implements InputAsker, ErrorPrinter {
         return bye;
     }
 
-    public String printLineBreak() {
-        String color = ColorInventory.getColor("CYAN");
-        String breakLine = "===================================================";
-        System.out.println(color + breakLine + resetColor);
-        return breakLine;
-    }
-
     public String defineOuput() {
         String input = ask();
             if (input.equals("list books")) {
-                printLineBreak();
+                printSeparator();
                 bookCatalogue.printBookCatalogueMenu();
                 bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
@@ -64,5 +53,13 @@ public class Menu implements InputAsker, ErrorPrinter {
         String error = "Select a valid option!";
         System.out.println(error);
         return error;
+    }
+
+    @Override
+    public String printSeparator() {
+        String color = ColorInventory.getColor("CYAN");
+        String breakLine = "===================================================";
+        System.out.println(color + breakLine + resetColor);
+        return breakLine;
     }
 }
