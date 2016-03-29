@@ -2,7 +2,7 @@ package com.twu.biblioteca.controllers;
 
 public class SlowPrinter {
 
-    public String slowPrint(String message, long millisPerChar) {
+    public void slowPrint(String message, long millisPerChar) {
         for (int i = 0; i < message.length(); i++ ) {
             System.out.print(message.charAt(i));
             try {
@@ -11,6 +11,5 @@ public class SlowPrinter {
                 e.printStackTrace();
             }
         }
-        return message;
     }
 }

@@ -13,7 +13,7 @@ public class SlowPrinterTest {
     public void shouldCatchIfThreadIsInterrupted() throws InterruptedException {
         SlowPrinter printer = mock(SlowPrinter.class);
         String message = "Welcome";
-        when(printer.slowPrint(message, 30)).thenThrow(InterruptedException.class);
+        printer.slowPrint(message, 10);
         assertTrue(throwException());
     }
 

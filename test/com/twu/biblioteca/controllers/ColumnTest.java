@@ -29,16 +29,17 @@ public class ColumnTest {
         assertEquals(expected, actual);
     }
 
-//    // wrong!
-//    @Test
-//    public void shouldConvertToString() {
-//        String title = "For whom the bells toll";
-//        List<String> titleList = asList(title);
-//        List<List<String>> list = asList(titleList);
-//        Column column = mock(Column.class);
-//        when(column.addLine(title)).thenReturn(list);
-//        String actual = column.toString();
-//        String expected = column.toString();
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    public void shouldConvertToString() {
+        String title = "For whom the bells toll";
+        List<String> titleList = asList(title);
+        List<List<String>> list = asList(titleList);
+        Column column = new Column();
+        column.addLine(title);
+        String actual = column.toString();
+        String expected = "For whom the bells toll " +
+                "\n";
+        assertEquals(expected, actual);
+    }
+
 }
