@@ -31,19 +31,19 @@ public class CatalogueTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldBeAbleToCheckoutBooks() {
-        String expected = "Thank you! Enjoy the book";
-        String actual = catalogue.checkoutBook("Moby Dick");
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
-        String expected = "Book not found. Please, select a book from the list";
-        String actual = catalogue.checkoutBook("The Art Of Love");
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldBeAbleToCheckoutBooks() {
+//        String expected = "Thank you! Enjoy the book";
+//        String actual = catalogue.checkoutBook("Moby Dick");
+//        assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
+//        String expected = "Book not found. Please, select a book from the list";
+//        String actual = catalogue.checkoutBook("The Art Of Love");
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
@@ -52,20 +52,20 @@ public class CatalogueTest {
         assertFalse(bookList.contains(book));
     }
 
-    @Test
-    public void shouldBeAbleToReturnBooks() {
-        String expected = "Thank you for returning the book.";
-        catalogue.checkoutBook("Moby Dick");
-        String actual = catalogue.returnBook("Moby Dick");
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
-        String expected = "That is not a valid book to return.";
-        String actual = catalogue.returnBook("Hamlet");
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldBeAbleToReturnBooks() {
+//        String expected = "Thank you for returning the book.";
+//        catalogue.checkoutBook("Moby Dick");
+//        String actual = catalogue.returnBook("Moby Dick");
+//        assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
+//        String expected = "That is not a valid book to return.";
+//        String actual = catalogue.returnBook("Hamlet");
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     public void shouldAddCheckoutBookFromInventory() {

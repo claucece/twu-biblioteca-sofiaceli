@@ -35,14 +35,16 @@ public class Catalogue implements UserCatalogueHelper {
         return inventory.getInventoryOfBooks();
     }
 
-    public String checkoutBook(String title) {
+    public boolean checkoutBook(String title) {
         for (Book book : inventory.getInventoryOfBooks()) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeBookFromInventory(book);
-                return printSucessfulCheckout();
+                printSucessfulCheckout();
+                return true;
             }
         }
-        return printUnsucessfulCheckout();
+        printUnsucessfulCheckout();
+        return false;
     }
 
     public List<Book> addBookToInventory(Book book) {
@@ -50,14 +52,16 @@ public class Catalogue implements UserCatalogueHelper {
         return inventory.getInventoryOfBooks();
     }
 
-    public String returnBook(String title) {
+    public boolean returnBook(String title) {
         for (Book book : listOfBooks.VALUES) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 addBookToInventory(book);
-                return printSucessfulReturn();
+                printSucessfulReturn();
+                return true;
             }
         }
-        return printUnsucessfulReturn();
+        printUnsucessfulReturn();
+        return false;
     }
 
     @Override
@@ -69,7 +73,7 @@ public class Catalogue implements UserCatalogueHelper {
 
     @Override
     public String printUnsucessfulCheckout() {
-        String error = "Book not found. Please, select a book from the list";
+        String error = "Book not found. Please, select a book from the list.";
         System.out.println(error);
         return error;
     }
