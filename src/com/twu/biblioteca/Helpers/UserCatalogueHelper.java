@@ -1,4 +1,4 @@
-package com.twu.biblioteca.controllers;
+package com.twu.biblioteca.Helpers;
 
 public interface UserCatalogueHelper {
 

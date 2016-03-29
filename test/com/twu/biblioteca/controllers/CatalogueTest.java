@@ -57,6 +57,7 @@ public class CatalogueTest {
         boolean expected = true;
         catalogue.checkoutBook("Moby Dick");
         boolean actual = catalogue.returnBook("Moby Dick");
+        System.out.println(inventory.getInventoryOfBooks());
         assertEquals(expected, actual);
     }
 

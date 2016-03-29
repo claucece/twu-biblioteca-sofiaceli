@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.views.Home;
 import com.twu.biblioteca.views.Menu;
 

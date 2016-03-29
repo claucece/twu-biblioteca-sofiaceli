@@ -1,5 +1,6 @@
-package com.twu.biblioteca.controllers;
+package com.twu.biblioteca.Helpers;
 
+import com.twu.biblioteca.controllers.SlowPrinter;
 import com.twu.biblioteca.models.ColorInventory;
 
 public interface Separator {

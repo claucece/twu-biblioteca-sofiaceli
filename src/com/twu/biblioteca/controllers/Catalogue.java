@@ -1,12 +1,14 @@
 package com.twu.biblioteca.controllers;
 
+import com.twu.biblioteca.Helpers.ErrorPrinter;
+import com.twu.biblioteca.Helpers.UserCatalogueHelper;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.ListOfBooks;
 
 import java.util.List;
 
-public class Catalogue implements UserCatalogueHelper {
+public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     private Inventory inventory;
     private ListOfBooks listOfBooks;
@@ -48,15 +50,20 @@ public class Catalogue implements UserCatalogueHelper {
     }
 
     public List<Book> addBookToInventory(Book book) {
-        inventory.getInventoryOfBooks().add(book);
+        if (!(inventory.getInventoryOfBooks().contains(book))) {
+            inventory.getInventoryOfBooks().add(book);
+            printSucessfulCheckout();
+        } else {
+            printError();
+        }
         return inventory.getInventoryOfBooks();
     }
 
     public boolean returnBook(String title) {
         for (Book book : listOfBooks.VALUES) {
-            if (book.getSpec().getTitle().matches(title.toLowerCase())) {
+            String bookToReturn = book.getSpec().getTitle();
+            if (bookToReturn.matches(title.toLowerCase())) {
                 addBookToInventory(book);
-                printSucessfulReturn();
                 return true;
             }
         }
@@ -88,6 +95,13 @@ public class Catalogue implements UserCatalogueHelper {
     @Override
     public String printUnsucessfulReturn() {
         String error = "That is not a valid book to return.";
+        System.out.println(error);
+        return error;
+    }
+
+    @Override
+    public String printError() {
+        String error = "Book already in stock";
         System.out.println(error);
         return error;
     }
