@@ -2,7 +2,6 @@ package com.twu.biblioteca.models;
 
 public class Color {
 
-    private volatile int hashCode;
     private final String ansiEscape;
     private final String colorName;
 

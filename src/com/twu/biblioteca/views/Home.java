@@ -1,10 +1,9 @@
 package com.twu.biblioteca.views;
 
+import com.twu.biblioteca.controllers.Separator;
 import com.twu.biblioteca.models.ColorInventory;
 
-public class Home {
-
-    private String resetColor = ColorInventory.getColor("RESET");
+public class Home implements Separator {
 
     public String printWelcomeMessage() {
         String welcomeMessage = "Hello and welcome to 'Alexandros', the Library Management " +
@@ -22,20 +21,21 @@ public class Home {
                 "#   ( A ( l ( e ( x ( a ( n ( d ( r ( o ( s )\n" +
                 "#    \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ \\_/ ";
         System.out.println(logo);
+        printSeparator();
         return logo;
-    }
-
-    public String printLineBreak() {
-        String color = ColorInventory.getColor("CYAN");
-        String breakLine = "===================================================";
-        System.out.println(color + breakLine + resetColor);
-        return breakLine;
     }
 
     public String selectFromMenu() {
         String menu = "Please, select an option from the menu below:";
         System.out.println(menu);
+        printSeparator();
         return menu;
     }
 
+    @Override
+    public String printSeparator() {
+        String breakLine = "===================================================";
+        System.out.println(color + breakLine + resetColor);
+        return breakLine;
+    }
 }

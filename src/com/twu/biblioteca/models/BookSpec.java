@@ -55,10 +55,6 @@ public class BookSpec {
         return publishedYear;
     }
 
-    public String toString() {
-        return type.toString();
-    }
-
     public String getType() {
         return type.toString();
     }

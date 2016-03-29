@@ -12,11 +12,9 @@ public class BibliotecaLauncher {
         System.out.println();
         home.printHomeLogo();
         System.out.println();
-        home.printLineBreak();
         home.selectFromMenu();
         Menu menu = new Menu();
         menu.printMenu();
-        home.printLineBreak();
         menu.defineOuput();
     }
 

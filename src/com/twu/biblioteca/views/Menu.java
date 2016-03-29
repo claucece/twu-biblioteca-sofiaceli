@@ -1,7 +1,6 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.ColorInventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 
@@ -36,8 +35,8 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
                 bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
                 return exit();
-            } else {
             }
+        printError();
         return defineOuput();
     }
 
@@ -57,7 +56,6 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String printSeparator() {
-        String color = ColorInventory.getColor("CYAN");
         String breakLine = "===================================================";
         System.out.println(color + breakLine + resetColor);
         return breakLine;

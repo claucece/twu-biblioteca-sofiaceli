@@ -8,6 +8,6 @@ public interface InputAsker {
     Scanner scanner = new Scanner(System.in);
     PrintStream out = new PrintStream(System.out);
 
-    public String ask();
+    String ask();
 
 }

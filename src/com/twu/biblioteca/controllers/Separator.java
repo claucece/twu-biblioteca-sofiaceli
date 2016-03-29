@@ -6,6 +6,7 @@ public interface Separator {
 
     SlowPrinter printer = new SlowPrinter();
     String resetColor = ColorInventory.getColor("RESET");
+    String color = ColorInventory.getColor("CYAN");
 
     String printSeparator();
 
