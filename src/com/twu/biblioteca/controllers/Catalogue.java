@@ -11,14 +11,13 @@ import java.util.List;
 public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     private Inventory inventory;
-    private Column column;
 
     public Catalogue(Inventory inventory) {
         this.inventory = inventory;
-        column = new Column();
     }
 
     public String putBookInformationInColumns() {
+        Column column = new Column();
         for (Book book : inventory.returnInventoryOfBooks()) {
             String title = book.getSpec().getTitle();
             String author = book.getSpec().getAuthor();

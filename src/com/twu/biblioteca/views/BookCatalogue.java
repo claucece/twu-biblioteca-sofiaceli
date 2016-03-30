@@ -9,12 +9,10 @@ import com.twu.biblioteca.models.Inventory;
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     private Catalogue catalogue;
-    private Column column;
 
     public BookCatalogue() {
         Inventory inventory = Inventory.valueOf();
         catalogue = new Catalogue(inventory);
-        column = new Column();
     }
 
     public String returnCatalogue() {
@@ -23,6 +21,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String printBookCatalogueMenu() {
+        Column column = new Column();
         returnCatalogue();
         String color = ColorInventory.getColor("INVERT");
         String option1 = "--> Checkout Book  ";

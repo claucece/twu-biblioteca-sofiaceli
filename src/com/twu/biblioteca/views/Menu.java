@@ -6,15 +6,14 @@ import com.twu.biblioteca.controllers.*;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 
-    private Column column;
     private BookCatalogue bookCatalogue;
 
     public Menu() {
-        column = new Column();
         bookCatalogue = new BookCatalogue();
     }
 
     public String printMenu() {
+        Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> Quit  ";
         column.addLine(option1, option2);
