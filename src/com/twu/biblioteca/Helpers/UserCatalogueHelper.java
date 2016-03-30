@@ -8,11 +8,11 @@ public interface UserCatalogueHelper {
     String notInStockColor = ColorInventory.getColor("RED");
     String resetStockColor = ColorInventory.getColor("RESET");
 
-    String printSucessfulCheckout();
+    StringBuilder printSucessfulCheckout();
 
-    String printUnsucessfulCheckout();
+    StringBuilder printUnsucessfulCheckout();
 
-    String printSucessfulReturn();
+    StringBuilder printSucessfulReturn();
 
-    String printUnsucessfulReturn();
+    StringBuilder printUnsucessfulReturn();
 }

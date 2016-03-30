@@ -68,29 +68,29 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     @Override
-    public String printSucessfulCheckout() {
-        String successfullCheckOut = "Thank you! Enjoy the book";
+    public StringBuilder printSucessfulCheckout() {
+        StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the book");
         System.out.println(inStockColor + successfullCheckOut + resetStockColor);
         return successfullCheckOut;
     }
 
     @Override
-    public String printUnsucessfulCheckout() {
-        String error = "Book not found. Please, select a book from the list.";
+    public StringBuilder printUnsucessfulCheckout() {
+        StringBuilder error = new StringBuilder("Book not found. Please, select a book from the list.");
         System.out.println(notInStockColor + error + resetStockColor);
         return error;
     }
 
     @Override
-    public String printSucessfulReturn() {
-        String successfullReturn = "Thank you for returning the book.";
+    public StringBuilder printSucessfulReturn() {
+        StringBuilder successfullReturn = new StringBuilder("Thank you for returning the book.");
         System.out.println(inStockColor + successfullReturn + resetStockColor);
         return successfullReturn;
     }
 
     @Override
-    public String printUnsucessfulReturn() {
-        String error = "That is not a valid book to return.";
+    public StringBuilder printUnsucessfulReturn() {
+        StringBuilder error = new StringBuilder("That is not a valid book to return.");
         System.out.println(notInStockColor + error + resetStockColor);
         return error;
     }
