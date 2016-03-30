@@ -50,9 +50,9 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
     }
 
     @Override
-    public String printError() {
-        String error = "Select a valid option!";
-        System.out.println(errorColor + error + resetColor);
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("Select a valid option!");
+        System.out.println(errorColor + error + resetErrorColor);
         return error;
     }
 

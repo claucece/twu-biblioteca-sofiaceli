@@ -96,8 +96,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     @Override
-    public String printError() {
-        String error = "Book already in stock";
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("Book already in stock");
         System.out.println(errorColor + error + resetErrorColor);
         return error;
     }

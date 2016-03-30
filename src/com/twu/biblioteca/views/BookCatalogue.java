@@ -67,9 +67,9 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     @Override
-    public String printError() {
-        String error = "Invalid Option. Please, select a valid option!";
-        System.out.println(error);
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("Invalid Option. Please, select a valid option!");
+        System.out.println(errorColor + error + resetErrorColor);
         return error;
     }
 
