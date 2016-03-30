@@ -37,7 +37,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     private String checkIfValidCheckOut() {
         System.out.println("Please, write the title of the book you want to checkout");
         String titleToCheckout = ask();
-        String result = (catalogue.checkoutBook(titleToCheckout)) ? printSeparator() : checkIfValidReturn();
+        String result = (catalogue.checkoutBook(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
         return result;
     }
 
