@@ -18,15 +18,15 @@ public class BookCatalogueTest {
         bookCatalogue = new BookCatalogue();
     }
 
-    @Test
-    public void shouldReturnBookInformation() {
-        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       \n" +
-                "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
-                "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
-                "\n";
-        String actual = bookCatalogue.returnCatalogue();
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    public void shouldReturnBookInformation() {
+//        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       \n" +
+//                "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
+//                "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
+//                "\n";
+//        String actual = bookCatalogue.returnCatalogue();
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     public void shouldPrintMenuItems() {
