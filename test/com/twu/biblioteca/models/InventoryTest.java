@@ -18,7 +18,7 @@ public class InventoryTest {
     public void shouldAddBook() {
         Book expectedBook = inventory.addBook().get(0);
         String expected = expectedBook.getSpec().getAuthor();
-        String actual = inventory.getInventoryOfBooks().get(0).getSpec().getAuthor();
+        String actual = inventory.returnInventoryOfBooks().get(0).getSpec().getAuthor();
         assertEquals(expected, actual);
     }
 

@@ -1,7 +1,7 @@
 package com.twu.biblioteca.controllers;
 
-import com.twu.biblioteca.Helpers.ErrorPrinter;
-import com.twu.biblioteca.Helpers.UserCatalogueHelper;
+import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.helpers.UserCatalogueHelper;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.ListOfBooks;
@@ -18,8 +18,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         column = new Column();
     }
 
-    public String getBookInformation() {
-        for (Book book : inventory.getInventoryOfBooks()) {
+    public String putBookInformationInColumns() {
+        for (Book book : inventory.returnInventoryOfBooks()) {
             String title = book.getSpec().getTitle();
             String author = book.getSpec().getAuthor();
             String published_year = book.getSpec().getPublishedYear();
@@ -31,12 +31,12 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     public List<Book> removeBookFromInventory(Book book) {
-        inventory.getInventoryOfBooks().remove(book);
-        return inventory.getInventoryOfBooks();
+        inventory.returnInventoryOfBooks().remove(book);
+        return inventory.returnInventoryOfBooks();
     }
 
-    public boolean checkoutBook(String title) {
-        for (Book book : inventory.getInventoryOfBooks()) {
+    public boolean isACheckoutBook(String title) {
+        for (Book book : inventory.returnInventoryOfBooks()) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeBookFromInventory(book);
                 printSucessfulCheckout();
@@ -48,15 +48,15 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     private void addBookToInventory(Book book) {
-        if (!(inventory.getInventoryOfBooks().contains(book))) {
-            inventory.getInventoryOfBooks().add(book);
+        if (!(inventory.returnInventoryOfBooks().contains(book))) {
+            inventory.returnInventoryOfBooks().add(book);
             printSucessfulReturn();
         } else {
             printError();
         }
     }
 
-    public boolean returnBook(String title) {
+    public boolean isABookReturn(String title) {
         for (Book book : ListOfBooks.VALUES) {
             String bookToReturn = book.getSpec().getTitle();
             if (bookToReturn.matches(title.toLowerCase())) {

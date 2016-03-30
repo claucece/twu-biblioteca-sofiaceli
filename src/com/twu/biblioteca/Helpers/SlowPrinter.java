@@ -1,8 +1,8 @@
-package com.twu.biblioteca.controllers;
+package com.twu.biblioteca.helpers;
 
 public class SlowPrinter {
 
-    public void slowPrint(String message, long millisPerChar) {
+    public void printSlowly(String message, long millisPerChar) {
         for (int i = 0; i < message.length(); i++) {
             System.out.print(message.charAt(i));
             try {

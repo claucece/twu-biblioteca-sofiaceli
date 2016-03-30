@@ -27,19 +27,19 @@ public class CatalogueTest {
                 "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
                 "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
                 "\n";
-        String actual = catalogue.getBookInformation();
+        String actual = catalogue.putBookInformationInColumns();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldBeAbleToCheckoutBooks() {
-        boolean actual = catalogue.checkoutBook("Moby Dick");
+        boolean actual = catalogue.isACheckoutBook("Moby Dick");
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
-        boolean actual = catalogue.checkoutBook("The Art Of Love");
+        boolean actual = catalogue.isACheckoutBook("The Art Of Love");
         assertEquals(false, actual);
     }
 
@@ -52,25 +52,25 @@ public class CatalogueTest {
 
     @Test
     public void shouldBeAbleToReturnBooks() {
-        catalogue.checkoutBook("Moby Dick");
-        boolean actual = catalogue.returnBook("Moby Dick");
-        System.out.println(inventory.getInventoryOfBooks());
+        catalogue.isACheckoutBook("Moby Dick");
+        boolean actual = catalogue.isABookReturn("Moby Dick");
+        System.out.println(inventory.returnInventoryOfBooks());
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
-        boolean actual = catalogue.returnBook("Hamlet");
+        boolean actual = catalogue.isABookReturn("Hamlet");
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldAddCheckoutBookFromInventory() {
-        List<Book> startList = inventory.getInventoryOfBooks();
-        catalogue.checkoutBook("Moby Dick");
-        catalogue.returnBook("Moby Dick");
-        List<Book> finishList = inventory.getInventoryOfBooks();
-        System.out.println(catalogue.getBookInformation());
+        List<Book> startList = inventory.returnInventoryOfBooks();
+        catalogue.isACheckoutBook("Moby Dick");
+        catalogue.isABookReturn("Moby Dick");
+        List<Book> finishList = inventory.returnInventoryOfBooks();
+        System.out.println(catalogue.putBookInformationInColumns());
         assertEquals(startList.size(), finishList.size());
     }
 }

@@ -1,4 +1,4 @@
-package com.twu.biblioteca.Helpers;
+package com.twu.biblioteca.helpers;
 
 import com.twu.biblioteca.models.ColorInventory;
 

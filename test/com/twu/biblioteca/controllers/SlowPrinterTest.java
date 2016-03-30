@@ -1,5 +1,6 @@
 package com.twu.biblioteca.controllers;
 
+import com.twu.biblioteca.helpers.SlowPrinter;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -11,7 +12,7 @@ public class SlowPrinterTest {
     public void shouldCatchIfThreadIsInterrupted() throws InterruptedException {
         SlowPrinter printer = mock(SlowPrinter.class);
         String message = "Welcome";
-        printer.slowPrint(message, 10);
+        printer.printSlowly(message, 10);
         assertTrue(throwException());
     }
 

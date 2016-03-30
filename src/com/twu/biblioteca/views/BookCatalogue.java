@@ -1,7 +1,7 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.Helpers.ErrorPrinter;
-import com.twu.biblioteca.Helpers.Separator;
+import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorInventory;
 import com.twu.biblioteca.models.Inventory;
@@ -18,8 +18,8 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String returnCatalogue() {
-        System.out.println(catalogue.getBookInformation());
-        return catalogue.getBookInformation();
+        System.out.println(catalogue.putBookInformationInColumns());
+        return catalogue.putBookInformationInColumns();
     }
 
     public String printBookCatalogueMenu() {
@@ -37,14 +37,14 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     private String checkIfValidCheckOut() {
         System.out.println("Please, write the title of the book you want to checkout");
         String titleToCheckout = ask();
-        String result = (catalogue.checkoutBook(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
+        String result = (catalogue.isACheckoutBook(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
         return result;
     }
 
     private String checkIfValidReturn() {
         System.out.println("Please, write the title of the book you want to return");
         String titleToReturn = ask();
-        String result = (catalogue.returnBook(titleToReturn)) ? printSeparator() : checkIfValidReturn();
+        String result = (catalogue.isABookReturn(titleToReturn)) ? printSeparator() : checkIfValidReturn();
         return result;
     }
 
@@ -79,7 +79,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         String breakLine = "===================================================";
         String information = "Returning to main menu......";
         System.out.println(color + breakLine + resetColor);
-        printer.slowPrint(information, 50);
+        printer.printSlowly(information, 50);
         return information;
     }
 }

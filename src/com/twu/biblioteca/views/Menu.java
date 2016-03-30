@@ -1,7 +1,7 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.Helpers.ErrorPrinter;
-import com.twu.biblioteca.Helpers.Separator;
+import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {

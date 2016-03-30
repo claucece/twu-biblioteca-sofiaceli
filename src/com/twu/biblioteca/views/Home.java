@@ -1,6 +1,6 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.Helpers.Separator;
+import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.models.ColorInventory;
 
 public class Home implements Separator {

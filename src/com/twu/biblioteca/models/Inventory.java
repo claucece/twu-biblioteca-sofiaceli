@@ -15,7 +15,7 @@ public class Inventory {
         return new Inventory();
     }
 
-    public List<Book> getInventoryOfBooks() {
+    public List<Book> returnInventoryOfBooks() {
         if (books.isEmpty()) {
             addBook();
         }
