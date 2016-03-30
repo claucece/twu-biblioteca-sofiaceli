@@ -13,7 +13,7 @@ class BibliotecaLauncher {
         System.out.println();
         home.selectFromMenu();
         Menu menu = new Menu();
-        menu.printMenu();
+        menu.toLineColumn();
         menu.defineOuput();
     }
 

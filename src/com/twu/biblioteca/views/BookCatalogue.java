@@ -3,7 +3,7 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.ColorInventory;
+import com.twu.biblioteca.models.ColorList;
 import com.twu.biblioteca.models.Inventory;
 
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
@@ -20,10 +20,10 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         return catalogue.putBookInformationInColumns();
     }
 
-    public String printBookCatalogueMenu() {
+    public String toLineColumn() {
         Column column = new Column();
         returnCatalogue();
-        String color = ColorInventory.getColor("INVERT");
+        String color = ColorList.getColor("INVERT");
         String option1 = "--> Checkout Book  ";
         String option2 = "--> Return Book  ";
         String option3 = "--> Return To Main Menu  ";

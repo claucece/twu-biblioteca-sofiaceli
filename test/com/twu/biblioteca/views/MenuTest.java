@@ -22,7 +22,7 @@ public class MenuTest {
         System.setOut(new PrintStream(outContent));
         String actual = "--> List books   --> Quit   " +
                 "\n";
-        assertEquals(menu.printMenu(), actual);
+        assertEquals(menu.toLineColumn(), actual);
     }
 
 }

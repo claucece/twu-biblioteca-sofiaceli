@@ -1,7 +1,7 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.helpers.Separator;
-import com.twu.biblioteca.models.ColorInventory;
+import com.twu.biblioteca.models.ColorList;
 
 public class Home implements Separator {
 
@@ -10,7 +10,7 @@ public class Home implements Separator {
                 "System from The Bangalore Public Library!" +
                 "\n" +
                 "Keep reading to see the lists of books available";
-        String color = ColorInventory.getColor("BOLD");
+        String color = ColorList.getColor("BOLD");
         System.out.print(color + welcomeMessage + resetColor);
         return welcomeMessage;
     }

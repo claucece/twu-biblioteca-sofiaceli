@@ -1,12 +1,12 @@
 package com.twu.biblioteca.helpers;
 
-import com.twu.biblioteca.models.ColorInventory;
+import com.twu.biblioteca.models.ColorList;
 
 public interface Separator {
 
     SlowPrinter printer = new SlowPrinter();
-    String resetColor = ColorInventory.getColor("RESET");
-    String color = ColorInventory.getColor("CYAN");
+    String resetColor = ColorList.getColor("RESET");
+    String color = ColorList.getColor("CYAN");
     StringBuilder breakLine = new StringBuilder("===================================================");
 
     String printSeparator();

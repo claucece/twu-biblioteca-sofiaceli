@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class ColorInventory {
+public class ColorList {
 
     private static final Color[] PRIVATE_VALUES = {new Color.Builder().ansiSequence("\u001B[30m").colorName("BLACK").build(),
             new Color.Builder().ansiSequence("\u001B[31m").colorName("RED").build(),

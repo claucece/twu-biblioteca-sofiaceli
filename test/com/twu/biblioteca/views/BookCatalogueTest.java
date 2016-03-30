@@ -32,7 +32,7 @@ public class BookCatalogueTest {
     public void shouldPrintMenuItems() {
         System.setOut(new PrintStream(outContent));
         String actual = "--> Checkout Book   --> Return Book   --> Return To Main Menu   \n";
-        assertEquals(bookCatalogue.printBookCatalogueMenu(), actual);
+        assertEquals(bookCatalogue.toLineColumn(), actual);
     }
 
 

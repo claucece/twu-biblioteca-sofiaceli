@@ -12,7 +12,7 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         bookCatalogue = new BookCatalogue();
     }
 
-    public String printMenu() {
+    public String toLineColumn() {
         Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> Quit  ";
@@ -32,14 +32,14 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         String input = ask();
             if (input.equals("list books")) {
                 printSeparator();
-                bookCatalogue.printBookCatalogueMenu();
+                bookCatalogue.toLineColumn();
                 bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
                 return exit();
             } else {
                 printError();
             }
-        printMenu();
+        toLineColumn();
         return defineOuput();
     }
 
