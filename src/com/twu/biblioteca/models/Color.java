@@ -24,7 +24,7 @@ public class Color {
         }
     }
 
-    Color(Builder builder) {
+    private Color(Builder builder) {
         ansiEscape = builder.ansiEscape;
         colorName = builder.colorName;
     }

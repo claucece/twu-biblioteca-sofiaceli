@@ -1,7 +1,6 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.Helpers.ErrorPrinter;
-import com.twu.biblioteca.controllers.InputAsker;
 import com.twu.biblioteca.Helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorInventory;
@@ -10,11 +9,10 @@ import com.twu.biblioteca.models.Inventory;
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     private Catalogue catalogue;
-    private Inventory inventory;
     private Column column;
 
     public BookCatalogue() {
-        inventory = inventory.valueOf();
+        Inventory inventory = Inventory.valueOf();
         catalogue = new Catalogue(inventory);
         column = new Column();
     }
@@ -66,8 +64,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String ask() {
-        String input = scanner.nextLine().toLowerCase();
-        return input;
+        return scanner.nextLine().toLowerCase();
     }
 
     @Override

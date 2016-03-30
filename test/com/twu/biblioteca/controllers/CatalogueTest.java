@@ -17,7 +17,7 @@ public class CatalogueTest {
 
     @Before
     public void setUp() {
-        inventory = inventory.valueOf();
+        inventory = Inventory.valueOf();
         catalogue = new Catalogue(inventory);
     }
 
@@ -33,16 +33,14 @@ public class CatalogueTest {
 
     @Test
     public void shouldBeAbleToCheckoutBooks() {
-        boolean expected = true;
         boolean actual = catalogue.checkoutBook("Moby Dick");
-        assertEquals(expected, actual);
+        assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
-        boolean expected = false;
         boolean actual = catalogue.checkoutBook("The Art Of Love");
-        assertEquals(expected, actual);
+        assertEquals(false, actual);
     }
 
     @Test
@@ -54,18 +52,16 @@ public class CatalogueTest {
 
     @Test
     public void shouldBeAbleToReturnBooks() {
-        boolean expected = true;
         catalogue.checkoutBook("Moby Dick");
         boolean actual = catalogue.returnBook("Moby Dick");
         System.out.println(inventory.getInventoryOfBooks());
-        assertEquals(expected, actual);
+        assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
-        boolean expected = false;
         boolean actual = catalogue.returnBook("Hamlet");
-        assertEquals(expected, actual);
+        assertEquals(false, actual);
     }
 
     @Test

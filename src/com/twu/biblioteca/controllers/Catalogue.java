@@ -11,12 +11,10 @@ import java.util.List;
 public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     private Inventory inventory;
-    private ListOfBooks listOfBooks;
     private Column column;
 
     public Catalogue(Inventory inventory) {
         this.inventory = inventory;
-        listOfBooks = new ListOfBooks();
         column = new Column();
     }
 
@@ -49,18 +47,17 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         return false;
     }
 
-    public List<Book> addBookToInventory(Book book) {
+    private void addBookToInventory(Book book) {
         if (!(inventory.getInventoryOfBooks().contains(book))) {
             inventory.getInventoryOfBooks().add(book);
             printSucessfulCheckout();
         } else {
             printError();
         }
-        return inventory.getInventoryOfBooks();
     }
 
     public boolean returnBook(String title) {
-        for (Book book : listOfBooks.VALUES) {
+        for (Book book : ListOfBooks.VALUES) {
             String bookToReturn = book.getSpec().getTitle();
             if (bookToReturn.matches(title.toLowerCase())) {
                 addBookToInventory(book);

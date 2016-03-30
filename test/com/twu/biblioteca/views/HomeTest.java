@@ -2,8 +2,10 @@ package com.twu.biblioteca.views;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
 import static org.junit.Assert.*;
 
 public class HomeTest {
@@ -25,8 +27,7 @@ public class HomeTest {
                 "\n" +
                 "Keep reading to see the lists of books available\u001B[0m";
         home.printWelcomeMessage();
-        String welcome = testWelcome;
-        assertEquals(welcome, outContent.toString());
+        assertEquals(testWelcome, outContent.toString());
     }
 
 }

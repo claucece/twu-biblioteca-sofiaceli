@@ -11,7 +11,7 @@ public class InventoryTest {
 
     @Before
     public void setUp() {
-        inventory = inventory.valueOf();
+        inventory = Inventory.valueOf();
     }
 
     @Test

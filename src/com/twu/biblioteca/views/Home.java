@@ -25,11 +25,10 @@ public class Home implements Separator {
         return logo;
     }
 
-    public String selectFromMenu() {
+    public void selectFromMenu() {
         String menu = "Please, select an option from the menu below:";
         System.out.println(menu);
         printSeparator();
-        return menu;
     }
 
     @Override

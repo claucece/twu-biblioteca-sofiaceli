@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.views.Home;
 import com.twu.biblioteca.views.Menu;
 
-public class BibliotecaLauncher {
+class BibliotecaLauncher {
 
     public static void main(String[] args) {
         Home home = new Home();

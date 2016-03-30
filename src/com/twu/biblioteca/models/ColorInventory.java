@@ -23,7 +23,7 @@ public class ColorInventory {
 
     public static String getColor(String colorName) {
         for (Color color : VALUES) {
-            if (colorName == color.getColorName())
+            if (colorName.equals(color.getColorName()))
                 return color.getAnsiEscape();
         }
         return "\u001B[0m";
