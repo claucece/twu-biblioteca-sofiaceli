@@ -58,8 +58,6 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String printSeparator() {
-        String breakLine = "===================================================";
-        System.out.println(color + breakLine + resetColor);
-        return breakLine;
+        return color + breakLine + resetColor;
     }
 }

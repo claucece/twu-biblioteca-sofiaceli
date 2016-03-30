@@ -75,7 +75,6 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String printSeparator() {
-        String breakLine = "===================================================";
         String information = "Returning to main menu......";
         System.out.println(color + breakLine + resetColor);
         printer.printSlowly(information, 50);
