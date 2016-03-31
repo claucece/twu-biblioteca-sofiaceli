@@ -18,10 +18,9 @@ public class SlowPrinter {
                 System.out.print(message.charAt(i));
                 try {
                     Thread.sleep(millisPerChar);
+                    requestStop();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                } finally {
-                    requestStop();
                 }
             }
         }
