@@ -2,23 +2,15 @@ package com.twu.biblioteca.helpers;
 
 public class SlowPrinter {
 
-    private static boolean stopPrinter;
-
-    private static synchronized void requestStop() {
-        stopPrinter = true;
-    }
-
-    private static synchronized boolean stopRequested() {
-        return stopPrinter;
-    }
+    private static volatile boolean stopPrinter;
 
     public void printSlowly(String message, long millisPerChar) {
-        while (!stopRequested()) {
+        while (!stopPrinter) {
         for (int i = 0; i < message.length(); i++) {
                 System.out.print(message.charAt(i));
                 try {
                     Thread.sleep(millisPerChar);
-                    requestStop();
+                    stopPrinter = true;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
