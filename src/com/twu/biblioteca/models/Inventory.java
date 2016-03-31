@@ -1,10 +1,12 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.helpers.ErrorPrinter;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Inventory {
+public class Inventory implements ErrorPrinter {
 
     private static List<Book> books;
 
@@ -24,8 +26,7 @@ public class Inventory {
         if (Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty())) {
             addBook();
         } else if (getListOfBooks().isEmpty()) {
-            String error = "No available books!";
-            System.out.println(error);
+            printError();
         }
         return books;
     }
@@ -35,5 +36,12 @@ public class Inventory {
             books.add(book);
         }
         return books;
+    }
+
+    @Override
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("No available books!");
+        System.out.println(errorColor + error + resetErrorColor);
+        return error;
     }
 }
