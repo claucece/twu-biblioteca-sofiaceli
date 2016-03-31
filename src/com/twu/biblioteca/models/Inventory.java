@@ -22,8 +22,13 @@ public class Inventory implements ErrorPrinter {
         return books;
     }
 
+    public boolean isListEqualToInventory() {
+        boolean equality = Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty());
+        return equality;
+    }
+
     public List<Book> returnInventoryOfBooks() {
-        if (Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty())) {
+        if (isListEqualToInventory()) {
             addBook();
         } else if (getListOfBooks().isEmpty()) {
             printError();

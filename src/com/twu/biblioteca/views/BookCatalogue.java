@@ -50,7 +50,6 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String defineBookMenuOutcome() {
-        System.out.println("Please, select a choice from the menu above:");
         String input = ask();
         if (input.equals("checkout book")) {
             return checkIfValidCheckOut();
@@ -65,6 +64,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String ask() {
+        System.out.println("Please, select a choice from the menu above:");
         return scanner.nextLine().toLowerCase();
     }
 
