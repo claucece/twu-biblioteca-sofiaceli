@@ -14,12 +14,12 @@ public class InventoryTest {
         inventory = Inventory.valueOf();
     }
 
-//    @Test
-//    public void shouldAddBook() {
-//        Book expectedBook = inventory.addBook().get(0);
-//        String expected = expectedBook.getSpec().getAuthor();
-//        String actual = inventory.returnInventoryOfBooks().get(0).getSpec().getAuthor();
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    public void shouldAddBook() {
+        Book expectedBook = inventory.addBook().get(0);
+        String expected = expectedBook.getSpec().getAuthor();
+        String actual = inventory.returnInventoryOfBooks().get(0).getSpec().getAuthor();
+        assertEquals(expected, actual);
+    }
 
 }
