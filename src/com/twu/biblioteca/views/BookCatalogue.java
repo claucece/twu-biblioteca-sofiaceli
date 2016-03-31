@@ -15,8 +15,9 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         catalogue = new Catalogue(inventory);
     }
 
-    public void returnCatalogue() {
+    public String returnCatalogue() {
         System.out.println(catalogue.putBookInformationInColumns());
+        return catalogue.putBookInformationInColumns();
     }
 
     public String toLineColumn() {

@@ -3,7 +3,6 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.Inventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 
@@ -32,7 +31,7 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
     public String defineOuput() {
         String input = ask();
             if (input.equals("list books")) {
-                //printSeparator();
+                printSeparator();
                 bookCatalogue.toLineColumn();
                 bookCatalogue.defineBookMenuOutcome();
             } else if (input.equals("quit")) {
@@ -59,6 +58,8 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String printSeparator() {
-        return color + breakLine + resetColor;
+        String separator = color + breakLine + resetColor;
+        System.out.println(color + breakLine + resetColor);
+        return separator;
     }
 }

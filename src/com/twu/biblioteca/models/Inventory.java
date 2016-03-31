@@ -24,7 +24,7 @@ public class Inventory {
         if (Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty())) {
             addBook();
         } else if (getListOfBooks().isEmpty()) {
-            String error = "No available books";
+            String error = "No available books!";
             System.out.println(error);
         }
         return books;
