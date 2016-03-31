@@ -40,6 +40,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
                 removeBookFromInventory(book);
                 printSucessfulCheckout();
                 return true;
+            } else if (title.equals("quit")) {
+                return true;
             }
         }
         printUnsucessfulCheckout();
@@ -61,6 +63,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
             if (bookToReturn.matches(title.toLowerCase())) {
                 addBookToInventory(book);
                 return true;
+            } else if (title.equals("quit")) {
+            return true;
             }
         }
         printUnsucessfulReturn();
