@@ -54,12 +54,11 @@ public class CatalogueTest {
     public void shouldBeAbleToReturnBooks() {
         catalogue.isACheckoutBook("Moby Dick");
         boolean actual = catalogue.isABookReturn("Moby Dick");
-        System.out.println(inventory.returnInventoryOfBooks());
         assertEquals(true, actual);
     }
 
     @Test
-    public void shouldNotBeAbleToCheckoutBookThatIsNotOnList() {
+    public void shouldNotBeAbleToReturnBookThatIsNotOnList() {
         boolean actual = catalogue.isABookReturn("Hamlet");
         assertEquals(false, actual);
     }
@@ -70,7 +69,6 @@ public class CatalogueTest {
         catalogue.isACheckoutBook("Moby Dick");
         catalogue.isABookReturn("Moby Dick");
         List<Book> finishList = inventory.returnInventoryOfBooks();
-        System.out.println(catalogue.putBookInformationInColumns());
         assertEquals(startList.size(), finishList.size());
     }
 }

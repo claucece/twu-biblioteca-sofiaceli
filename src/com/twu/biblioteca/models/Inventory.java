@@ -22,9 +22,8 @@ public class Inventory implements ErrorPrinter {
         return books;
     }
 
-    public boolean isListEqualToInventory() {
-        boolean equality = Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty());
-        return equality;
+    private boolean isListEqualToInventory() {
+        return Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty());
     }
 
     public List<Book> returnInventoryOfBooks() {
@@ -36,7 +35,7 @@ public class Inventory implements ErrorPrinter {
         return books;
     }
 
-    public List<Book> addBook() {
+    private List<Book> addBook() {
         for (Book book : ListOfBooks.VALUES) {
             books.add(book);
         }
