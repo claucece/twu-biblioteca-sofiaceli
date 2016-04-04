@@ -1,9 +1,10 @@
 package com.twu.biblioteca.controllers;
 
+import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.UserCatalogueHelper;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.BookModel.Book;
 import com.twu.biblioteca.models.ListOfBooks;
 
 public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
@@ -16,7 +17,7 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     public String putBookInformationInColumns() {
         Column column = new Column();
-        for (Book book : inventory.returnInventoryOfBooks()) {
+        for (Element book : inventory.returnInventoryOfBooks()) {
             String title = book.getSpec().getTitle();
             String author = book.getSpec().getAuthor();
             String published_year = book.getSpec().getPublishedYear();
@@ -27,12 +28,12 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         return column.toString();
     }
 
-    public boolean removeBookFromInventory(Book book) {
+    public boolean removeBookFromInventory(Element book) {
         return inventory.returnInventoryOfBooks().remove(book);
     }
 
     public boolean isACheckoutBook(String title) {
-        for (Book book : inventory.returnInventoryOfBooks()) {
+        for (Element book : inventory.returnInventoryOfBooks()) {
             if (book.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeBookFromInventory(book);
                 printSucessfulCheckout();
@@ -45,7 +46,7 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         return false;
     }
 
-    private void addBookToInventory(Book book) {
+    private void addBookToInventory(Element book) {
         if (!(inventory.returnInventoryOfBooks().contains(book))) {
             inventory.returnInventoryOfBooks().add(book);
             printSucessfulReturn();
@@ -55,15 +56,15 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     public boolean isABookReturn(String title) {
-        for (Book book : ListOfBooks.VALUES) {
-            String bookToReturn = book.getSpec().getTitle();
-            if (bookToReturn.matches(title.toLowerCase())) {
-                addBookToInventory(book);
-                return true;
-            } else if (title.equals("quit")) {
-            return true;
+        for (Element book : ListOfBooks.VALUES) {
+                String bookToReturn = book.getSpec().getTitle();
+                if (bookToReturn.matches(title.toLowerCase())) {
+                    addBookToInventory(book);
+                    return true;
+                } else if (title.equals("quit")) {
+                    return true;
+                }
             }
-        }
         printUnsucessfulReturn();
         return false;
     }

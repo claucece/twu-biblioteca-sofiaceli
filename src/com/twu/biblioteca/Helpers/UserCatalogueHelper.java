@@ -1,6 +1,6 @@
 package com.twu.biblioteca.helpers;
 
-import com.twu.biblioteca.models.ColorList;
+import com.twu.biblioteca.models.ColorModel.ColorList;
 
 public interface UserCatalogueHelper {
 

@@ -1,7 +1,5 @@
 package com.twu.biblioteca.helpers;
 
-import com.twu.biblioteca.helpers.ElementSpec;
-
 public abstract class Element {
 
     private static String id;

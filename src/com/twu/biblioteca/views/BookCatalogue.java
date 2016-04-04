@@ -3,7 +3,7 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.ColorList;
+import com.twu.biblioteca.models.ColorModel.ColorList;
 import com.twu.biblioteca.models.Inventory;
 
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {

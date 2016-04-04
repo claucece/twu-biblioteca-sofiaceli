@@ -1,5 +1,8 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.models.BookModel.Book;
+import com.twu.biblioteca.models.BookModel.BookSpec;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

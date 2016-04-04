@@ -1,16 +1,23 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.helpers.Element;
+import com.twu.biblioteca.models.BookModel.Book;
+import com.twu.biblioteca.models.MovieModel.Movie;
+import com.twu.biblioteca.models.BookModel.BookSpec;
+import com.twu.biblioteca.models.MovieModel.MovieSpec;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class ListOfBooks {
 
-    private static final Book[] PRIVATE_VALUES = {(new Book(new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL))),
+    private static final Element[] PRIVATE_VALUES = {(new Book(new BookSpec("For whom the bells toll", "Ernest Hemingway", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL))),
             (new Book(new BookSpec("Demian", "Herman Hesse", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL ))),
             (new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.SHORT_STORY))),
+             new Movie(new MovieSpec("Titanic", "Lynch", "1990", "10", "Comedy", "Lo"))
     };
 
-    public static final List<Book> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+    public static final List<Element> VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
 
 }

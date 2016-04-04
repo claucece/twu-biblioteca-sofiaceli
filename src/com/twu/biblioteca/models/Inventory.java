@@ -1,24 +1,39 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.models.BookModel.Book;
+import com.twu.biblioteca.models.MovieModel.Movie;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Inventory implements ErrorPrinter {
 
-    private static List<Book> books;
+    private static List<Element> books;
+    private static List<Element> movies;
 
     private Inventory() {
-        books = new LinkedList<Book>(ListOfBooks.VALUES);
-    }
+        books = new LinkedList<Element>();
+        movies = new LinkedList<Element>();
+        for (Element element : ListOfBooks.VALUES) {
+            if (element.getClass() == Book.class) {
+                books.add(element);
+            }
+            else if (element.getClass() == Movie.class){
+                movies.add(element);
+            }
+                System.out.println(books);
+            }
+        }
 
     public static Inventory valueOf() {
         return new Inventory();
     }
 
-    public List<Book> getListOfBooks() {
+    public List<Element> getListOfBooks() {
         return books;
     }
 
@@ -26,7 +41,7 @@ public class Inventory implements ErrorPrinter {
         return Collections.disjoint(getListOfBooks(), ListOfBooks.VALUES) && !(getListOfBooks().isEmpty());
     }
 
-    public List<Book> returnInventoryOfBooks() {
+    public List<Element> returnInventoryOfBooks() {
         if (isListEqualToInventory()) {
             addBook();
         } else if (getListOfBooks().isEmpty()) {
@@ -35,9 +50,12 @@ public class Inventory implements ErrorPrinter {
         return books;
     }
 
-    private List<Book> addBook() {
-        for (Book book : ListOfBooks.VALUES) {
-            books.add(book);
+    private List<Element> addBook() {
+        for (Element book : ListOfBooks.VALUES) {
+            if (book.getClass() == Book.class) {
+                books.add(book);
+            //    System.out.println(books);
+            }
         }
         return books;
     }

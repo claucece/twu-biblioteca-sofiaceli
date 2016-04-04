@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models;
+package com.twu.biblioteca.models.MovieModel;
 
 import com.twu.biblioteca.helpers.Element;
 
