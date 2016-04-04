@@ -2,18 +2,41 @@ package com.twu.biblioteca.models;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.helpers.ErrorPrinter;
+
+import java.util.Collections;
 import java.util.List;
 
-public interface Inventory extends ErrorPrinter {
+public abstract class Inventory implements ErrorPrinter {
 
-    List<Element> getList();
+    private static List<Element> elements;
 
-    boolean isListEqualToInventory();
+    public List<Element> getList() {
+        return elements;
+    }
 
-    List<Element> returnInventoryOfElements();
+    public boolean isListEqualToInventory() {
+        return Collections.disjoint(getList(), ListOfElements.VALUES) && !(getList().isEmpty());
+    }
 
-    List<Element> addElement();
+    public List<Element> returnInventoryOfElements() {
+        if (isListEqualToInventory()) {
+            addElement();
+        } else if (getList().isEmpty()) {
+            printError();
+        }
+        return elements;
+    }
 
-    @Override
-    StringBuilder printError();
+    public List<Element> addElement() {
+        for (Element element : ListOfElements.VALUES) {
+                elements.add(element);
+            }
+        return elements;
+    }
+
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("No available books!");
+        System.out.println(errorColor + error + resetErrorColor);
+        return error;
+    }
 }

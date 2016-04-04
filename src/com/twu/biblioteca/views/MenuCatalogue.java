@@ -5,23 +5,25 @@ import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorModel.ColorList;
 import com.twu.biblioteca.models.BookModel.BookInventory;
+import com.twu.biblioteca.models.Inventory;
 
-public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
-    private com.twu.biblioteca.controllers.BookCatalogue bookCatalogue;
+public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
 
-    public BookCatalogue() {
-        BookInventory bookInventory = BookInventory.valueOf();
-        bookCatalogue = new com.twu.biblioteca.controllers.BookCatalogue(bookInventory);
+    private Catalogue catalogue;
+    private Inventory inventory;
+
+    public MenuCatalogue() {
+        catalogue = new Catalogue(inventory);
     }
 
-    public String returnCatalogue() {
-        return bookCatalogue.putInformationInColumns();
+    public String returnCatalogue(Inventory inventory) {
+        return catalogue.putInformationInColumns(inventory);
     }
 
-    public String toLineColumn() {
+    public String toLineColumn(Inventory inventory) {
         Column column = new Column();
-        System.out.println(returnCatalogue());
+        System.out.println(returnCatalogue(inventory));
         String color = ColorList.getColor("INVERT");
         String option1 = "--> Checkout Book  ";
         String option2 = "--> Return Book  ";
@@ -29,37 +31,38 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         column.addLine(option1, option2, option3);
         String toBookMenu = column.toString();
         System.out.println(color + toBookMenu + resetColor);
+        defineBookMenuOutcome(inventory);
         return toBookMenu;
     }
 
-    private String checkIfValidCheckOut() {
+    private String checkIfValidCheckOut(Inventory inventory) {
         System.out.println("Please, write the title of the book you want to checkout." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToCheckout = ask();
-        String result = (bookCatalogue.isACheckout(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
+        String result = (catalogue.isACheckout(titleToCheckout, inventory)) ? printSeparator() : checkIfValidCheckOut(inventory);
         return result;
     }
 
-    private String checkIfValidReturn() {
+    private String checkIfValidReturn(Inventory inventory) {
         System.out.println("Please, write the title of the book you want to return." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToReturn = ask();
-        String result = (bookCatalogue.isAReturn(titleToReturn)) ? printSeparator() : checkIfValidReturn();
+        String result = (catalogue.isAReturn(titleToReturn, inventory)) ? printSeparator() : checkIfValidReturn(inventory);
         return result;
     }
 
-    public String defineBookMenuOutcome() {
+    public String defineBookMenuOutcome(Inventory inventory) {
         System.out.println("Please, select a choice from the menu above:");
         String input = ask();
         if (input.equals("checkout book")) {
-            return checkIfValidCheckOut();
+            return checkIfValidCheckOut(inventory);
         } else if (input.equals("return book")) {
-            return checkIfValidReturn();
+            return checkIfValidReturn(inventory);
         } else if (input.equals("main menu")) {
             return printSeparator();
         }
         printError();
-        return defineBookMenuOutcome();
+        return defineBookMenuOutcome(inventory);
     }
 
     @Override

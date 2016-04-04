@@ -1,17 +1,106 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.Element;
+import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.helpers.UserCatalogueHelper;
+import com.twu.biblioteca.models.Inventory;
+import com.twu.biblioteca.models.ListOfElements;
 
-public interface Catalogue {
+public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
-    String putInformationInColumns();
+    private Inventory inventory;
 
-    boolean removeFromInventory(Element element);
+    public Catalogue(Inventory inventory) {
+        this.inventory = inventory;
+    }
 
-    boolean isACheckout(String title);
+    public String putInformationInColumns(Inventory inventory) {
+        Column column = new Column();
+        for (Element element : inventory.returnInventoryOfElements()) {
+            String title = element.getSpec().getTitle();
+            String author = element.getSpec().getAuthor();
+            String published_year = element.getSpec().getPublishedYear();
+            String type = element.getSpec().getType();
+            String genre = element.getSpec().getGenre();
+            column.addLine(title, author, published_year, type, genre);
+        }
+        return column.toString();
+    }
 
-    void addToInventory(Element element);
+    public boolean removeFromInventory(Element element, Inventory inventory) {
+        return inventory.returnInventoryOfElements().remove(element);
+    }
 
-    boolean isAReturn(String title);
+    public boolean isACheckout(String title, Inventory inventory) {
+        for (Element element : inventory.returnInventoryOfElements()) {
+            System.out.println(element.getSpec().getTitle());
+            if (element.getSpec().getTitle().matches(title.toLowerCase())) {
+                removeFromInventory(element, inventory);
+                printSucessfulCheckout();
+                return true;
+            } else if (title.equals("quit")) {
+                return true;
+            }
+        }
+        printUnsucessfulCheckout();
+        return false;
+    }
 
+    public void addToInventory(Element element, Inventory inventory) {
+        if (!(inventory.returnInventoryOfElements().contains(element))) {
+            inventory.returnInventoryOfElements().add(element);
+            printSucessfulReturn();
+        } else {
+            printError();
+        }
+    }
+
+    public boolean isAReturn(String title, Inventory inventory) {
+        for (Element element : ListOfElements.VALUES) {
+                String elementToReturn = element.getSpec().getTitle();
+                if (elementToReturn.matches(title.toLowerCase())) {
+                    addToInventory(element, inventory);
+                    return true;
+                } else if (title.equals("quit")) {
+                    return true;
+                }
+            }
+        printUnsucessfulReturn();
+        return false;
+    }
+
+    @Override
+    public StringBuilder printSucessfulCheckout() {
+        StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the book");
+        System.out.println(inStockColor + successfullCheckOut + resetStockColor);
+        return successfullCheckOut;
+    }
+
+    @Override
+    public StringBuilder printUnsucessfulCheckout() {
+        StringBuilder error = new StringBuilder("Book not found. Please, select a book from the list.");
+        System.out.println(notInStockColor + error + resetStockColor);
+        return error;
+    }
+
+    @Override
+    public StringBuilder printSucessfulReturn() {
+        StringBuilder successfullReturn = new StringBuilder("Thank you for returning the book.");
+        System.out.println(inStockColor + successfullReturn + resetStockColor);
+        return successfullReturn;
+    }
+
+    @Override
+    public StringBuilder printUnsucessfulReturn() {
+        StringBuilder error = new StringBuilder("That is not a valid book to return.");
+        System.out.println(notInStockColor + error + resetStockColor);
+        return error;
+    }
+
+    @Override
+    public StringBuilder printError() {
+        StringBuilder error = new StringBuilder("Book already in stock");
+        System.out.println(errorColor + error + resetErrorColor);
+        return error;
+    }
 }

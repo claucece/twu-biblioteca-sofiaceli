@@ -3,13 +3,19 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
+import com.twu.biblioteca.models.BookModel.BookInventory;
+import com.twu.biblioteca.models.MovieModel.MovieInventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 
-    private BookCatalogue bookCatalogue;
+    private MenuCatalogue menuCatalogue;
+    private BookInventory bookInventory;
+    private MovieInventory movieInventory;
 
     public Menu() {
-        bookCatalogue = new BookCatalogue();
+        menuCatalogue = new MenuCatalogue();
+        bookInventory = new BookInventory();
+        movieInventory = new MovieInventory();
     }
 
     public String toLineColumn() {
@@ -33,8 +39,10 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         String input = ask();
             if (input.equals("list books")) {
                 printSeparator();
-                bookCatalogue.toLineColumn();
-                bookCatalogue.defineBookMenuOutcome();
+                menuCatalogue.toLineColumn(bookInventory);
+            } else if (input.equals("list movies")) {
+                printSeparator();
+                menuCatalogue.toLineColumn(movieInventory);
             } else if (input.equals("quit")) {
                 return exit();
             } else {

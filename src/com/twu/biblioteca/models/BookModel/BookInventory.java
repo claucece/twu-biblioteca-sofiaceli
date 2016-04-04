@@ -8,31 +8,23 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookInventory implements Inventory {
+public class BookInventory extends Inventory {
 
     private static List<Element> books;
 
-    private BookInventory() {
+    public BookInventory() {
         books = new LinkedList<Element>();
         for (Element element : ListOfElements.VALUES) {
             if (element.getClass() == Book.class) {
                 books.add(element);
             }
-            //    System.out.println(books);
-            }
-        }
 
-    public static BookInventory valueOf() {
-        return new BookInventory();
+        }
     }
 
     @Override
     public List<Element> getList() {
         return books;
-    }
-
-    public boolean isListEqualToInventory() {
-        return Collections.disjoint(getList(), ListOfElements.VALUES) && !(getList().isEmpty());
     }
 
     @Override

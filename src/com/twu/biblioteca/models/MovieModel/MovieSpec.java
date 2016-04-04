@@ -4,15 +4,15 @@ import com.twu.biblioteca.helpers.ElementSpec;
 
 public class MovieSpec implements ElementSpec {
 
-    private String name;
+    private String title;
     private String director;
     private String year;
     private String rating;
     private String type;
     private String genre;
 
-    public MovieSpec(String name, String director, String year, String rating, String type, String genre) {
-        this.name = name;
+    public MovieSpec(String title, String director, String year, String rating, String type, String genre) {
+        this.title = title;
         this.director = director;
         this.year = year;
         this.rating = rating;
@@ -21,8 +21,13 @@ public class MovieSpec implements ElementSpec {
     }
 
     @Override
+    public String getRating() {
+        return rating;
+    }
+
+    @Override
     public String getTitle() {
-        return name;
+        return title.toLowerCase();
     }
 
     @Override
@@ -45,7 +50,4 @@ public class MovieSpec implements ElementSpec {
         return genre;
     }
 
-    public String getRating() {
-        return rating;
-    }
 }

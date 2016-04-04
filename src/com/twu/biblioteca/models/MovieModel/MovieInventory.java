@@ -8,22 +8,17 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MovieInventory implements Inventory {
+public class MovieInventory extends Inventory {
 
     private static List<Element> movies;
 
-    private MovieInventory() {
+    public MovieInventory() {
         movies = new LinkedList<Element>();
         for (Element element : ListOfElements.VALUES) {
             if (element.getClass() == Movie.class) {
                 movies.add(element);
             }
-            //System.out.println(books);
         }
-    }
-
-    public static MovieInventory valueOf() {
-        return new MovieInventory();
     }
 
     @Override

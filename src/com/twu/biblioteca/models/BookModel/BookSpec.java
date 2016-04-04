@@ -48,4 +48,9 @@ public class BookSpec extends AbstractElementSpec {
         return genre.toString();
     }
 
+    @Override
+    public String getRating() {
+        return null;
+    }
+
 }
