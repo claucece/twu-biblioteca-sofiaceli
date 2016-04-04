@@ -40,7 +40,7 @@ public abstract class Inventory implements ErrorPrinter {
     }
 
     public StringBuilder printError() {
-        StringBuilder error = new StringBuilder("No available books!");
+        StringBuilder error = new StringBuilder("No more available elements!");
         System.out.println(errorColor + error + resetErrorColor);
         return error;
     }
