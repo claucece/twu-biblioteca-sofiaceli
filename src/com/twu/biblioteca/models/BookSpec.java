@@ -3,11 +3,8 @@ package com.twu.biblioteca.models;
 import java.util.EnumMap;
 import java.util.Map;
 
-public class BookSpec {
+public class BookSpec extends AbstractElementSpec{
 
-    private String title;
-    private String author;
-    private String publishedYear;
     private Genre.Type type;
     private Genre genre;
 
@@ -36,23 +33,9 @@ public class BookSpec {
     }
 
     public BookSpec(String title, String author, String publishedYear, Genre.Type type, Genre genre) {
-        this.title = title;
-        this.author = author;
-        this.publishedYear = publishedYear;
+        super(title, author, publishedYear);
         this.type = type;
         this.genre = genre;
-    }
-
-    public String getTitle() {
-        return title.toLowerCase();
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getPublishedYear() {
-        return publishedYear;
     }
 
     public String getType() {

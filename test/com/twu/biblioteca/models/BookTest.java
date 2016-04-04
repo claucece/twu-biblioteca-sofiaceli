@@ -25,7 +25,7 @@ public class BookTest {
 
     @Test
     public void shouldHaveBookSpec() {
-        BookSpec expected = book.getSpec();
+        ElementSpec expected = book.getSpec();
         BookSpec actual = bookspec;
         assertEquals(expected, actual);
     }

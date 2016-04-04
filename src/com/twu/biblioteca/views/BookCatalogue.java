@@ -16,13 +16,12 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String returnCatalogue() {
-        System.out.println(catalogue.putBookInformationInColumns());
         return catalogue.putBookInformationInColumns();
     }
 
     public String toLineColumn() {
         Column column = new Column();
-        returnCatalogue();
+        System.out.println(returnCatalogue());
         String color = ColorList.getColor("INVERT");
         String option1 = "--> Checkout Book  ";
         String option2 = "--> Return Book  ";
@@ -50,6 +49,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String defineBookMenuOutcome() {
+        System.out.println("Please, select a choice from the menu above:");
         String input = ask();
         if (input.equals("checkout book")) {
             return checkIfValidCheckOut();
@@ -64,7 +64,6 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String ask() {
-        System.out.println("Please, select a choice from the menu above:");
         return scanner.nextLine().toLowerCase();
     }
 

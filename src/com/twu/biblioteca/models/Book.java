@@ -1,19 +1,9 @@
 package com.twu.biblioteca.models;
 
-public class Book {
-
-    private static String id;
-    private BookSpec spec;
+public class Book extends Element{
 
     public Book(BookSpec spec) {
-        this.spec = spec;
+        super(spec);
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public BookSpec getSpec() {
-        return spec;
-    }
 }

@@ -6,8 +6,6 @@ import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.ListOfBooks;
 
-import java.util.List;
-
 public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     private Inventory inventory;
@@ -29,9 +27,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         return column.toString();
     }
 
-    public List<Book> removeBookFromInventory(Book book) {
-        inventory.returnInventoryOfBooks().remove(book);
-        return inventory.returnInventoryOfBooks();
+    public boolean removeBookFromInventory(Book book) {
+        return inventory.returnInventoryOfBooks().remove(book);
     }
 
     public boolean isACheckoutBook(String title) {
