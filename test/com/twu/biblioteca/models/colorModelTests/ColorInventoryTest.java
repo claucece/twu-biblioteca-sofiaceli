@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models;
+package com.twu.biblioteca.models.colorModelTests;
 
 import com.twu.biblioteca.models.colorModel.Color;
 import com.twu.biblioteca.models.colorModel.ColorList;

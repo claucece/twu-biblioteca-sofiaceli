@@ -19,7 +19,6 @@ public class BookInventory extends Inventory {
             if (element.getClass() == Book.class) {
                 books.add(element);
             }
-
         }
     }
 
