@@ -1,18 +1,18 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.controllers.Catalogue;
+import com.twu.biblioteca.controllers.BookCatalogue;
 import com.twu.biblioteca.models.BookModel.BookInventory;
 import org.junit.Before;
 
 public class InventoryTest {
 
     private BookInventory bookInventory;
-    private Catalogue catalogue;
+    private BookCatalogue bookCatalogue;
 
     @Before
     public void setUp() {
         bookInventory = BookInventory.valueOf();
-        catalogue = new Catalogue(bookInventory);
+        bookCatalogue = new BookCatalogue(bookInventory);
     }
 
 //    @Test

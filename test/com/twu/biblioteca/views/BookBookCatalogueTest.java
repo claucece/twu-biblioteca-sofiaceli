@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class BookCatalogueTest {
+public class BookBookCatalogueTest {
 
     private BookCatalogue bookCatalogue;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();

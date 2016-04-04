@@ -8,15 +8,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CatalogueTest {
+public class BookCatalogueTest {
 
     private BookInventory bookInventory;
-    private Catalogue catalogue;
+    private BookCatalogue bookCatalogue;
 
     @Before
     public void setUp() {
         bookInventory = BookInventory.valueOf();
-        catalogue = new Catalogue(bookInventory);
+        bookCatalogue = new BookCatalogue(bookInventory);
     }
 
     @Test
@@ -25,47 +25,47 @@ public class CatalogueTest {
                 "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
                 "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
                 "\n";
-        String actual = catalogue.putBookInformationInColumns();
+        String actual = bookCatalogue.putInformationInColumns();
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldBeAbleToCheckoutBooks() {
-        boolean actual = catalogue.isACheckoutBook("Moby Dick");
+        boolean actual = bookCatalogue.isACheckout("Moby Dick");
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
-        boolean actual = catalogue.isACheckoutBook("The Art Of Love");
+        boolean actual = bookCatalogue.isACheckout("The Art Of Love");
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
         Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL));
-        boolean bookList = catalogue.removeBookFromInventory(book);
+        boolean bookList = bookCatalogue.removeBookFromInventory(book);
         assertFalse(bookInventory.returnInventoryOfElements().contains(book));
     }
 
     @Test
     public void shouldBeAbleToReturnBooks() {
-        catalogue.isACheckoutBook("Moby Dick");
-        boolean actual = catalogue.isABookReturn("Moby Dick");
+        bookCatalogue.isACheckout("Moby Dick");
+        boolean actual = bookCatalogue.isAReturn("Moby Dick");
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToReturnBookThatIsNotOnList() {
-        boolean actual = catalogue.isABookReturn("Hamlet");
+        boolean actual = bookCatalogue.isAReturn("Hamlet");
         assertEquals(false, actual);
     }
 
 //    @Test
 //    public void shouldAddCheckoutBookFromInventory() {
 //        List<Book> startList = bookInventory.returnInventoryOfBooks();
-//        catalogue.isACheckoutBook("Moby Dick");
-//        catalogue.isABookReturn("Moby Dick");
+//        bookCatalogue.isACheckout("Moby Dick");
+//        bookCatalogue.isAReturn("Moby Dick");
 //        List<Book> finishList = bookInventory.returnInventoryOfBooks();
 //        assertEquals(startList.size(), finishList.size());
 //    }

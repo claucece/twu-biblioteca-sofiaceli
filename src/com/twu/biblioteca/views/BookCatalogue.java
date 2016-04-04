@@ -8,15 +8,15 @@ import com.twu.biblioteca.models.BookModel.BookInventory;
 
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
-    private Catalogue catalogue;
+    private com.twu.biblioteca.controllers.BookCatalogue bookCatalogue;
 
     public BookCatalogue() {
         BookInventory bookInventory = BookInventory.valueOf();
-        catalogue = new Catalogue(bookInventory);
+        bookCatalogue = new com.twu.biblioteca.controllers.BookCatalogue(bookInventory);
     }
 
     public String returnCatalogue() {
-        return catalogue.putBookInformationInColumns();
+        return bookCatalogue.putInformationInColumns();
     }
 
     public String toLineColumn() {
@@ -36,7 +36,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         System.out.println("Please, write the title of the book you want to checkout." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToCheckout = ask();
-        String result = (catalogue.isACheckoutBook(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
+        String result = (bookCatalogue.isACheckout(titleToCheckout)) ? printSeparator() : checkIfValidCheckOut();
         return result;
     }
 
@@ -44,7 +44,7 @@ public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
         System.out.println("Please, write the title of the book you want to return." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToReturn = ask();
-        String result = (catalogue.isABookReturn(titleToReturn)) ? printSeparator() : checkIfValidReturn();
+        String result = (bookCatalogue.isAReturn(titleToReturn)) ? printSeparator() : checkIfValidReturn();
         return result;
     }
 
