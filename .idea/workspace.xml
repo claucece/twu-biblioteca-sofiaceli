@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e99d9cd-d241-4dce-9d5d-1c58df908021" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/Inventory.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/Inventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
@@ -101,12 +97,22 @@
       <file leaf-file-name="CatalogueTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="315">
+              <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
               <folding>
-                <marker date="1459806680000" expanded="true" signature="1250:2239" placeholder="..." />
-                <marker date="1459806680000" expanded="true" signature="1251:2239" placeholder="..." />
+                <marker date="1459807505000" expanded="true" signature="2680:4499" placeholder="..." />
+                <marker date="1459807505000" expanded="true" signature="2681:4499" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListOfElements.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -458,11 +464,11 @@
       <recent name="com.twu.biblioteca" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CatalogueTest.shouldAddCheckoutBookFromInventory">
-    <configuration default="false" name="CatalogueTest.shouldRemoveCheckoutBookFromInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory">
+    <configuration default="false" name="CatalogueTest.shouldRemoveCheckoutMovieFromInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.controllers.Catalogue" />
+          <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -471,7 +477,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldRemoveCheckoutBookFromInventory" />
+      <option name="METHOD_NAME" value="shouldRemoveCheckoutMovieFromInventory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -485,7 +491,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CatalogueTest.shouldBeAbleToReturnMovies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
@@ -497,7 +503,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldNotBeAbleToCheckoutBookThatIsNotOnInventory" />
+      <option name="METHOD_NAME" value="shouldBeAbleToReturnMovies" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -511,7 +517,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldBeAbleToReturnBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToReturnMovieThatIsNotOnList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
@@ -523,7 +529,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldBeAbleToReturnBooks" />
+      <option name="METHOD_NAME" value="shouldNotBeAbleToReturnMovieThatIsNotOnList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -537,7 +543,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToReturnBookThatIsNotOnList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToReturnMovieThatIsOnBookList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
@@ -549,7 +555,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldNotBeAbleToReturnBookThatIsNotOnList" />
+      <option name="METHOD_NAME" value="shouldNotBeAbleToReturnMovieThatIsOnBookList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -563,7 +569,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="CatalogueTest.shouldAddCheckoutBookFromInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.controllers.*" />
@@ -575,7 +581,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca.controllers" />
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.controllers.CatalogueTest" />
-      <option name="METHOD_NAME" value="shouldAddCheckoutBookFromInventory" />
+      <option name="METHOD_NAME" value="shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1016,19 +1022,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldRemoveCheckoutBookFromInventory" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnInventory" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnBooks" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnBookThatIsNotOnList" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldAddCheckoutBookFromInventory" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldRemoveCheckoutMovieFromInventory" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnMovies" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnMovieThatIsNotOnList" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnMovieThatIsOnBookList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldAddCheckoutBookFromInventory" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnBookThatIsNotOnList" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnBooks" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldRemoveCheckoutBookFromInventory" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnInventory" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnMovieThatIsOnBookList" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldNotBeAbleToReturnMovieThatIsNotOnList" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldBeAbleToReturnMovies" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.CatalogueTest.shouldRemoveCheckoutMovieFromInventory" />
       </list>
     </recent_temporary>
   </component>
@@ -1054,35 +1060,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CatalogueTest_shouldAddCheckoutBookFromInventory - 2016.04.04 at 16h 51m 21s.xml">
-      <configuration name="CatalogueTest.shouldAddCheckoutBookFromInventory" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldBeAbleToCheckoutMovies - 2016.04.04 at 16h 57m 18s.xml">
+      <configuration name="CatalogueTest.shouldBeAbleToCheckoutMovies" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToCheckoutBooks - 2016.04.04 at 16h 48m 56s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToCheckoutBooks" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldBeAbleToReturnMovies - 2016.04.04 at 17h 02m 21s.xml">
+      <configuration name="CatalogueTest.shouldBeAbleToReturnMovies" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldBeAbleToReturnBooks - 2016.04.04 at 16h 49m 52s.xml">
-      <configuration name="CatalogueTest.shouldBeAbleToReturnBooks" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldGetMovieInformation - 2016.04.04 at 16h 56m 44s.xml">
+      <configuration name="CatalogueTest.shouldGetMovieInformation" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldGetBookInformation - 2016.04.04 at 16h 48m 33s.xml">
-      <configuration name="CatalogueTest.shouldGetBookInformation" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory - 2016.04.04 at 17h 04m 33s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutBookThatIsNotOnInventory - 2016.04.04 at 16h 49m 14s.xml">
-      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutBookThatIsNotOnInventory" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutMovieThatIsNotOnBookInventory - 2016.04.04 at 16h 57m 47s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutMovieThatIsNotOnBookInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldNotBeAbleToReturnBookThatIsNotOnList - 2016.04.04 at 16h 50m 13s.xml">
-      <configuration name="CatalogueTest.shouldNotBeAbleToReturnBookThatIsNotOnList" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutMovieThatIsNotOnBookInventory - 2016.04.04 at 16h 57m 56s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutMovieThatIsNotOnBookInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldRemoveCheckoutBookFromInventory - 2016.04.04 at 09h 35m 02s.xml">
-      <configuration name="CatalogueTest.shouldRemoveCheckoutBookFromInventory" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToCheckoutMovieThatIsNotOnInventory - 2016.04.04 at 16h 59m 09s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToCheckoutMovieThatIsNotOnInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CatalogueTest_shouldRemoveCheckoutBookFromInventory - 2016.04.04 at 16h 49m 32s.xml">
-      <configuration name="CatalogueTest.shouldRemoveCheckoutBookFromInventory" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToReturnMovieThatIsNotOnList - 2016.04.04 at 17h 02m 58s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToReturnMovieThatIsNotOnList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InventoryTest_shouldAddBook - 2016.03.31 at 15h 59m 43s.xml">
-      <configuration name="InventoryTest.shouldAddBook" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldNotBeAbleToReturnMovieThatIsOnBookList - 2016.04.04 at 17h 03m 23s.xml">
+      <configuration name="CatalogueTest.shouldNotBeAbleToReturnMovieThatIsOnBookList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="InventoryTest_shouldBeEmptyWhenBooksAreRemoved - 2016.03.31 at 16h 03m 51s.xml">
-      <configuration name="InventoryTest.shouldBeEmptyWhenBooksAreRemoved" configurationId="JUnit" />
+    <history-entry file="CatalogueTest_shouldRemoveCheckoutMovieFromInventory - 2016.04.04 at 17h 01m 31s.xml">
+      <configuration name="CatalogueTest.shouldRemoveCheckoutMovieFromInventory" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1374,16 +1380,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/MovieCatalogue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="834">
@@ -1569,13 +1565,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="315">
+          <caret line="122" column="4" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="4" />
           <folding>
-            <marker date="1459806680000" expanded="true" signature="1250:2239" placeholder="..." />
-            <marker date="1459806680000" expanded="true" signature="1251:2239" placeholder="..." />
+            <marker date="1459807505000" expanded="true" signature="2680:4499" placeholder="..." />
+            <marker date="1459807505000" expanded="true" signature="2681:4499" placeholder="..." />
           </folding>
         </state>
       </provider>
