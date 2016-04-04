@@ -1,9 +1,11 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.helpers.AbstractElementSpec;
+
 import java.util.EnumMap;
 import java.util.Map;
 
-public class BookSpec extends AbstractElementSpec{
+public class BookSpec extends AbstractElementSpec {
 
     private Genre.Type type;
     private Genre genre;

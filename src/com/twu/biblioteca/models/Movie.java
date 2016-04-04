@@ -2,10 +2,9 @@ package com.twu.biblioteca.models;
 
 import com.twu.biblioteca.helpers.Element;
 
-public class Book extends Element {
+public class Movie extends Element {
 
-    public Book(BookSpec spec) {
+    public Movie(MovieSpec spec) {
         super(spec);
     }
-
 }

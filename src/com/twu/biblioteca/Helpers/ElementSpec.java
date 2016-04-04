@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models;
+package com.twu.biblioteca.helpers;
 
 public interface ElementSpec {
 
@@ -8,7 +8,4 @@ public interface ElementSpec {
 
     String getPublishedYear();
 
-    String getType();
-
-    String getGenre();
 }

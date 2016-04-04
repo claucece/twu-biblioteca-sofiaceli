@@ -1,6 +1,6 @@
-package com.twu.biblioteca.models;
+package com.twu.biblioteca.helpers;
 
-public abstract class AbstractElementSpec implements ElementSpec{
+public abstract class AbstractElementSpec implements ElementSpec {
 
     private String title;
     private String author;
