@@ -33,15 +33,7 @@ public abstract class Inventory implements ErrorPrinter {
     }
 
     public List<Element> addElement() {
-        for (Element element : ListOfElements.VALUES) {
-                elements.add(element);
-            }
         return elements;
     }
 
-    public StringBuilder printError() {
-        StringBuilder error = new StringBuilder("No more available elements!");
-        System.out.println(errorColor + error + resetErrorColor);
-        return error;
-    }
 }

@@ -58,7 +58,7 @@ public class MovieInventory extends Inventory {
 
     @Override
     public StringBuilder printError() {
-        StringBuilder error = new StringBuilder("No available books!");
+        StringBuilder error = new StringBuilder("No available movies!");
         System.out.println(errorColor + error + resetErrorColor);
         return error;
     }

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.models.bookModel;
 
 import com.twu.biblioteca.helpers.Element;
+import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.ListOfElements;
 
