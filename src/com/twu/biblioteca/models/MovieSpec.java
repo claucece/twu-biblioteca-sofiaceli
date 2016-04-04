@@ -8,12 +8,16 @@ public class MovieSpec implements ElementSpec {
     private String director;
     private String year;
     private String rating;
+    private String type;
+    private String genre;
 
-    public MovieSpec(String name, String director, String year, String rating) {
+    public MovieSpec(String name, String director, String year, String rating, String type, String genre) {
         this.name = name;
         this.director = director;
         this.year = year;
         this.rating = rating;
+        this.type = type;
+        this.genre = genre;
     }
 
     @Override
@@ -33,12 +37,12 @@ public class MovieSpec implements ElementSpec {
 
     @Override
     public String getType() {
-        return null;
+        return type;
     }
 
     @Override
     public String getGenre() {
-        return null;
+        return genre;
     }
 
     public String getRating() {
