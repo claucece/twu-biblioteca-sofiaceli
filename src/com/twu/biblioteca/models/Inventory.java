@@ -5,7 +5,6 @@ import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.models.BookModel.Book;
 import com.twu.biblioteca.models.MovieModel.Movie;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +24,7 @@ public class Inventory implements ErrorPrinter {
             else if (element.getClass() == Movie.class){
                 movies.add(element);
             }
-                System.out.println(books);
+            //    System.out.println(books);
             }
         }
 
@@ -54,7 +53,6 @@ public class Inventory implements ErrorPrinter {
         for (Element book : ListOfBooks.VALUES) {
             if (book.getClass() == Book.class) {
                 books.add(book);
-            //    System.out.println(books);
             }
         }
         return books;
