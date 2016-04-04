@@ -11,6 +11,7 @@ import java.util.List;
 public class BookInventory extends Inventory {
 
     private static List<Element> books;
+    private String name = "book";
 
     public BookInventory() {
         books = new LinkedList<Element>();
@@ -20,6 +21,11 @@ public class BookInventory extends Inventory {
             }
 
         }
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

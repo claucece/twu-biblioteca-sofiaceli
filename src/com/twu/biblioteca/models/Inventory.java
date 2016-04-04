@@ -8,7 +8,12 @@ import java.util.List;
 
 public abstract class Inventory implements ErrorPrinter {
 
+    private String name = "inventory";
     private static List<Element> elements;
+
+    public String getName() {
+        return name;
+    }
 
     public List<Element> getList() {
         return elements;

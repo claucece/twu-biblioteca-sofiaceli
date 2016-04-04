@@ -4,7 +4,6 @@ import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorModel.ColorList;
-import com.twu.biblioteca.models.BookModel.BookInventory;
 import com.twu.biblioteca.models.Inventory;
 
 
@@ -25,8 +24,8 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
         Column column = new Column();
         System.out.println(returnCatalogue(inventory));
         String color = ColorList.getColor("INVERT");
-        String option1 = "--> Checkout Book  ";
-        String option2 = "--> Return Book  ";
+        String option1 = "--> Checkout " + inventory.getName();
+        String option2 = "--> Return " + inventory.getName();
         String option3 = "--> Return To Main Menu  ";
         column.addLine(option1, option2, option3);
         String toBookMenu = column.toString();
@@ -36,7 +35,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     private String checkIfValidCheckOut(Inventory inventory) {
-        System.out.println("Please, write the title of the book you want to checkout." +
+        System.out.println("Please, write the title of the " + inventory.getName() + " you want to checkout." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToCheckout = ask();
         String result = (catalogue.isACheckout(titleToCheckout, inventory)) ? printSeparator() : checkIfValidCheckOut(inventory);
@@ -44,7 +43,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     private String checkIfValidReturn(Inventory inventory) {
-        System.out.println("Please, write the title of the book you want to return." +
+        System.out.println("Please, write the title of the " + inventory.getName() + " you want to return." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToReturn = ask();
         String result = (catalogue.isAReturn(titleToReturn, inventory)) ? printSeparator() : checkIfValidReturn(inventory);
@@ -54,9 +53,9 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
     public String defineBookMenuOutcome(Inventory inventory) {
         System.out.println("Please, select a choice from the menu above:");
         String input = ask();
-        if (input.equals("checkout book")) {
+        if (input.equals("checkout book") || (input.equals("checkout movie"))) {
             return checkIfValidCheckOut(inventory);
-        } else if (input.equals("return book")) {
+        } else if (input.equals("return book") || (input.equals("return movie"))) {
             return checkIfValidReturn(inventory);
         } else if (input.equals("main menu")) {
             return printSeparator();
@@ -84,4 +83,5 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
         printer.printSlowly(information, 50);
         return information;
     }
+
 }

@@ -36,20 +36,20 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
             System.out.println(element.getSpec().getTitle());
             if (element.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeFromInventory(element, inventory);
-                printSucessfulCheckout();
+                printSucessfulCheckout(inventory);
                 return true;
             } else if (title.equals("quit")) {
                 return true;
             }
         }
-        printUnsucessfulCheckout();
+        printUnsucessfulCheckout(inventory);
         return false;
     }
 
     public void addToInventory(Element element, Inventory inventory) {
         if (!(inventory.returnInventoryOfElements().contains(element))) {
             inventory.returnInventoryOfElements().add(element);
-            printSucessfulReturn();
+            printSucessfulReturn(inventory);
         } else {
             printError();
         }
@@ -65,41 +65,41 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
                     return true;
                 }
             }
-        printUnsucessfulReturn();
+        printUnsucessfulReturn(inventory);
         return false;
     }
 
     @Override
-    public StringBuilder printSucessfulCheckout() {
-        StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the book");
+    public StringBuilder printSucessfulCheckout(Inventory inventory) {
+        StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the " + inventory.getName());
         System.out.println(inStockColor + successfullCheckOut + resetStockColor);
         return successfullCheckOut;
     }
 
     @Override
-    public StringBuilder printUnsucessfulCheckout() {
-        StringBuilder error = new StringBuilder("Book not found. Please, select a book from the list.");
+    public StringBuilder printUnsucessfulCheckout(Inventory inventory) {
+        StringBuilder error = new StringBuilder(inventory.getName() + " not found. Please, select a " + inventory.getName() + " from the list.");
         System.out.println(notInStockColor + error + resetStockColor);
         return error;
     }
 
     @Override
-    public StringBuilder printSucessfulReturn() {
-        StringBuilder successfullReturn = new StringBuilder("Thank you for returning the book.");
+    public StringBuilder printSucessfulReturn(Inventory inventory) {
+        StringBuilder successfullReturn = new StringBuilder("Thank you for returning the " + inventory.getName());
         System.out.println(inStockColor + successfullReturn + resetStockColor);
         return successfullReturn;
     }
 
     @Override
-    public StringBuilder printUnsucessfulReturn() {
-        StringBuilder error = new StringBuilder("That is not a valid book to return.");
+    public StringBuilder printUnsucessfulReturn(Inventory inventory) {
+        StringBuilder error = new StringBuilder("That is not a valid " + inventory.getName() + " to return.");
         System.out.println(notInStockColor + error + resetStockColor);
         return error;
     }
 
     @Override
     public StringBuilder printError() {
-        StringBuilder error = new StringBuilder("Book already in stock");
+        StringBuilder error = new StringBuilder("That is already in stock");
         System.out.println(errorColor + error + resetErrorColor);
         return error;
     }

@@ -11,6 +11,7 @@ import java.util.List;
 public class MovieInventory extends Inventory {
 
     private static List<Element> movies;
+    private String name = "movie";
 
     public MovieInventory() {
         movies = new LinkedList<Element>();
@@ -19,6 +20,11 @@ public class MovieInventory extends Inventory {
                 movies.add(element);
             }
         }
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override

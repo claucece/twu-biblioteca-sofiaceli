@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e99d9cd-d241-4dce-9d5d-1c58df908021" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/BookCatalogue.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/BookCatalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/BookCatalogueTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookBookCatalogueTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Helpers/ElementSpec.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Helpers/ElementSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/controllers/Catalogue.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/controllers/Catalogue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookModel/BookInventory.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookModel/BookInventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookModel/BookSpec.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/BookModel/BookSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/Inventory.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/Inventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/MovieModel/MovieInventory.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/MovieModel/MovieInventory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/MovieModel/MovieSpec.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/models/MovieModel/MovieSpec.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/Menu.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/views/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/controllers/CatalogueTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/InventoryTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/InventoryTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/BookCatalogueTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/views/BookCatalogueTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Helpers/ElementSpec.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Helpers/ElementSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookSpec.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +41,8 @@
       <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state relative-caret-position="855">
+              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -69,96 +51,48 @@
       <file leaf-file-name="MenuCatalogue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
+                <element signature="e#493#494#0" expanded="true" />
                 <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Catalogue.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Catalogue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorPrinter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ErrorPrinter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCatalogueHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/UserCatalogueHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookInventory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieInventory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Movie.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/Movie.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovieSpec.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-              <folding>
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#710#711#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListOfElements.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
+              <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -187,9 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/ColorInventoryTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/SlowPrinterTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/ColorInventory.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/ColumnTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Helpers/Separator.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Helpers/ErrorPrinter.java" />
@@ -230,14 +161,17 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/controllers/CatalogueTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Column.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/helpers/UserCatalogueHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ErrorPrinter.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java" />
       </list>
     </option>
   </component>
@@ -458,6 +392,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MovieModel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TWU_Biblioteca-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="biblioteca" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1293,13 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/UserCatalogueHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/controllers/ColumnTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-65">
@@ -1335,21 +1284,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MenuOptions.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ErrorPrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1467,7 +1402,7 @@
         <state relative-caret-position="270">
           <caret line="18" column="86" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="86" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1502,14 +1437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1549,71 +1476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ElementSpec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#676#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#351#352#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1628,13 +1494,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        <state relative-caret-position="249">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="e#635#636#0" expanded="true" />
             <element signature="e#664#665#0" expanded="true" />
             <element signature="e#710#711#0" expanded="true" />
             <element signature="e#752#753#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieInventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+          <folding>
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Column.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/UserCatalogueHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ErrorPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookInventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#493#494#0" expanded="true" />
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

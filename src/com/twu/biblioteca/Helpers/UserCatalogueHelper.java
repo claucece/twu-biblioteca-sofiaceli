@@ -1,6 +1,7 @@
 package com.twu.biblioteca.helpers;
 
 import com.twu.biblioteca.models.ColorModel.ColorList;
+import com.twu.biblioteca.models.Inventory;
 
 public interface UserCatalogueHelper {
 
@@ -8,11 +9,11 @@ public interface UserCatalogueHelper {
     String notInStockColor = ColorList.getColor("RED");
     String resetStockColor = ColorList.getColor("RESET");
 
-    StringBuilder printSucessfulCheckout();
+    StringBuilder printSucessfulCheckout(Inventory inventory);
 
-    StringBuilder printUnsucessfulCheckout();
+    StringBuilder printUnsucessfulCheckout(Inventory inventory);
 
-    StringBuilder printSucessfulReturn();
+    StringBuilder printSucessfulReturn(Inventory inventory);
 
-    StringBuilder printUnsucessfulReturn();
+    StringBuilder printUnsucessfulReturn(Inventory inventory);
 }

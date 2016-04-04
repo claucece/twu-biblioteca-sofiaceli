@@ -4,6 +4,7 @@ import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.BookModel.BookInventory;
+import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.MovieModel.MovieInventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
