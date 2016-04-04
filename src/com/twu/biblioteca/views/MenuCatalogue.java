@@ -3,7 +3,7 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.ColorModel.ColorList;
+import com.twu.biblioteca.models.colorModel.ColorList;
 import com.twu.biblioteca.models.Inventory;
 
 

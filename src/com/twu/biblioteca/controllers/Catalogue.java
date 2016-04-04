@@ -56,14 +56,14 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     public boolean isAReturn(String title, Inventory inventory) {
         for (Element element : ListOfElements.VALUES) {
-                String elementToReturn = element.getSpec().getTitle();
-                if (elementToReturn.matches(title.toLowerCase())) {
-                    addToInventory(element, inventory);
-                    return true;
-                } else if (title.equals("quit")) {
-                    return true;
-                }
+            String elementToReturn = element.getSpec().getTitle();
+            if (elementToReturn.matches(title.toLowerCase())) {
+                addToInventory(element, inventory);
+                return true;
+            } else if (title.equals("quit")) {
+                return true;
             }
+        }
         printUnsucessfulReturn(inventory);
         return false;
     }

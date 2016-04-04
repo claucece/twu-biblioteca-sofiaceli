@@ -1,8 +1,7 @@
 package com.twu.biblioteca.models;
 
 import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.models.BookModel.BookInventory;
-import org.junit.Before;
+import com.twu.biblioteca.models.bookModel.BookInventory;
 
 public class InventoryTest {
 

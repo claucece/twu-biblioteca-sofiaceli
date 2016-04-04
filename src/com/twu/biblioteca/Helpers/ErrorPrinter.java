@@ -1,7 +1,6 @@
 package com.twu.biblioteca.helpers;
 
-import com.twu.biblioteca.models.ColorModel.ColorList;
-import com.twu.biblioteca.models.Inventory;
+import com.twu.biblioteca.models.colorModel.ColorList;
 
 public interface ErrorPrinter {
 

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.models.BookModel.BookSpec;
+import com.twu.biblioteca.models.bookModel.BookSpec;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,13 +14,14 @@ public class BookSpecTest {
     private String publishedYear;
     private BookSpec.Genre.Type type;
     private BookSpec.Genre genre;
+    private String rating;
 
     @Before
     public void setUp() {
         title = "From Whom The Bells Toll";
         type = BookSpec.Genre.Type.FICTION;
         genre = BookSpec.Genre.NOVEL;
-        specOfBook = new BookSpec(title, author, publishedYear, type, genre);
+        specOfBook = new BookSpec(title, author, publishedYear, type, genre, rating);
     }
 
     @Test
@@ -55,6 +56,13 @@ public class BookSpecTest {
     public void shouldGetGenre() {
         String expected = specOfBook.getGenre();
         String actual = genre.toString();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldGetRating() {
+        String expected = specOfBook.getRating();
+        String actual = rating;
         assertEquals(expected, actual);
     }
 

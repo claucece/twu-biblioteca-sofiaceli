@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models.BookModel;
+package com.twu.biblioteca.models.bookModel;
 
 import com.twu.biblioteca.helpers.Element;
 

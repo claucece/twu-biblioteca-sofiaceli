@@ -5,11 +5,13 @@ public abstract class AbstractElementSpec implements ElementSpec {
     private String title;
     private String author;
     private String publishedYear;
+    private String rating;
 
-    public AbstractElementSpec(String title, String author, String publishedYear) {
+    public AbstractElementSpec(String title, String author, String publishedYear, String rating) {
         this.title = title;
         this.author = author;
         this.publishedYear = publishedYear;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -22,6 +24,10 @@ public abstract class AbstractElementSpec implements ElementSpec {
 
     public String getPublishedYear() {
         return publishedYear;
+    }
+
+    public String getRating() {
+        return rating;
     }
 
 }

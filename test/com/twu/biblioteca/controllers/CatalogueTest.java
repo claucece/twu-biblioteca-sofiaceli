@@ -1,12 +1,12 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.Element;
-import com.twu.biblioteca.models.BookModel.BookInventory;
-import com.twu.biblioteca.models.BookModel.Book;
-import com.twu.biblioteca.models.BookModel.BookSpec;
-import com.twu.biblioteca.models.MovieModel.Movie;
-import com.twu.biblioteca.models.MovieModel.MovieInventory;
-import com.twu.biblioteca.models.MovieModel.MovieSpec;
+import com.twu.biblioteca.models.bookModel.BookInventory;
+import com.twu.biblioteca.models.bookModel.Book;
+import com.twu.biblioteca.models.bookModel.BookSpec;
+import com.twu.biblioteca.models.movieModel.Movie;
+import com.twu.biblioteca.models.movieModel.MovieInventory;
+import com.twu.biblioteca.models.movieModel.MovieSpec;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -87,7 +87,7 @@ public class CatalogueTest {
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
-        Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL));
+        Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL, "10"));
         boolean bookList = bookCatalogue.removeFromInventory(book, bookInventory);
         assertFalse(bookInventory.returnInventoryOfElements().contains(book));
     }
@@ -119,13 +119,13 @@ public class CatalogueTest {
         assertEquals(false, actual);
     }
 
-    // and this is a bug
     @Test
     public void shouldNotBeAbleToReturnMovieThatIsNotOnList() {
         boolean actual = movieCatalogue.isAReturn("Eraser Head", movieInventory);
         assertEquals(false, actual);
     }
 
+    // and this is a bug
     @Test
     public void shouldNotBeAbleToReturnMovieThatIsOnBookList() {
         boolean actual = movieCatalogue.isAReturn("Moby Dick", movieInventory);

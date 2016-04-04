@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models.BookModel;
+package com.twu.biblioteca.models.bookModel;
 
 import com.twu.biblioteca.helpers.AbstractElementSpec;
 
@@ -34,8 +34,8 @@ public class BookSpec extends AbstractElementSpec {
         }
     }
 
-    public BookSpec(String title, String author, String publishedYear, Genre.Type type, Genre genre) {
-        super(title, author, publishedYear);
+    public BookSpec(String title, String author, String publishedYear, Genre.Type type, Genre genre, String rating) {
+        super(title, author, publishedYear, rating);
         this.type = type;
         this.genre = genre;
     }
@@ -46,11 +46,6 @@ public class BookSpec extends AbstractElementSpec {
 
     public String getGenre() {
         return genre.toString();
-    }
-
-    @Override
-    public String getRating() {
-        return null;
     }
 
 }

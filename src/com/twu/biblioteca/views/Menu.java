@@ -3,9 +3,8 @@ package com.twu.biblioteca.views;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.BookModel.BookInventory;
-import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.MovieModel.MovieInventory;
+import com.twu.biblioteca.models.bookModel.BookInventory;
+import com.twu.biblioteca.models.movieModel.MovieInventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 

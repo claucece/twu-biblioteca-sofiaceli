@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models.ColorModel;
+package com.twu.biblioteca.models.colorModel;
 
 public class Color {
 

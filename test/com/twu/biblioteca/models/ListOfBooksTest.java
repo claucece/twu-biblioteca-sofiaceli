@@ -1,10 +1,5 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.models.BookModel.Book;
-import org.junit.Test;
-
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class ListOfBooksTest {

@@ -1,10 +1,9 @@
-package com.twu.biblioteca.models.BookModel;
+package com.twu.biblioteca.models.bookModel;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.ListOfElements;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
