@@ -33,7 +33,6 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     public boolean isACheckout(String title, Inventory inventory) {
         for (Element element : inventory.returnInventoryOfElements()) {
-            System.out.println(element.getSpec().getTitle());
             if (element.getSpec().getTitle().matches(title.toLowerCase())) {
                 removeFromInventory(element, inventory);
                 printSucessfulCheckout(inventory);
