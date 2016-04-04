@@ -8,4 +8,8 @@ public interface ElementSpec {
 
     String getPublishedYear();
 
+    String getType();
+
+    String getGenre();
+
 }

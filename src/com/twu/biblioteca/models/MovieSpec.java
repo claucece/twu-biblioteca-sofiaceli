@@ -31,6 +31,16 @@ public class MovieSpec implements ElementSpec {
         return year;
     }
 
+    @Override
+    public String getType() {
+        return null;
+    }
+
+    @Override
+    public String getGenre() {
+        return null;
+    }
+
     public String getRating() {
         return rating;
     }
