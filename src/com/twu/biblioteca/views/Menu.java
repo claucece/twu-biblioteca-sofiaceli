@@ -15,8 +15,9 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
     public String toLineColumn() {
         Column column = new Column();
         String option1 = "--> List books  ";
-        String option2 = "--> Quit  ";
-        column.addLine(option1, option2);
+        String option2 = "--> List movies  ";
+        String option3 = "--> Quit  ";
+        column.addLine(option1, option2, option3);
         String toMenu = column.toString();
         System.out.println(toMenu);
         return toMenu;

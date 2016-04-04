@@ -4,15 +4,15 @@ import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.ColorModel.ColorList;
-import com.twu.biblioteca.models.Inventory;
+import com.twu.biblioteca.models.BookModel.BookInventory;
 
 public class BookCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     private Catalogue catalogue;
 
     public BookCatalogue() {
-        Inventory inventory = Inventory.valueOf();
-        catalogue = new Catalogue(inventory);
+        BookInventory bookInventory = BookInventory.valueOf();
+        catalogue = new Catalogue(bookInventory);
     }
 
     public String returnCatalogue() {
