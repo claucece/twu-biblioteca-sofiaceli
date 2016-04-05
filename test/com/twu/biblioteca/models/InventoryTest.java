@@ -1,25 +1,18 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.models.bookModel.BookInventory;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class InventoryTest {
 
-    private BookInventory bookInventory;
-    private Catalogue catalogue;
-
-//    @Before
-//    public void setUp() {
-//        bookInventory = BookInventory.valueOf();
-//        catalogue = new Catalogue(bookInventory);
-//    }
-
-//    @Test
-//    public void shouldAddBook() {
-//        Book expectedBook = bookInventory.getListOfBooks().get(0);
-//        String expected = expectedBook.getSpec().getAuthor();
-//        String actual = bookInventory.returnInventoryOfBooks().get(0).getSpec().getAuthor();
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    public void shouldListBeEqualToInventory() {
+        boolean expected = false;
+        Inventory inventory = mock(Inventory.class);
+        boolean actual = inventory.isListEqualToInventory();
+        assertEquals(expected, actual);
+    }
 
 }

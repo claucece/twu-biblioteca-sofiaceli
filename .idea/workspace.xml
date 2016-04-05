@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e99d9cd-d241-4dce-9d5d-1c58df908021" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModelTest/MovieInventoryTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModelTest/MovieSpecTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModelTest/MovieTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/bookModelTests/BookInventoryTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/models/bookModelTests/BookInventoryTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookInventoryTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookInventoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,54 +33,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MenuCatalogue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MenuCatalogue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="41">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#441#442#0" expanded="true" />
                 <element signature="e#493#494#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColorList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ColorList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/colorModel/ColorList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/HomeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListOfElements.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="135" selection-start-line="16" selection-start-column="135" selection-end-line="16" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -112,7 +79,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/ColorModel/ColorList.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/Movie.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/helpers/Element.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/Book.java" />
@@ -129,7 +95,6 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/BookCatalogue.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/BookModel/BookSpec.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/views/BookCatalogueTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/views/BookCatalogue.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/MovieSpec.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Column.java" />
@@ -153,7 +118,6 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/colorModelTests/ColorTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookSpecTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/bookModel/BookInventory.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModel/BookInventoryTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModel/MovieTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModelTest/MovieTest.java" />
@@ -162,6 +126,9 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModel/MovieInventoryTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/bookModelTests/BookInventoryTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/movieModelTest/MovieInventoryTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/models/bookModel/BookInventory.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java" />
       </list>
     </option>
   </component>
@@ -293,11 +260,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="movieModelTest" />
+              <option name="myItemId" value="helpers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,32 +322,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="biblioteca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TWU_Biblioteca-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="biblioteca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bookModel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -401,11 +338,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.twu.biblioteca.models" />
       <recent name="com.twu.biblioteca.models.movieModel" />
       <recent name="com.twu.biblioteca.models.bookModel" />
       <recent name="com.twu.biblioteca.helpers" />
       <recent name="com.twu.biblioteca.controllers" />
-      <recent name="com.twu.biblioteca.views" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.twu.biblioteca.models" />
@@ -426,19 +363,45 @@
       <recent name="$PROJECT_DIR$/src/com/twu/biblioteca/controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieInventoryTest.shouldPrintApropiateError">
-    <configuration default="false" name="MovieSpecTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ListOfBooksTest.shouldHaveExistanceOfMovieElementInList">
+    <configuration default="false" name="InventoryTest.shouldListBeEqualToInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.movieModelTest.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models.movieModelTest" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.movieModelTest.MovieSpecTest" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.InventoryTest" />
+      <option name="METHOD_NAME" value="shouldListBeEqualToInventory" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="InventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.InventoryTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -453,19 +416,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MovieSpecTest.shouldGetRating" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="InventoryTest.shouldAddApropiateElementDependingOnInventory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.movieModelTest.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models.movieModelTest" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.movieModelTest.MovieSpecTest" />
-      <option name="METHOD_NAME" value="shouldGetRating" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.InventoryTest" />
+      <option name="METHOD_NAME" value="shouldAddApropiateElementDependingOnInventory" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -479,45 +442,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MovieInventoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ListOfBooksTest.shouldHaveExistanceOfElementInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.movieModelTest.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models.movieModelTest" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.movieModelTest.MovieInventoryTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BookInventoryTest.shouldPrintApropiateError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.bookModelTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models.bookModelTests" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.bookModelTests.BookInventoryTest" />
-      <option name="METHOD_NAME" value="shouldPrintApropiateError" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.ListOfBooksTest" />
+      <option name="METHOD_NAME" value="shouldHaveExistanceOfElementInList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -531,19 +468,19 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MovieInventoryTest.shouldPrintApropiateError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ListOfBooksTest.shouldHaveExistanceOfMovieElementInList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.models.movieModelTest.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models.movieModelTest" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.movieModelTest.MovieInventoryTest" />
-      <option name="METHOD_NAME" value="shouldPrintApropiateError" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.models" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.models.ListOfBooksTest" />
+      <option name="METHOD_NAME" value="shouldHaveExistanceOfMovieElementInList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -984,19 +921,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MovieSpecTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MovieSpecTest.shouldGetRating" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MovieInventoryTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BookInventoryTest.shouldPrintApropiateError" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MovieInventoryTest.shouldPrintApropiateError" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.InventoryTest.shouldListBeEqualToInventory" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.InventoryTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.InventoryTest.shouldAddApropiateElementDependingOnInventory" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldHaveExistanceOfElementInList" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldHaveExistanceOfMovieElementInList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MovieInventoryTest.shouldPrintApropiateError" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BookInventoryTest.shouldPrintApropiateError" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MovieInventoryTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MovieSpecTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MovieSpecTest.shouldGetRating" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldHaveExistanceOfMovieElementInList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ListOfBooksTest.shouldHaveExistanceOfElementInList" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.InventoryTest.shouldAddApropiateElementDependingOnInventory" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.InventoryTest.shouldListBeEqualToInventory" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.InventoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1022,35 +959,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 35m 20s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest - 2016.04.04 at 23h 59m 46s.xml">
+      <configuration name="InventoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 37m 11s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest - 2016.04.05 at 00h 02m 31s.xml">
+      <configuration name="InventoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 38m 20s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldAddApropiateElementDependingOnInventory - 2016.04.05 at 00h 02m 27s.xml">
+      <configuration name="InventoryTest.shouldAddApropiateElementDependingOnInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 38m 34s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldAddApropiateElementDependingOnInventory - 2016.04.05 at 00h 02m 56s.xml">
+      <configuration name="InventoryTest.shouldAddApropiateElementDependingOnInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 39m 18s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldListBeEqualToInventory - 2016.04.04 at 23h 59m 27s.xml">
+      <configuration name="InventoryTest.shouldListBeEqualToInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 40m 28s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldListBeEqualToInventory - 2016.04.04 at 23h 59m 31s.xml">
+      <configuration name="InventoryTest.shouldListBeEqualToInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 41m 01s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldListBeEqualToInventory - 2016.04.05 at 00h 00m 52s.xml">
+      <configuration name="InventoryTest.shouldListBeEqualToInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BookInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 44m 00s.xml">
-      <configuration name="BookInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="InventoryTest_shouldListBeEqualToInventory - 2016.04.05 at 00h 02m 34s.xml">
+      <configuration name="InventoryTest.shouldListBeEqualToInventory" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MovieInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 44m 54s.xml">
-      <configuration name="MovieInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="ListOfBooksTest_shouldHaveExistanceOfElementInList - 2016.04.05 at 00h 04m 37s.xml">
+      <configuration name="ListOfBooksTest.shouldHaveExistanceOfElementInList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MovieInventoryTest_shouldPrintApropiateError - 2016.04.04 at 23h 45m 02s.xml">
-      <configuration name="MovieInventoryTest.shouldPrintApropiateError" configurationId="JUnit" />
+    <history-entry file="ListOfBooksTest_shouldHaveExistanceOfMovieElementInList - 2016.04.05 at 00h 05m 02s.xml">
+      <configuration name="ListOfBooksTest.shouldHaveExistanceOfMovieElementInList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -1068,13 +1005,13 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819074" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253857" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32447553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31837308" sideWeight="0.50858366" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3160839" sideWeight="0.4914163" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3160839" sideWeight="0.4914163" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1141,7 +1078,7 @@
           <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1184,13 +1121,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfMovies.java" />
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/MovieModel/Inventory.java" />
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/NotToLoos.java" />
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/MovieCatalogue.java" />
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/controllers/Catalogue.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1199,14 +1129,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1275,13 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/helpers/AbstractElementSpecTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/UserCatalogueHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1308,6 +1223,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,6 +1256,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1347,14 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="135" selection-start-line="16" selection-start-column="135" selection-end-line="16" selection-end-column="135" />
           <folding />
         </state>
       </provider>
@@ -1430,21 +1341,9 @@
         <state relative-caret-position="360">
           <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#534#535#0" expanded="false" />
+            <element signature="e#578#579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1465,34 +1364,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/colorModel/ColorList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/HomeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/helpers/ErrorPrinter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/bookModel/BookInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="56" column="71" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -1512,19 +1387,91 @@
         <state relative-caret-position="360">
           <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
           <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/helpers/AbstractElementSpecTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/views/HomeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/InventoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/bookModel/BookInventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/views/MenuCatalogue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="41">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
             <element signature="e#493#494#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/models/ListOfBooksTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/ListOfElements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="185" selection-start-line="14" selection-start-column="185" selection-end-line="14" selection-end-column="185" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/models/colorModel/ColorList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
