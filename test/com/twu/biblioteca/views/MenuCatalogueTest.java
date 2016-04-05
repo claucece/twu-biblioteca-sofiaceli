@@ -2,7 +2,7 @@ package com.twu.biblioteca.views;
 
 import java.io.ByteArrayOutputStream;
 
-public class BookCatalogueTest {
+public class MenuCatalogueTest {
 
     private MenuCatalogue menuCatalogue;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
