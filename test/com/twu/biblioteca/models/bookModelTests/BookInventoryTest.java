@@ -23,15 +23,9 @@ public class BookInventoryTest {
     }
 
     @Test
-    public void shouldReturnInventoryOfElements() {
+    public void shouldPrintApropiateError() {
+        String expected = new StringBuilder("No available books!").toString();
+        String actual = bookInventory.printError().toString();
+        assertEquals(expected, actual);
     }
-
-    @Test
-    public void shouldAddElement() {
-    }
-
-    @Test
-    public void shouldPrintError() {
-    }
-
 }
