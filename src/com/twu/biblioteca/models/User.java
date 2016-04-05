@@ -1,8 +1,5 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.models.bookModel.Book;
-import com.twu.biblioteca.models.colorModel.Color;
-
 public class User {
 
     private final String libraryNumber;
