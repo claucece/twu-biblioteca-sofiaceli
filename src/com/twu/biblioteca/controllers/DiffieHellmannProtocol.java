@@ -1,14 +1,12 @@
 package com.twu.biblioteca.controllers;
 
-import javax.crypto.KeyAgreement;
-import javax.crypto.ShortBufferException;
+import javax.crypto.*;
 import javax.crypto.interfaces.DHPublicKey;
 import javax.crypto.spec.DHParameterSpec;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
-import java.util.Arrays;
 
 import static sun.security.pkcs11.wrapper.Functions.toHexString;
 
@@ -16,10 +14,12 @@ public class DiffieHellmannProtocol {
 
     String mode;
     int aliceLen;
-    KeyAgreement aliceKeyAgree;
+    KeyAgreement userKeyAgree;
     KeyAgreement bibliotecaKeyAgree;
     DHParameterSpec dhSkipParamSpec1;
     X509EncodedKeySpec x509KeySpec;
+    byte[] cleartext;
+    byte[] ciphertext;
 
     DHParameterSpec dhSkipParamSpec = new DHParameterSpec(skip1024Modulus,
             skip1024Base);
@@ -64,7 +64,8 @@ public class DiffieHellmannProtocol {
 
     private static final BigInteger skip1024Base = BigInteger.valueOf(2);
 
-    public KeyPair generateUserKeyPair() throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
+
+    public KeyPair generateUserKeyPair() throws Exception {
         System.out.println("ALICE: Generate DH keypair ...");
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
@@ -73,8 +74,8 @@ public class DiffieHellmannProtocol {
         return userKpair;
     }
 
-    public KeyPair generateBibliotecaKeyPair(PublicKey pubKey) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
-        dhSkipParamSpec1 = ((DHPublicKey) pubKey).getParams();
+    public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+        dhSkipParamSpec1 = ((DHPublicKey) userPubKey).getParams();
         System.out.println("BOB: Generate DH keypair ...");
         KeyPairGenerator bibliotecaKpairGen = KeyPairGenerator.getInstance("DH");
         bibliotecaKpairGen.initialize(dhSkipParamSpec1);
@@ -82,58 +83,61 @@ public class DiffieHellmannProtocol {
         initializeBibliotecaAgreement(bibliotecaKpair);
         return bibliotecaKpair;
     }
-    
-    public KeyAgreement initializeUserAgreement(KeyPair userKeys) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
-        System.out.println("ALICE: Initialization ...");
-        aliceKeyAgree = KeyAgreement.getInstance("DH");
-        aliceKeyAgree.init(userKeys.getPrivate());
+
+    public KeyAgreement initializeUserAgreement(KeyPair userKeys) throws Exception {
+        System.out.println("USER: Initialization ...");
+        userKeyAgree = KeyAgreement.getInstance("DH");
+        userKeyAgree.init(userKeys.getPrivate());
         userEncondesAndSendsToBiblioteca(userKeys);
-        return aliceKeyAgree;
+        return userKeyAgree;
     }
 
-    public KeyAgreement initializeBibliotecaAgreement(KeyPair keys) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
-        System.out.println("BOB: Initialization ...");
+    public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
+        System.out.println("BIBLIOTECA: Initialization ...");
         bibliotecaKeyAgree = KeyAgreement.getInstance("DH");
-        bibliotecaKeyAgree.init(keys.getPrivate());
-        bibliotecaEncondesAndSendsToUser(keys);
+        bibliotecaKeyAgree.init(bibliotecaKeys.getPrivate());
+        bibliotecaEncondesAndSendsToUser(bibliotecaKeys);
         return bibliotecaKeyAgree;
     }
 
-    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
-        byte[] alicePubKeyEnc = userKeys.getPublic().getEncoded();
-        instantiatesUserPubKey(alicePubKeyEnc);
-        return alicePubKeyEnc;
+    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys) throws Exception {
+        byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
+        instantiatesUserPubKey(userPubKeyEnc);
+        return userPubKeyEnc;
     }
 
-    public byte[] bibliotecaEncondesAndSendsToUser(KeyPair keys) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
-        byte[] bobPubKeyEnc = keys.getPublic().getEncoded();
-        instantiatesBibliotecaPubKey(bobPubKeyEnc);
-        return bobPubKeyEnc;
+    public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+        byte[] bibliotecaPubKeyEnc = bibliotecaKeys.getPublic().getEncoded();
+        instantiatesBibliotecaPubKey(bibliotecaPubKeyEnc);
+        return bibliotecaPubKeyEnc;
     }
 
-    public PublicKey instantiatesUserPubKey(byte[] pubKey) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+    public PublicKey instantiatesUserPubKey(byte[] userPubKeyEnc) throws Exception {
         KeyFactory bibliotecaKeyFac = KeyFactory.getInstance("DH");
-        x509KeySpec = new X509EncodedKeySpec
-                (pubKey);
+        x509KeySpec = new X509EncodedKeySpec(userPubKeyEnc);
         PublicKey userPubKey = bibliotecaKeyFac.generatePublic(x509KeySpec);
         generateBibliotecaKeyPair(userPubKey);
-        executePhase1OnUser(userPubKey);
-        System.out.println(toHexString(generateSecretUserKey()));
-        System.out.println(toHexString(generateSecretBibliotecaKey()));
+        executePhase1OnBiblioteca(userPubKey);
+        SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
+        SecretKey userDesKey = userKeyAgree.generateSecret("DES");
+        System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey));
+        System.out.println(userDecryptsUsingDES(userDesKey));
+        //System.out.println(toHexString(generateSecretUserKey()));
+        //System.out.println(toHexString(generateSecretBibliotecaKey()));
         return userPubKey;
     }
 
-    public PublicKey instantiatesBibliotecaPubKey(byte[] pubKey) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+    public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
         KeyFactory userKeyFac = KeyFactory.getInstance("DH");
-        x509KeySpec = new X509EncodedKeySpec(pubKey);
+        x509KeySpec = new X509EncodedKeySpec(bibliotecaPubKeyEnc);
         PublicKey bibliotecaPubKey = userKeyFac.generatePublic(x509KeySpec);
-        executePhase1OnBiblioteca(bibliotecaPubKey);
+        executePhase1OnUser(bibliotecaPubKey);
         return bibliotecaPubKey;
     }
 
     public Key executePhase1OnUser(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
         System.out.println("ALICE: Execute PHASE1 ...");
-        return aliceKeyAgree.doPhase(key, true);
+        return userKeyAgree.doPhase(key, true);
     }
 
     public Key executePhase1OnBiblioteca(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
@@ -142,7 +146,7 @@ public class DiffieHellmannProtocol {
     }
 
     public byte[] generateSecretUserKey() throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException {
-        byte[] aliceSharedSecret = aliceKeyAgree.generateSecret();
+        byte[] aliceSharedSecret = userKeyAgree.generateSecret();
         aliceLen = aliceSharedSecret.length;
         return aliceSharedSecret;
     }
@@ -151,23 +155,29 @@ public class DiffieHellmannProtocol {
         byte[] bobSharedSecret = bibliotecaKeyAgree.generateSecret();
         return bobSharedSecret;
     }
-    
+
+    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
+        Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+        bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
+        cleartext = "This is just an example".getBytes();
+        ciphertext = bibliotecaCipher.doFinal(cleartext);
+        return ciphertext;
+    }
+
+    public Cipher userDecryptsUsingDES(SecretKey userSecretKey) throws Exception {
+        Cipher userCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+        userCipher.init(Cipher.DECRYPT_MODE, userSecretKey);
+        byte[] recovered = userCipher.doFinal(ciphertext);
+        if (!java.util.Arrays.equals(cleartext, recovered))
+            throw new Exception("DES in CBC mode recovered text is " +
+                    "different from cleartext");
+        System.out.println("DES in ECB mode recovered text is " +
+                "same as cleartext");
+        return userCipher;
+    }
+
     public void run(String mode) throws Exception {
         generateUserKeyPair();
-        //initializeUserAgreement(generateUserKeyPair());
-        //userEncondesAndSendsToBiblioteca();
-        //instantiatesUserPubKey();
-        //generateBibliotecaKeyPair();
-
-//        System.out.println("Alice secret: " +
-//                toHexString(generateSecretUserKey()));
-//        System.out.println("Bob secret: " +
-//                toHexString(generateSecretBibliotecaKey()));
-//
-//        if (!Arrays.equals(generateSecretUserKey(), generateSecretBibliotecaKey()))
-//            throw new Exception("Shared secrets differ");
-//        System.out.println("Shared secrets are the same");
-
     }
 
 }
