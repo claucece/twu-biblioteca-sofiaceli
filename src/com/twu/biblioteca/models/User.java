@@ -1,18 +1,21 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.helpers.InputAsker;
+import java.io.PrintStream;
+import java.util.Scanner;
 
-public class User implements InputAsker{
+public class User {
 
-    //public static String password;
     private final String libraryNumber;
-    private final String hashPassword;
+    private String hashPassword;
     private final String name;
     private final String emailAdress;
     private final String phoneNumber;
 
-    @Override
-    public String ask() {
+    static Scanner scanner = new Scanner(System.in);
+    static PrintStream out = new PrintStream(System.out);
+
+    //@Override
+    public static String ask() {
         out.println("Please, enter a new password");
         return scanner.nextLine().toLowerCase();
     }
@@ -26,7 +29,7 @@ public class User implements InputAsker{
 
         public Builder (String libraryNumber, String hashPassword) {
             this.libraryNumber = libraryNumber;
-            this.hashPassword = hashPassword;
+            this.hashPassword = hashPassword = ask();
         }
 
         public Builder name(String value) {
@@ -62,8 +65,8 @@ public class User implements InputAsker{
         return libraryNumber;
     }
 
-    public String getHashPassword() {
-        return hashPassword;
+    public int getHashPassword() {
+        return hashPassword.hashCode();
     }
 
     public String getName() {

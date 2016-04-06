@@ -163,9 +163,10 @@ public class DiffieHellmannProtocol implements InputAsker{
     public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
-        String password = ask();
+        String password = null;
         User user = new User.Builder("001-0001", password).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
-        cleartext = user.getHashPassword().getBytes();
+        cleartext = Integer.toString(user.getHashPassword()).getBytes();
+        System.out.println(user.getHashPassword());
         ciphertext = bibliotecaCipher.doFinal(cleartext);
         return ciphertext;
     }
