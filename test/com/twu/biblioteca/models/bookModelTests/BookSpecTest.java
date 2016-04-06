@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models.bookModelTests;
 
-import com.twu.biblioteca.models.bookModel.BookSpec;
+import com.twu.biblioteca.models.book.BookSpec;
 import org.junit.Before;
 import org.junit.Test;
 

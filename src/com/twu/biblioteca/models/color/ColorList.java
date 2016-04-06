@@ -1,4 +1,4 @@
-package com.twu.biblioteca.models.colorModel;
+package com.twu.biblioteca.models.color;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models.colorModelTests;
 
-import com.twu.biblioteca.models.colorModel.Color;
+import com.twu.biblioteca.models.color.Color;
 import org.junit.Before;
 import org.junit.Test;
 

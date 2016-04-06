@@ -1,12 +1,21 @@
 package com.twu.biblioteca.models;
 
-public class User {
+import com.twu.biblioteca.helpers.InputAsker;
 
+public class User implements InputAsker{
+
+    //public static String password;
     private final String libraryNumber;
     private final String hashPassword;
     private final String name;
     private final String emailAdress;
     private final String phoneNumber;
+
+    @Override
+    public String ask() {
+        out.println("Please, enter a new password");
+        return scanner.nextLine().toLowerCase();
+    }
 
     public static class Builder {
         private String libraryNumber;

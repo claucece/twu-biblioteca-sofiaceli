@@ -1,10 +1,11 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.helpers.ErrorPrinter;
+import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.controllers.*;
-import com.twu.biblioteca.models.bookModel.BookInventory;
-import com.twu.biblioteca.models.movieModel.MovieInventory;
+import com.twu.biblioteca.models.book.BookInventory;
+import com.twu.biblioteca.models.movie.MovieInventory;
 
 public class Menu implements InputAsker, ErrorPrinter, Separator {
 

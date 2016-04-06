@@ -1,22 +1,23 @@
-package com.twu.biblioteca.models.bookModel;
+package com.twu.biblioteca.models.movie;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.models.Inventory;
 import com.twu.biblioteca.models.ListOfElements;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BookInventory extends Inventory {
+public class MovieInventory extends Inventory {
 
-    private static List<Element> books;
-    private String name = "book";
+    private static List<Element> movies;
+    private String name = "movie";
 
-    public BookInventory() {
-        books = new LinkedList<Element>();
+    public MovieInventory() {
+        movies = new LinkedList<Element>();
         for (Element element : ListOfElements.VALUES) {
-            if (element.getClass() == Book.class) {
-                books.add(element);
+            if (element.getClass() == Movie.class) {
+                movies.add(element);
             }
         }
     }
@@ -28,7 +29,11 @@ public class BookInventory extends Inventory {
 
     @Override
     public List<Element> getList() {
-        return books;
+        return movies;
+    }
+
+    public boolean isListEqualToInventory() {
+        return Collections.disjoint(getList(), ListOfElements.VALUES) && !(getList().isEmpty());
     }
 
     @Override
@@ -38,22 +43,22 @@ public class BookInventory extends Inventory {
         } else if (getList().isEmpty()) {
             printError();
         }
-        return books;
+        return movies;
     }
 
     @Override
     public List<Element> addElement() {
-        for (Element book : ListOfElements.VALUES) {
-            if (book.getClass() == Book.class) {
-                books.add(book);
+        for (Element movie : ListOfElements.VALUES) {
+            if (movie.getClass() == Movie.class) {
+                movies.add(movie);
             }
         }
-        return books;
+        return movies;
     }
 
     @Override
     public StringBuilder printError() {
-        StringBuilder error = new StringBuilder("No available books!");
+        StringBuilder error = new StringBuilder("No available movies!");
         System.out.println(errorColor + error + resetErrorColor);
         return error;
     }

@@ -1,7 +1,7 @@
 package com.twu.biblioteca.models.movieModelTest;
 
-import com.twu.biblioteca.models.movieModel.Movie;
-import com.twu.biblioteca.models.movieModel.MovieInventory;
+import com.twu.biblioteca.models.movie.Movie;
+import com.twu.biblioteca.models.movie.MovieInventory;
 import org.junit.Before;
 import org.junit.Test;
 

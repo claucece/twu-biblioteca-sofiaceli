@@ -3,25 +3,28 @@ package com.twu.biblioteca.models;
 import javax.crypto.spec.*;
 
 import com.twu.biblioteca.controllers.DiffieHellmannProtocol;
+import com.twu.biblioteca.helpers.InputAsker;
 
-/**
- * This program executes the Diffie-Hellman key agreement protocol
- * between 2 parties: Alice and Bob.
- *
- * By default, preconfigured parameters (1024-bit prime modulus and base
- * generator used by SKIP) are used.
- * If this program is called with the "-gen" option, a new set of
- * parameters is created.
- */
+import java.io.PrintStream;
+import java.util.Scanner;
 
 public class DHKeyAgreement2 {
 
+    static Scanner scanner = new Scanner(System.in);
+    static PrintStream out = new PrintStream(System.out);
+
+
+
     public static void main(String argv[]) throws Exception {
-        // try {
+
         String mode = "USE_SKIP_DH_PARAMS";
 
         DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
         keyAgree.run(mode);
+
+
     }
+
+
 }
 

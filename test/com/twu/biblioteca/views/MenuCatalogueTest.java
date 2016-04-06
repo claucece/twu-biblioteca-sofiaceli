@@ -1,14 +1,10 @@
 package com.twu.biblioteca.views;
 
-import com.twu.biblioteca.controllers.Catalogue;
-import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.bookModel.BookInventory;
-import com.twu.biblioteca.models.movieModel.MovieInventory;
+import com.twu.biblioteca.models.book.BookInventory;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 

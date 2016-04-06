@@ -1,8 +1,12 @@
 package com.twu.biblioteca.controllers;
 
+import com.twu.biblioteca.helpers.InputAsker;
+import com.twu.biblioteca.models.User;
+
 import javax.crypto.*;
 import javax.crypto.interfaces.DHPublicKey;
 import javax.crypto.spec.DHParameterSpec;
+import javax.jws.soap.SOAPBinding;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
@@ -10,7 +14,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 import static sun.security.pkcs11.wrapper.Functions.toHexString;
 
-public class DiffieHellmannProtocol {
+public class DiffieHellmannProtocol implements InputAsker{
 
     String mode;
     int aliceLen;
@@ -76,7 +80,7 @@ public class DiffieHellmannProtocol {
 
     public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
         dhSkipParamSpec1 = ((DHPublicKey) userPubKey).getParams();
-        System.out.println("BOB: Generate DH keypair ...");
+        System.out.println("BIBLIOTECA: Generate DH keypair ...");
         KeyPairGenerator bibliotecaKpairGen = KeyPairGenerator.getInstance("DH");
         bibliotecaKpairGen.initialize(dhSkipParamSpec1);
         KeyPair bibliotecaKpair = bibliotecaKpairGen.generateKeyPair();
@@ -136,12 +140,12 @@ public class DiffieHellmannProtocol {
     }
 
     public Key executePhase1OnUser(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
-        System.out.println("ALICE: Execute PHASE1 ...");
+        System.out.println("USER: Execute PHASE1 ...");
         return userKeyAgree.doPhase(key, true);
     }
 
     public Key executePhase1OnBiblioteca(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
-        System.out.println("BOB: Execute PHASE1 ...");
+        System.out.println("BIBLIOTECA: Execute PHASE1 ...");
         return bibliotecaKeyAgree.doPhase(key, true);
     }
 
@@ -159,7 +163,9 @@ public class DiffieHellmannProtocol {
     public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
-        cleartext = "This is just an example".getBytes();
+        String password = ask();
+        User user = new User.Builder("001-0001", password).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        cleartext = user.getHashPassword().getBytes();
         ciphertext = bibliotecaCipher.doFinal(cleartext);
         return ciphertext;
     }
@@ -180,4 +186,9 @@ public class DiffieHellmannProtocol {
         generateUserKeyPair();
     }
 
+    @Override
+    public String ask() {
+        out.println("Please, enter a new password");
+        return scanner.nextLine().toLowerCase();
+    }
 }

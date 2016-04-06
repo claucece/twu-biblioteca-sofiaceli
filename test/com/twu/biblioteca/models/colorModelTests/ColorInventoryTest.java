@@ -1,7 +1,7 @@
 package com.twu.biblioteca.models.colorModelTests;
 
-import com.twu.biblioteca.models.colorModel.Color;
-import com.twu.biblioteca.models.colorModel.ColorList;
+import com.twu.biblioteca.models.color.Color;
+import com.twu.biblioteca.models.color.ColorList;
 import org.junit.Test;
 
 import java.util.List;

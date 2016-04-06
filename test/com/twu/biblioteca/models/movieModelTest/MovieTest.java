@@ -1,10 +1,8 @@
 package com.twu.biblioteca.models.movieModelTest;
 
 import com.twu.biblioteca.helpers.ElementSpec;
-import com.twu.biblioteca.models.bookModel.Book;
-import com.twu.biblioteca.models.bookModel.BookSpec;
-import com.twu.biblioteca.models.movieModel.Movie;
-import com.twu.biblioteca.models.movieModel.MovieSpec;
+import com.twu.biblioteca.models.movie.Movie;
+import com.twu.biblioteca.models.movie.MovieSpec;
 import org.junit.Before;
 import org.junit.Test;
 

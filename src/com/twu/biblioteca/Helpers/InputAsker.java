@@ -1,4 +1,4 @@
-package com.twu.biblioteca.controllers;
+package com.twu.biblioteca.helpers;
 
 import java.io.PrintStream;
 import java.util.Scanner;
