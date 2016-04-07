@@ -1,22 +1,29 @@
 package com.twu.biblioteca.models;
 
+//import com.sun.istack.internal.NotNull;
+
+import com.twu.biblioteca.anotations.Size;
+
 import java.io.PrintStream;
 import java.util.Scanner;
+
 
 public class User {
 
     private final String libraryNumber;
     private String hashPassword;
-    private final String name;
+
+    @Size(message = "Invalid size")
+    public String name;
+
     private final String emailAdress;
     private final String phoneNumber;
 
     static Scanner scanner = new Scanner(System.in);
     static PrintStream out = new PrintStream(System.out);
 
-    //@Override
     public static String ask() {
-        out.println("Please, enter a new password");
+        out.println("Please, enter a new password:");
         return scanner.nextLine().toLowerCase();
     }
 
@@ -27,9 +34,14 @@ public class User {
         private String emailAdress = "user@usermail.com";
         private String phoneNumber = "6038200";
 
-        public Builder (String libraryNumber, String hashPassword) {
+        public Builder (String libraryNumber) {
             this.libraryNumber = libraryNumber;
-            this.hashPassword = hashPassword = ask();
+        }
+
+        public Builder password(String value) {
+            //hashPassword = value;
+            hashPassword = ask();
+            return this;
         }
 
         public Builder name(String value) {

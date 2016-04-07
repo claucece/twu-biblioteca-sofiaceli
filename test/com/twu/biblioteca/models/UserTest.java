@@ -1,52 +1,96 @@
 package com.twu.biblioteca.models;
 
+import com.twu.biblioteca.anotations.SizeChecker;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.io.ByteArrayInputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class UserTest {
 
+    private static SizeChecker checker;
     private User user;
+    private User errorUser;
 
     @Before
     public void setUp() {
-        user = new User.Builder("001-0001", "shouldbeahash").name("User").emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        checker = new SizeChecker();
     }
 
     @Test
-    public void shouldReturnLibraryNumber() {
-        String expected = user.getLibraryNumber();
-        String actual = "001-0001";
-        assertEquals(expected, actual);
+    public void shouldReturnName() {
+        User user = mock(User.class);
+        User.Builder builder = newBuilderMock();
+        when(user.getName()).thenReturn("user");
+        assertEquals(user.getName(), "user");
     }
 
     @Test
-    public void shouldReturnUserName() {
-        String expected = user.getName();
-        String actual = "User";
-        assertEquals(expected, actual);
+    public void shouldHaveAValidLengthName() throws IllegalAccessException {
+        String data = "user";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        errorUser = new User.Builder("001-0001").password("lo").name(data).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        List<String> mylist = new ArrayList<String>();
+        assertEquals(mylist, checker.validateSize(errorUser));
     }
 
     @Test
-    public void shouldReturnEmailAdress() {
-        String expected = user.getEmailAdress();
-        String actual = "user@usermail.com";
-        assertEquals(expected, actual);
+    public void shouldNotAllowAnInvalidLengthName() throws IllegalAccessException {
+        String data = "na";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder("001-0001").password("lo").name(data).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        List<String> mylist = new ArrayList<String>(Arrays.asList("Invalid size"));
+        assertEquals(mylist, checker.validateSize(user));
     }
 
-    @Test
-    public void shouldReturnPhoneNumber() {
-        String expected = user.getPhoneNumber();
-        String actual = "6038200";
-        assertEquals(expected, actual);
-    }
+
 
 //    @Test
-//    public void shouldReturnHashedPassword() {
-//        String expected = user.getHashPassword();
-//        String actual = "shouldbeahash";
+//    public void shouldReturnUserName() {
+//        User f = mock(User.class);
+//        User.Builder b = newBuilderMock();
+//        when(b.build()).thenReturn(f);
+//        when(f.getName()).thenReturn(null);
+//        String expected = f.getName();
+//        String actual = null;
+//        assertTrue(expected.);
+//        //assertEquals(expected, actual);
+    //}
+
+//    @Test
+//    public void shouldReturnEmailAdress() {
+//        String expected = user.getEmailAdress();
+//        String actual = "user@usermail.com";
+//        assertEquals(expected, actual);
+//    }
+//
+//    @Test
+//    public void shouldReturnPhoneNumber() {
+//        String expected = user.getPhoneNumber();
+//        String actual = "6038200";
 //        assertEquals(expected, actual);
 //    }
 
+    @Test
+    public void shouldReturnPhone() {
+        User user = mock(User.class);
+        User.Builder builder = newBuilderMock();
+        when(builder.build()).thenReturn(user);
+        //when(f.ask()).thenReturn("lo");
+        user.getHashPassword();
+    }
+
+    private User.Builder newBuilderMock() {
+        User.Builder b = mock(User.Builder.class);
+        when(b.password("lo")).thenReturn(b);
+        when(b.name("user")).thenReturn(b);
+        return b;
+    }
 }

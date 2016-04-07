@@ -6,13 +6,10 @@ import com.twu.biblioteca.models.User;
 import javax.crypto.*;
 import javax.crypto.interfaces.DHPublicKey;
 import javax.crypto.spec.DHParameterSpec;
-import javax.jws.soap.SOAPBinding;
 import java.math.BigInteger;
 import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
-
-import static sun.security.pkcs11.wrapper.Functions.toHexString;
 
 public class DiffieHellmannProtocol implements InputAsker{
 
@@ -164,7 +161,7 @@ public class DiffieHellmannProtocol implements InputAsker{
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
         String password = null;
-        User user = new User.Builder("001-0001", password).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        User user = new User.Builder("001-0001").password(password).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
         cleartext = Integer.toString(user.getHashPassword()).getBytes();
         System.out.println(user.getHashPassword());
         ciphertext = bibliotecaCipher.doFinal(cleartext);
