@@ -18,7 +18,7 @@ public class DHKeyAgreement2 {
         String mode = "USE_SKIP_DH_PARAMS";
 
         //DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
-        //keyAgree.run(mode);
+        //keyAgree.handlePassword(mode);
         for (User user : UserList.VALUES) {
             user.getHashPassword();
         }

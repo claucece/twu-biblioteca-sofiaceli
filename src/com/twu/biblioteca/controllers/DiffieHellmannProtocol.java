@@ -66,12 +66,12 @@ public class DiffieHellmannProtocol {
     private static final BigInteger skip1024Base = BigInteger.valueOf(2);
 
 
-    public byte[] generateUserKeyPair(int hashPass) throws Exception {
+    public byte[] generateUserKeyPair(String hashPass, String choice) throws Exception {
         System.out.println("USER: Generate DH keypair ...");
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
-        return initializeUserAgreement(userKpair, hashPass);
+        return initializeUserAgreement(userKpair, hashPass, choice);
         //return userKpair;
     }
 
@@ -85,11 +85,11 @@ public class DiffieHellmannProtocol {
         return bibliotecaKpair;
     }
 
-    public byte[] initializeUserAgreement(KeyPair userKeys, int hashPass) throws Exception {
+    public byte[] initializeUserAgreement(KeyPair userKeys, String hashPass, String choice) throws Exception {
         System.out.println("USER: Initialization ...");
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
-        return userEncondesAndSendsToBiblioteca(userKeys, hashPass);
+        return userEncondesAndSendsToBiblioteca(userKeys, hashPass, choice);
         //return userKeyAgree;
     }
 
@@ -101,9 +101,9 @@ public class DiffieHellmannProtocol {
         return bibliotecaKeyAgree;
     }
 
-    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, int hashPass) throws Exception {
+    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, String hashPass, String choice) throws Exception {
         byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
-        return instantiatesUserPubKey(userPubKeyEnc, hashPass);
+        return instantiatesUserPubKey(userPubKeyEnc, hashPass, choice);
         //return userPubKeyEnc;
     }
 
@@ -113,7 +113,7 @@ public class DiffieHellmannProtocol {
         return bibliotecaPubKeyEnc;
     }
 
-    public byte[] instantiatesUserPubKey(byte[] userPubKeyEnc, int hashPass) throws Exception {
+    public byte[] instantiatesUserPubKey(byte[] userPubKeyEnc, String hashPass, String choice) throws Exception {
         KeyFactory bibliotecaKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(userPubKeyEnc);
         PublicKey userPubKey = bibliotecaKeyFac.generatePublic(x509KeySpec);
@@ -122,10 +122,13 @@ public class DiffieHellmannProtocol {
         SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
         SecretKey userDesKey = userKeyAgree.generateSecret("DES");
         byte[] encryptedPass = bibliotecaEncryptsUsingDES(bibliotecaDesKey, hashPass);
-        userDecryptsUsingDES(userDesKey);
-        //System.out.println(toHexString(generateSecretUserKey()));
-        //System.out.println(toHexString(generateSecretBibliotecaKey()));
-        return encryptedPass;
+        byte[] decryptedPass = userDecryptsUsingDES(userDesKey, encryptedPass);
+        if (choice.equals("Encrypt")) {
+            return encryptedPass;
+        } else if (choice.equals("Decrypt")) {
+            return decryptedPass;
+        }
+        return null;
     }
 
     public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws Exception {
@@ -159,15 +162,15 @@ public class DiffieHellmannProtocol {
         return bobSharedSecret;
     }
 
-    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey, int hashPass) throws Exception {
+    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey, String hashPass) throws Exception {
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
-            cleartext = Integer.toString(hashPass).getBytes();
+            cleartext = hashPass.getBytes("UTF-8");
             ciphertext = bibliotecaCipher.doFinal(cleartext);
             return ciphertext;
     }
 
-    public Cipher userDecryptsUsingDES(SecretKey userSecretKey) throws Exception {
+    public byte[] userDecryptsUsingDES(SecretKey userSecretKey, byte[] ciphertext) throws Exception {
         Cipher userCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         userCipher.init(Cipher.DECRYPT_MODE, userSecretKey);
         byte[] recovered = userCipher.doFinal(ciphertext);
@@ -176,11 +179,11 @@ public class DiffieHellmannProtocol {
                     "different from cleartext");
         System.out.println("DES in ECB mode recovered text is " +
                 "same as cleartext");
-        return userCipher;
+        return recovered;
     }
 
-    public byte[] run(String mode, int hashPass) throws Exception {
-        return generateUserKeyPair(hashPass);
+    public byte[] handlePassword(String mode, String hashPass, String choice) throws Exception {
+        return generateUserKeyPair(hashPass, choice);
     }
 
 }

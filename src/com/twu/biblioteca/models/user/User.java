@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class User {
 
+    private DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
+
     @Format (message = "Should have this format: '000-0000'")
     public final String libraryNumber;
 
@@ -82,9 +84,16 @@ public class User {
         return libraryNumber;
     }
 
+    public int getPassword() {
+        return hashPassword.hashCode();
+    }
+
     public byte[] getHashPassword() throws Exception {
-        DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
-        return keyAgree.run("USE_SKIP_DH_PARAMS", hashCode());
+        return keyAgree.handlePassword("USE_SKIP_DH_PARAMS", hashPassword, "Encrypt");
+    }
+
+    public byte[] getClearPassword() throws Exception {
+        return keyAgree.handlePassword("USE_SKIP_DH_PARAMS", hashPassword, "Decrypt");
     }
 
     public String getName() {
