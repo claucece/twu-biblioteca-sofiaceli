@@ -17,13 +17,13 @@ public class MenuTest {
         menu = new Menu();
     }
 
-//    @Test
-//    public void shouldPrintMenuItems() {
-//        System.setOut(new PrintStream(outContent));
-//        String actual = "--> List books   --> Quit   " +
-//                "\n";
-//        assertEquals(menu.toLineColumn(), actual);
-//    }
+    @Test
+    public void shouldPrintMenuItems() {
+        System.setOut(new PrintStream(outContent));
+        String actual = "--> List books   --> List movies   --> Log in   --> Quit   " +
+                "\n";
+        assertEquals(menu.toLineColumn(), actual);
+    }
 
 }
 

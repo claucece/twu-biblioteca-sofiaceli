@@ -1,9 +1,11 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
-import com.twu.biblioteca.models.user.User;
 
-import javax.crypto.*;
+import javax.crypto.Cipher;
+import javax.crypto.KeyAgreement;
+import javax.crypto.SecretKey;
+import javax.crypto.ShortBufferException;
 import javax.crypto.interfaces.DHPublicKey;
 import javax.crypto.spec.DHParameterSpec;
 import java.math.BigInteger;
@@ -66,16 +68,16 @@ public class DiffieHellmannProtocol implements InputAsker{
     private static final BigInteger skip1024Base = BigInteger.valueOf(2);
 
 
-    public KeyPair generateUserKeyPair() throws Exception {
-        System.out.println("ALICE: Generate DH keypair ...");
+    public KeyPair generateUserKeyPair(int hashPass) throws Exception {
+        System.out.println("USER: Generate DH keypair ...");
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
-        initializeUserAgreement(userKpair);
+        initializeUserAgreement(userKpair, hashPass);
         return userKpair;
     }
 
-    public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+    public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
         dhSkipParamSpec1 = ((DHPublicKey) userPubKey).getParams();
         System.out.println("BIBLIOTECA: Generate DH keypair ...");
         KeyPairGenerator bibliotecaKpairGen = KeyPairGenerator.getInstance("DH");
@@ -85,15 +87,15 @@ public class DiffieHellmannProtocol implements InputAsker{
         return bibliotecaKpair;
     }
 
-    public KeyAgreement initializeUserAgreement(KeyPair userKeys) throws Exception {
+    public KeyAgreement initializeUserAgreement(KeyPair userKeys, int hashPass) throws Exception {
         System.out.println("USER: Initialization ...");
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
-        userEncondesAndSendsToBiblioteca(userKeys);
+        userEncondesAndSendsToBiblioteca(userKeys, hashPass);
         return userKeyAgree;
     }
 
-    public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
+    public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
         System.out.println("BIBLIOTECA: Initialization ...");
         bibliotecaKeyAgree = KeyAgreement.getInstance("DH");
         bibliotecaKeyAgree.init(bibliotecaKeys.getPrivate());
@@ -101,19 +103,19 @@ public class DiffieHellmannProtocol implements InputAsker{
         return bibliotecaKeyAgree;
     }
 
-    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys) throws Exception {
+    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, int hashPass) throws Exception {
         byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
-        instantiatesUserPubKey(userPubKeyEnc);
+        instantiatesUserPubKey(userPubKeyEnc, hashPass);
         return userPubKeyEnc;
     }
 
-    public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+    public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws Exception {
         byte[] bibliotecaPubKeyEnc = bibliotecaKeys.getPublic().getEncoded();
         instantiatesBibliotecaPubKey(bibliotecaPubKeyEnc);
         return bibliotecaPubKeyEnc;
     }
 
-    public PublicKey instantiatesUserPubKey(byte[] userPubKeyEnc) throws Exception {
+    public SecretKey instantiatesUserPubKey(byte[] userPubKeyEnc, int hashPass) throws Exception {
         KeyFactory bibliotecaKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(userPubKeyEnc);
         PublicKey userPubKey = bibliotecaKeyFac.generatePublic(x509KeySpec);
@@ -121,18 +123,20 @@ public class DiffieHellmannProtocol implements InputAsker{
         executePhase1OnBiblioteca(userPubKey);
         SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
         SecretKey userDesKey = userKeyAgree.generateSecret("DES");
-        System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey));
-        System.out.println(userDecryptsUsingDES(userDesKey));
+        System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey, hashPass));
+        userDecryptsUsingDES(userDesKey);
         //System.out.println(toHexString(generateSecretUserKey()));
         //System.out.println(toHexString(generateSecretBibliotecaKey()));
-        return userPubKey;
+        return bibliotecaDesKey;
     }
 
-    public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeySpecException, InvalidKeyException, ShortBufferException {
+    public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws Exception {
         KeyFactory userKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(bibliotecaPubKeyEnc);
         PublicKey bibliotecaPubKey = userKeyFac.generatePublic(x509KeySpec);
         executePhase1OnUser(bibliotecaPubKey);
+        //SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
+        //System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey));
         return bibliotecaPubKey;
     }
 
@@ -157,15 +161,12 @@ public class DiffieHellmannProtocol implements InputAsker{
         return bobSharedSecret;
     }
 
-    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
+    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey, int hashPass) throws Exception {
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
-        String password = null;
-        User user = new User.Builder().libraryNumber("001-0001").password(password).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
-        cleartext = Integer.toString(user.getHashPassword()).getBytes();
-        System.out.println(user.getHashPassword());
-        ciphertext = bibliotecaCipher.doFinal(cleartext);
-        return ciphertext;
+            cleartext = Integer.toString(hashPass).getBytes();
+            ciphertext = bibliotecaCipher.doFinal(cleartext);
+            return ciphertext;
     }
 
     public Cipher userDecryptsUsingDES(SecretKey userSecretKey) throws Exception {
@@ -180,8 +181,8 @@ public class DiffieHellmannProtocol implements InputAsker{
         return userCipher;
     }
 
-    public void run(String mode) throws Exception {
-        generateUserKeyPair();
+    public KeyPair run(String mode, int hashPass) throws Exception {
+        return generateUserKeyPair(hashPass);
     }
 
     @Override

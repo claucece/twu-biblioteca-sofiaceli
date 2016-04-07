@@ -1,9 +1,7 @@
 package com.twu.biblioteca.models;
 
-import javax.crypto.spec.*;
-
-import com.twu.biblioteca.controllers.DiffieHellmannProtocol;
-import com.twu.biblioteca.helpers.InputAsker;
+import com.twu.biblioteca.models.user.User;
+import com.twu.biblioteca.models.user.UserList;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -19,8 +17,13 @@ public class DHKeyAgreement2 {
 
         String mode = "USE_SKIP_DH_PARAMS";
 
-        DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
-        keyAgree.run(mode);
+        //DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
+        //keyAgree.run(mode);
+        for (User user : UserList.VALUES) {
+            user.getHashPassword();
+        }
+        //User user = new User.Builder().libraryNumber("001-0001").password("lo").name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
+        //user.getHashPassword();
 
 
     }

@@ -1,8 +1,10 @@
 package com.twu.biblioteca.models.user;
 
 import com.twu.biblioteca.anotations.*;
+import com.twu.biblioteca.controllers.DiffieHellmannProtocol;
 
 import java.io.PrintStream;
+import java.security.KeyPair;
 import java.util.Scanner;
 
 
@@ -11,7 +13,7 @@ public class User {
     @Format (message = "Should have this format: '000-0000'")
     public final String libraryNumber;
 
-    public String hashPassword;
+    private final String hashPassword;
 
     @NotNull (message = "Could not be assigned null")
     @Size(message = "Invalid size")
@@ -28,7 +30,7 @@ public class User {
 
     public static String ask() {
         out.println("Please, enter a new password:");
-        return scanner.toString().toLowerCase();
+        return scanner.nextLine().toLowerCase();
     }
 
     public static class Builder {
@@ -44,7 +46,7 @@ public class User {
         }
 
         public Builder password(String value) {
-            hashPassword = ask();
+            hashPassword = value;
             return this;
         }
 
@@ -81,8 +83,9 @@ public class User {
         return libraryNumber;
     }
 
-    public int getHashPassword() {
-        return hashPassword.hashCode();
+    public KeyPair getHashPassword() throws Exception {
+        DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
+        return keyAgree.run("USE_SKIP_DH_PARAMS", hashCode());
     }
 
     public String getName() {

@@ -23,8 +23,9 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> List movies  ";
-        String option3 = "--> Quit  ";
-        column.addLine(option1, option2, option3);
+        String option3 = "--> Log in  ";
+        String option4 = "--> Quit  ";
+        column.addLine(option1, option2, option3, option4);
         String toMenu = column.toString();
         System.out.println(toMenu);
         return toMenu;
@@ -44,6 +45,7 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
             } else if (input.equals("list movies")) {
                 printSeparator();
                 menuCatalogue.toLineColumn(movieInventory);
+            } else if (input.equals("log in")) {
             } else if (input.equals("quit")) {
                 return exit();
             } else {

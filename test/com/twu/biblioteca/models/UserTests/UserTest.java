@@ -5,7 +5,6 @@ import com.twu.biblioteca.models.user.User;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +21,6 @@ public class UserTest {
 
     @Before
     public void setUp() {
-        System.setIn(new ByteArrayInputStream(data.getBytes()));
         user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
         errorUser = new User.Builder().libraryNumber("001001").password(data).name("u").emailAdress("userusermail.com").phoneNumber("60200").build();
         checker = new ValidationChecker();
@@ -41,7 +39,6 @@ public class UserTest {
 
     @Test
     public void shouldNotAllowAnInvalidLengthName() throws IllegalAccessException {
-        System.setIn(new ByteArrayInputStream(secondData.getBytes()));
         List<String> mylist = new ArrayList<String>(Arrays.asList("Invalid size"));
         assertEquals(mylist, checker.validateSize(errorUser));
     }
