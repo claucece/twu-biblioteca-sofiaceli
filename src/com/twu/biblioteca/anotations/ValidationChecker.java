@@ -77,4 +77,22 @@ public class ValidationChecker {
         }
         return errors;
     }
+
+    public List<String> validatePhone(Object obj) throws IllegalAccessException {
+        List<String> errors = new ArrayList<String>();
+        Field[] fields = obj.getClass().getFields();
+        for (int i = 0; i < fields.length; i++) {
+            Phone annotations = fields[i].getAnnotation(Phone.class);
+            if (annotations != null) {
+                try {
+                    if (!(fields[i].get(obj).toString().matches("/d{3}-d{3}/"))) {
+                        errors.add((annotations).message());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return errors;
+    }
 }

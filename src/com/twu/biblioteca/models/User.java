@@ -1,9 +1,6 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.anotations.Email;
-import com.twu.biblioteca.anotations.Format;
-import com.twu.biblioteca.anotations.NotNull;
-import com.twu.biblioteca.anotations.Size;
+import com.twu.biblioteca.anotations.*;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -12,19 +9,20 @@ import java.util.Scanner;
 public class User {
 
     @Format (message = "Should have this format: '000-0000'")
-    public String libraryNumber;
+    public final String libraryNumber;
 
     @NotNull (message = "Password should have a least one character")
     public String hashPassword;
 
     @NotNull (message = "Could not be assigned null")
     @Size(message = "Invalid size")
-    public String name;
+    public final String name;
 
     @Email(message = "Should have this format: 'name@servicemail.com'")
     public final String emailAdress;
 
-    private final String phoneNumber;
+    @Phone(message = "Should have this format: '000-000'")
+    public final String phoneNumber;
 
     static Scanner scanner = new Scanner(System.in);
     static PrintStream out = new PrintStream(System.out);

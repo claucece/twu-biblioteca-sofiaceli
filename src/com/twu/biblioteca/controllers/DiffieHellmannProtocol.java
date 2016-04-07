@@ -161,7 +161,7 @@ public class DiffieHellmannProtocol implements InputAsker{
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
         String password = null;
-        User user = new User.Builder().libraryNumber("001-0001").password(password).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        User user = new User.Builder().libraryNumber("001-0001").password(password).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
         cleartext = Integer.toString(user.getHashPassword()).getBytes();
         System.out.println(user.getHashPassword());
         ciphertext = bibliotecaCipher.doFinal(cleartext);
