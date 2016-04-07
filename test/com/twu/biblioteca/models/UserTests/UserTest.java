@@ -17,7 +17,6 @@ public class UserTest {
     private User user;
     private User errorUser;
     String data = "password";
-    String secondData = "password";
 
     @Before
     public void setUp() {

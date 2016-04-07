@@ -1,7 +1,5 @@
 package com.twu.biblioteca.controllers;
 
-import com.twu.biblioteca.helpers.InputAsker;
-
 import javax.crypto.Cipher;
 import javax.crypto.KeyAgreement;
 import javax.crypto.SecretKey;
@@ -13,7 +11,7 @@ import java.security.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
-public class DiffieHellmannProtocol implements InputAsker{
+public class DiffieHellmannProtocol {
 
     String mode;
     int aliceLen;
@@ -68,13 +66,13 @@ public class DiffieHellmannProtocol implements InputAsker{
     private static final BigInteger skip1024Base = BigInteger.valueOf(2);
 
 
-    public KeyPair generateUserKeyPair(int hashPass) throws Exception {
+    public byte[] generateUserKeyPair(int hashPass) throws Exception {
         System.out.println("USER: Generate DH keypair ...");
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
-        initializeUserAgreement(userKpair, hashPass);
-        return userKpair;
+        return initializeUserAgreement(userKpair, hashPass);
+        //return userKpair;
     }
 
     public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
@@ -87,12 +85,12 @@ public class DiffieHellmannProtocol implements InputAsker{
         return bibliotecaKpair;
     }
 
-    public KeyAgreement initializeUserAgreement(KeyPair userKeys, int hashPass) throws Exception {
+    public byte[] initializeUserAgreement(KeyPair userKeys, int hashPass) throws Exception {
         System.out.println("USER: Initialization ...");
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
-        userEncondesAndSendsToBiblioteca(userKeys, hashPass);
-        return userKeyAgree;
+        return userEncondesAndSendsToBiblioteca(userKeys, hashPass);
+        //return userKeyAgree;
     }
 
     public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
@@ -105,8 +103,8 @@ public class DiffieHellmannProtocol implements InputAsker{
 
     public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, int hashPass) throws Exception {
         byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
-        instantiatesUserPubKey(userPubKeyEnc, hashPass);
-        return userPubKeyEnc;
+        return instantiatesUserPubKey(userPubKeyEnc, hashPass);
+        //return userPubKeyEnc;
     }
 
     public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws Exception {
@@ -115,7 +113,7 @@ public class DiffieHellmannProtocol implements InputAsker{
         return bibliotecaPubKeyEnc;
     }
 
-    public SecretKey instantiatesUserPubKey(byte[] userPubKeyEnc, int hashPass) throws Exception {
+    public byte[] instantiatesUserPubKey(byte[] userPubKeyEnc, int hashPass) throws Exception {
         KeyFactory bibliotecaKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(userPubKeyEnc);
         PublicKey userPubKey = bibliotecaKeyFac.generatePublic(x509KeySpec);
@@ -123,11 +121,11 @@ public class DiffieHellmannProtocol implements InputAsker{
         executePhase1OnBiblioteca(userPubKey);
         SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
         SecretKey userDesKey = userKeyAgree.generateSecret("DES");
-        System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey, hashPass));
+        byte[] encryptedPass = bibliotecaEncryptsUsingDES(bibliotecaDesKey, hashPass);
         userDecryptsUsingDES(userDesKey);
         //System.out.println(toHexString(generateSecretUserKey()));
         //System.out.println(toHexString(generateSecretBibliotecaKey()));
-        return bibliotecaDesKey;
+        return encryptedPass;
     }
 
     public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws Exception {
@@ -181,13 +179,8 @@ public class DiffieHellmannProtocol implements InputAsker{
         return userCipher;
     }
 
-    public KeyPair run(String mode, int hashPass) throws Exception {
+    public byte[] run(String mode, int hashPass) throws Exception {
         return generateUserKeyPair(hashPass);
     }
 
-    @Override
-    public String ask() {
-        out.println("Please, enter a new password");
-        return scanner.nextLine().toLowerCase();
-    }
 }

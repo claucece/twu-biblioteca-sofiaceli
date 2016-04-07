@@ -4,7 +4,6 @@ import com.twu.biblioteca.anotations.*;
 import com.twu.biblioteca.controllers.DiffieHellmannProtocol;
 
 import java.io.PrintStream;
-import java.security.KeyPair;
 import java.util.Scanner;
 
 
@@ -83,7 +82,7 @@ public class User {
         return libraryNumber;
     }
 
-    public KeyPair getHashPassword() throws Exception {
+    public byte[] getHashPassword() throws Exception {
         DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
         return keyAgree.run("USE_SKIP_DH_PARAMS", hashCode());
     }
