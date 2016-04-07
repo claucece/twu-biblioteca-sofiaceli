@@ -34,29 +34,38 @@ public class UserTest {
 
     @Test
     public void shouldHaveAValidLengthName() throws IllegalAccessException {
-        String data = "user";
+        String data = "password";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        errorUser = new User.Builder("001-0001").password("lo").name(data).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        errorUser = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
         List<String> mylist = new ArrayList<String>();
         assertEquals(mylist, checker.validateSize(errorUser));
     }
 
     @Test
     public void shouldNotAllowAnInvalidLengthName() throws IllegalAccessException {
-        String data = "na";
+        String data = "password";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        user = new User.Builder("001-0001").password("lo").name(data).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("us").emailAdress("user@usermail.com").phoneNumber("6038200").build();
         List<String> mylist = new ArrayList<String>(Arrays.asList("Invalid size"));
         assertEquals(mylist, checker.validateSize(user));
     }
 
     @Test
     public void shouldBeNotNull() throws IllegalAccessException {
-        String data = "user";
+        String data = "password";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        user = new User.Builder("001-0001").password("lo").name(null).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        user = new User.Builder().libraryNumber("001-0001").password(data).name(null).emailAdress("user@usermail.com").phoneNumber("6038200").build();
         List<String> mylist = new ArrayList<String>(Arrays.asList("Could not be assigned null"));
         assertEquals(mylist, checker.validateNotNull(user));
+    }
+
+    @Test
+    public void shouldLibraryNumberHaveAProperFormat() throws IllegalAccessException {
+        String data = "user";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001000").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        List<String> mylist = new ArrayList<String>(Arrays.asList("Should have this format: '000-0000'"));
+        assertEquals(mylist, checker.validateFormat(user));
     }
 
 //    @Test

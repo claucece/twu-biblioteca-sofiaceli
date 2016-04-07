@@ -1,8 +1,6 @@
 package com.twu.biblioteca.models;
 
-//import com.sun.istack.internal.NotNull;
-
-//import com.sun.istack.internal.NotNull;
+import com.twu.biblioteca.anotations.Format;
 import com.twu.biblioteca.anotations.NotNull;
 import com.twu.biblioteca.anotations.Size;
 
@@ -12,8 +10,11 @@ import java.util.Scanner;
 
 public class User {
 
-    private final String libraryNumber;
-    private String hashPassword;
+    @Format(message = "Should have this format: '000-0000'")
+    public String libraryNumber;
+
+    @NotNull(message = "Password should have a least one character")
+    public String hashPassword;
 
     @NotNull(message = "Could not be assigned null")
     @Size(message = "Invalid size")
@@ -37,8 +38,13 @@ public class User {
         private String emailAdress = "user@usermail.com";
         private String phoneNumber = "6038200";
 
-        public Builder (String libraryNumber) {
-            this.libraryNumber = libraryNumber;
+        //public Builder (String libraryNumber) {
+        //    this.libraryNumber = libraryNumber;
+        //}
+
+        public Builder libraryNumber(String value) {
+            libraryNumber = value;
+            return this;
         }
 
         public Builder password(String value) {
