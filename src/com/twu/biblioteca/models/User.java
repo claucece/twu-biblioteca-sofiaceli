@@ -29,7 +29,7 @@ public class User {
 
     public static String ask() {
         out.println("Please, enter a new password:");
-        return scanner.nextLine().toLowerCase();
+        return scanner.toString().toLowerCase();
     }
 
     public static class Builder {
