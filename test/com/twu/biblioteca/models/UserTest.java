@@ -68,6 +68,15 @@ public class UserTest {
         assertEquals(mylist, checker.validateFormat(user));
     }
 
+    @Test
+    public void shouldEmailHaveAProperFormat() throws IllegalAccessException {
+        String data = "user";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("userusermail.com").phoneNumber("6038200").build();
+        List<String> mylist = new ArrayList<String>(Arrays.asList("Should have this format: 'name@servicemail.com'"));
+        assertEquals(mylist, checker.validateEmail(user));
+    }
+
 //    @Test
 //    public void shouldReturnUserName() {
 //        User f = mock(User.class);

@@ -59,4 +59,22 @@ public class ValidationChecker {
         }
         return errors;
     }
+
+    public List<String> validateEmail(Object obj) throws IllegalAccessException {
+        List<String> errors = new ArrayList<String>();
+        Field[] fields = obj.getClass().getFields();
+        for (int i = 0; i < fields.length; i++) {
+            Email annotations = fields[i].getAnnotation(Email.class);
+            if (annotations != null) {
+                try {
+                    if (!(fields[i].get(obj).toString().matches("\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\b"))) {
+                        errors.add((annotations).message());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return errors;
+    }
 }
