@@ -10,8 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class UserTest {
 
@@ -26,10 +24,10 @@ public class UserTest {
 
     @Test
     public void shouldReturnName() {
-        User user = mock(User.class);
-        User.Builder builder = newBuilderMock();
-        when(user.getName()).thenReturn("user");
-        assertEquals(user.getName(), "user");
+        String data = "password";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
+        assertEquals("user", user.getName());
     }
 
     @Test
@@ -60,12 +58,28 @@ public class UserTest {
     }
 
     @Test
+    public void shouldReturnLibraryNumber() {
+        String data = "password";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
+        assertEquals("001-0001", user.getLibraryNumber());
+    }
+
+    @Test
     public void shouldLibraryNumberHaveAProperFormat() throws IllegalAccessException {
         String data = "user";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
         user = new User.Builder().libraryNumber("001000").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
         List<String> mylist = new ArrayList<String>(Arrays.asList("Should have this format: '000-0000'"));
         assertEquals(mylist, checker.validateFormat(user));
+    }
+
+    @Test
+    public void shouldReturnEmail() {
+        String data = "password";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
+        assertEquals("user@usermail.com", user.getEmailAdress());
     }
 
     @Test
@@ -78,6 +92,14 @@ public class UserTest {
     }
 
     @Test
+    public void shouldPhoneNumber() {
+        String data = "password";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder().libraryNumber("001-0001").password(data).name("user").emailAdress("user@usermail.com").phoneNumber("603-200").build();
+        assertEquals("603-200", user.getPhoneNumber());
+    }
+
+    @Test
     public void shouldPhoneHaveAProperFormat() throws IllegalAccessException {
         String data = "user";
         System.setIn(new ByteArrayInputStream(data.getBytes()));
@@ -86,45 +108,4 @@ public class UserTest {
         assertEquals(mylist, checker.validatePhone(user));
     }
 
-//    @Test
-//    public void shouldReturnUserName() {
-//        User f = mock(User.class);
-//        User.Builder b = newBuilderMock();
-//        when(b.build()).thenReturn(f);
-//        when(f.getName()).thenReturn(null);
-//        String expected = f.getName();
-//        String actual = null;
-//        assertTrue(expected.);
-//        //assertEquals(expected, actual);
-    //}
-
-//    @Test
-//    public void shouldReturnEmailAdress() {
-//        String expected = user.getEmailAdress();
-//        String actual = "user@usermail.com";
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    public void shouldReturnPhoneNumber() {
-//        String expected = user.getPhoneNumber();
-//        String actual = "6038200";
-//        assertEquals(expected, actual);
-//    }
-
-    @Test
-    public void shouldReturnPhone() {
-        User user = mock(User.class);
-        User.Builder builder = newBuilderMock();
-        when(builder.build()).thenReturn(user);
-        //when(f.ask()).thenReturn("lo");
-        user.getHashPassword();
-    }
-
-    private User.Builder newBuilderMock() {
-        User.Builder b = mock(User.Builder.class);
-        when(b.password("lo")).thenReturn(b);
-        when(b.name("user")).thenReturn(b);
-        return b;
-    }
 }
