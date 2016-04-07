@@ -10,8 +10,8 @@ public class UserFinder {
     User user;
 
     public boolean findUser(String libraryNumber, String password) throws Exception {
-        System.out.println(libraryNumber);
-        System.out.println(password);
+        //System.out.println(libraryNumber);
+        //System.out.println(password);
         int hashCodePassword = password.hashCode();
         for (User user : UserList.VALUES) {
             if (libraryNumber.equals(user.getLibraryNumber()) && hashCodePassword == user.getPassword()) {

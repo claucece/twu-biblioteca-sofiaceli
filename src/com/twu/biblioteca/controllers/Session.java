@@ -8,13 +8,11 @@ public class Session implements InputAsker{
 
     public String newSession(InputAsker asker, InputAsker secondAsker) throws Exception {
         if (userFinder.findUser(asker.ask(), secondAsker.ask()) == true) {
-            //System.out.println("lo");
-            //System.out.println(userFinder.findUser(asker.ask(), secondAsker.ask()) == true);
             String session = "User authenticated. New session created.";
             return session;
         }
         String noSession = "User not authenticated. New session not created.";
-        return null;
+        return noSession;
     }
 
     @Override

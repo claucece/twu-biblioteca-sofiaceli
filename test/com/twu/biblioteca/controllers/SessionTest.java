@@ -23,11 +23,13 @@ public class SessionTest {
         assertEquals(session.newSession(secondAsker, asker), "User authenticated. New session created.");
     }
 
-//    @Test
-//    public void shouldNotCreateSessionIfUserParamsAreNotValid() throws Exception {
-//        session = new Session();
-//        InputAsker asker = mock(InputAsker.class);
-//        when(asker.ask()).thenReturn("001-0006");
-//        assertEquals(session.newSession(asker), "User not authenticated. New session not created.");
-//    }
+    @Test
+    public void shouldNotCreateSessionIfUserParamsAreNotValid() throws Exception {
+        InputAsker asker = mock(InputAsker.class);
+        InputAsker secondAsker = mock(InputAsker.class);
+        session = new Session();
+        when(asker.ask()).thenReturn("forlooplop");
+        when(secondAsker.ask()).thenReturn("001-0001");
+        assertEquals(session.newSession(asker, secondAsker), "User not authenticated. New session not created.");
+    }
 }
