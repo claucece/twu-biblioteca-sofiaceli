@@ -1,10 +1,18 @@
 package com.twu.biblioteca.controllers;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
-/**
- * Created by sceli on 4/7/16.
- */
+import static junit.framework.TestCase.assertTrue;
+
 public class UserFinderTest {
+
+    @Test
+    public void shouldBeTrueIfUserNameMatches() {
+        String name = "001-0001";
+        UserFinder userFinder = new UserFinder();
+        boolean matcher = userFinder.findUser(name);
+        assertTrue(matcher);
+    }
+
 
 }
