@@ -2,7 +2,7 @@ package com.twu.biblioteca.models.book;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.ListOfElements;
+import com.twu.biblioteca.models.ElementsList;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class BookInventory extends Inventory {
 
     public BookInventory() {
         books = new LinkedList<Element>();
-        for (Element element : ListOfElements.VALUES) {
+        for (Element element : ElementsList.VALUES) {
             if (element.getClass() == Book.class) {
                 books.add(element);
             }
@@ -43,7 +43,7 @@ public class BookInventory extends Inventory {
 
     @Override
     public List<Element> addElement() {
-        for (Element book : ListOfElements.VALUES) {
+        for (Element book : ElementsList.VALUES) {
             if (book.getClass() == Book.class) {
                 books.add(book);
             }

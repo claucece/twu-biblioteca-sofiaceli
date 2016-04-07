@@ -20,7 +20,7 @@ public abstract class Inventory implements ErrorPrinter {
     }
 
     public boolean isListEqualToInventory() {
-        return Collections.disjoint(getList(), ListOfElements.VALUES) && !(getList().isEmpty());
+        return Collections.disjoint(getList(), ElementsList.VALUES) && !(getList().isEmpty());
     }
 
     public List<Element> returnInventoryOfElements() {

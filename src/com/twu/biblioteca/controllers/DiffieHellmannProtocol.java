@@ -1,7 +1,7 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
-import com.twu.biblioteca.models.User;
+import com.twu.biblioteca.models.user.User;
 
 import javax.crypto.*;
 import javax.crypto.interfaces.DHPublicKey;

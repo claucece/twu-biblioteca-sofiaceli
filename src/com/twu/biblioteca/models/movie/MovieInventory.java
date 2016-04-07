@@ -2,7 +2,7 @@ package com.twu.biblioteca.models.movie;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.ListOfElements;
+import com.twu.biblioteca.models.ElementsList;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -15,7 +15,7 @@ public class MovieInventory extends Inventory {
 
     public MovieInventory() {
         movies = new LinkedList<Element>();
-        for (Element element : ListOfElements.VALUES) {
+        for (Element element : ElementsList.VALUES) {
             if (element.getClass() == Movie.class) {
                 movies.add(element);
             }
@@ -33,7 +33,7 @@ public class MovieInventory extends Inventory {
     }
 
     public boolean isListEqualToInventory() {
-        return Collections.disjoint(getList(), ListOfElements.VALUES) && !(getList().isEmpty());
+        return Collections.disjoint(getList(), ElementsList.VALUES) && !(getList().isEmpty());
     }
 
     @Override
@@ -48,7 +48,7 @@ public class MovieInventory extends Inventory {
 
     @Override
     public List<Element> addElement() {
-        for (Element movie : ListOfElements.VALUES) {
+        for (Element movie : ElementsList.VALUES) {
             if (movie.getClass() == Movie.class) {
                 movies.add(movie);
             }

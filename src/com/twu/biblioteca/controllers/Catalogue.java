@@ -4,7 +4,7 @@ import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.UserCatalogueHelper;
 import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.ListOfElements;
+import com.twu.biblioteca.models.ElementsList;
 
 public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
@@ -55,7 +55,7 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     }
 
     public boolean isAReturn(String title, Inventory inventory) {
-        for (Element element : ListOfElements.VALUES) {
+        for (Element element : ElementsList.VALUES) {
             String elementToReturn = element.getSpec().getTitle();
             if (elementToReturn.matches(title.toLowerCase())) {
                 addToInventory(element, inventory);
