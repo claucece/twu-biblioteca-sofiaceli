@@ -2,6 +2,8 @@ package com.twu.biblioteca.models;
 
 //import com.sun.istack.internal.NotNull;
 
+//import com.sun.istack.internal.NotNull;
+import com.twu.biblioteca.anotations.NotNull;
 import com.twu.biblioteca.anotations.Size;
 
 import java.io.PrintStream;
@@ -13,6 +15,7 @@ public class User {
     private final String libraryNumber;
     private String hashPassword;
 
+    @NotNull(message = "Could not be assigned null")
     @Size(message = "Invalid size")
     public String name;
 
@@ -39,7 +42,6 @@ public class User {
         }
 
         public Builder password(String value) {
-            //hashPassword = value;
             hashPassword = ask();
             return this;
         }

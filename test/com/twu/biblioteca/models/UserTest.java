@@ -1,6 +1,6 @@
 package com.twu.biblioteca.models;
 
-import com.twu.biblioteca.anotations.SizeChecker;
+import com.twu.biblioteca.anotations.ValidationChecker;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,13 +15,13 @@ import static org.mockito.Mockito.when;
 
 public class UserTest {
 
-    private static SizeChecker checker;
+    private static ValidationChecker checker;
     private User user;
     private User errorUser;
 
     @Before
     public void setUp() {
-        checker = new SizeChecker();
+        checker = new ValidationChecker();
     }
 
     @Test
@@ -50,7 +50,14 @@ public class UserTest {
         assertEquals(mylist, checker.validateSize(user));
     }
 
-
+    @Test
+    public void shouldBeNotNull() throws IllegalAccessException {
+        String data = "user";
+        System.setIn(new ByteArrayInputStream(data.getBytes()));
+        user = new User.Builder("001-0001").password("lo").name(null).emailAdress("user@usermail.com").phoneNumber("6038200").build();
+        List<String> mylist = new ArrayList<String>(Arrays.asList("Could not be assigned null"));
+        assertEquals(mylist, checker.validateNotNull(user));
+    }
 
 //    @Test
 //    public void shouldReturnUserName() {
