@@ -12,11 +12,13 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
     private MenuCatalogue menuCatalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
+    private Session session;
 
     public Menu() {
         menuCatalogue = new MenuCatalogue();
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
+        session = new Session();
     }
 
     public String toLineColumn() {
@@ -37,7 +39,24 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         return bye;
     }
 
-    public String defineOuput() {
+    public String defineTypeOfUser() throws Exception {
+        System.out.println("Please, enter the kind of user you are:");
+        System.out.println("1. Anonymous user      2.Log in");
+        String input = ask();
+        if (input.equals("log in")) {
+            printSeparator();
+            if (session.logIn() == true) {
+                toLineColumn();
+                defineOutput();
+            }
+        } else if (input.equals("anonymous user")) {
+            printSeparator();
+        }
+        printError();
+        return defineTypeOfUser();
+    }
+
+    public String defineOutput() throws Exception {
         String input = ask();
             if (input.equals("list books")) {
                 printSeparator();
@@ -45,19 +64,21 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
             } else if (input.equals("list movies")) {
                 printSeparator();
                 menuCatalogue.toLineColumn(movieInventory);
-            } else if (input.equals("log in")) {
+            //} else if (input.equals("log in")) {
+            //    printSeparator();
+            //    session.newSession();
             } else if (input.equals("quit")) {
                 return exit();
             } else {
                 printError();
             }
         toLineColumn();
-        return defineOuput();
+        return defineOutput();
     }
 
     @Override
     public String ask() {
-        out.println("Please, select a choice");
+        out.println("Please, select a choice:");
         return scanner.nextLine().toLowerCase();
     }
 

@@ -5,16 +5,17 @@ import com.twu.biblioteca.views.Menu;
 
 class BibliotecaLauncher {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Home home = new Home();
         home.printWelcomeMessage();
         System.out.println();
         home.printHomeLogo();
         System.out.println();
-        home.selectFromMenu();
+        //home.selectFromMenu();
         Menu menu = new Menu();
-        menu.toLineColumn();
-        menu.defineOuput();
+        //menu.toLineColumn();
+        menu.defineTypeOfUser();
+        //menu.toLineColumn();
     }
 
 }
