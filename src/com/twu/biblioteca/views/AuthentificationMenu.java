@@ -1,6 +1,7 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.controllers.Session;
+import com.twu.biblioteca.controllers.UserFinder;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
@@ -10,21 +11,23 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
     private Session session;
     private AuthetificatedUserMenu authenticatedUserMenu;
     private AnonymousUserMenu anonymousUserMenu;
+    //private UserFinder userFinder;
 
     public AuthentificationMenu() {
         session = new Session();
         authenticatedUserMenu = new AuthetificatedUserMenu();
         anonymousUserMenu = new AnonymousUserMenu();
+        //userFinder = new UserFinder();
     }
 
-    public String defineTypeOfUser() throws Exception {
+    public String defineTypeOfUser(UserFinder userFinder) throws Exception {
         String input = ask();
         if (input.equals("log in")) {
             printSeparator();
-            if (session.newSession() == true) {
+            if (session.newSession(userFinder) == true) {
                 printSeparator();
                 authenticatedUserMenu.printLoggedUserMenu();
-                authenticatedUserMenu.defineUserOutput();
+                authenticatedUserMenu.defineUserOutput(userFinder);
             }
         } else if (input.equals("anonymous user")) {
             printSeparator();
@@ -34,7 +37,7 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
             printError();
         }
         printSeparator();
-        return defineTypeOfUser();
+        return defineTypeOfUser(userFinder);
     }
 
     @Override

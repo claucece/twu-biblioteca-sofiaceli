@@ -5,17 +5,23 @@ import com.twu.biblioteca.models.user.UserList;
 
 public class UserFinder {
 
+    private User currentUser;
+
     public boolean findUser(String libraryNumber, String password) throws Exception {
         int hashCodePassword = password.hashCode();
         for (User user : UserList.VALUES) {
             if (libraryNumber.equals(user.getLibraryNumber()) && hashCodePassword == user.getPassword()) {
-                user = new User.Builder().libraryNumber(libraryNumber).password(user.getHashPassword().toString()).name(user.getName()).emailAdress(user.emailAdress).phoneNumber(user.getPhoneNumber()).build();
-                return user.isLogIn(true);
+                currentUser = new User.Builder().libraryNumber(libraryNumber).password(user.getHashPassword().toString()).name(user.getName()).emailAdress(user.emailAdress).phoneNumber(user.getPhoneNumber()).build();
+                return this.currentUser.isLogIn(true);
             } else {
-                return user.isLogIn(false);
+                return this.currentUser.isLogIn(false);
             }
         }
         return false;
+    }
+
+    public User getCurrentUser() {
+        return currentUser;
     }
 
 }

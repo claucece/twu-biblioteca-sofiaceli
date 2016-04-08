@@ -1,6 +1,7 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.controllers.Column;
+import com.twu.biblioteca.controllers.UserFinder;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
@@ -31,7 +32,7 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
         return toMenu;
     }
 
-    public String defineUserOutput() throws Exception {
+    public String defineUserOutput(UserFinder userFinder) throws Exception {
         String input = ask();
         if (input.equals("list books")) {
             printSeparator();
@@ -40,6 +41,7 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
             printSeparator();
             menuCatalogue.toLineColumn(movieInventory);
         } else if (input.equals("user info")) {
+            System.out.println(userFinder.getCurrentUser().getName());
             return logOut();
         } else if (input.equals("log out")) {
             return logOut();
@@ -47,7 +49,7 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
             printError();
         }
         printLoggedUserMenu();
-        return defineUserOutput();
+        return defineUserOutput(userFinder);
     }
 
     public String logOut() {

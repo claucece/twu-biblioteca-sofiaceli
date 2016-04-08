@@ -6,14 +6,13 @@ import com.twu.biblioteca.models.user.User;
 
 public class Session implements InputAsker{
 
-    UserFinder userFinder = new UserFinder();
     //maybe this will be gone
     private Inventory inventory;
     private String title;
     private Catalogue catalogue = new Catalogue(inventory);
     private User user;
 
-    public boolean newSession() throws Exception {
+    public boolean newSession(UserFinder userFinder) throws Exception {
         System.out.println("Please, enter your library Number:");
         String libraryNumberAsker = ask();
         System.out.println("Please, enter your password:");
