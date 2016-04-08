@@ -1,10 +1,14 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
+import com.twu.biblioteca.models.Inventory;
 
 public class Session implements InputAsker{
 
     UserFinder userFinder = new UserFinder();
+    private Inventory inventory;
+    private String title;
+    private Catalogue catalogue = new Catalogue(inventory);
 
     public String newSession() throws Exception {
         if (userFinder.findUser(ask(), ask()) == true) {
@@ -22,6 +26,15 @@ public class Session implements InputAsker{
             return true;
         }
         return false;
+    }
+
+    public String whoHasReserved() throws Exception {
+        if (logIn() == true) {
+            if (catalogue.isACheckout(title, inventory) == true) {
+                return userFinder.user.getName();
+            }
+        }
+        return null;
     }
 
     @Override
