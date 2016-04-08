@@ -1,16 +1,20 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
-import com.twu.biblioteca.models.Inventory;
-import com.twu.biblioteca.models.user.User;
 
 public class Session implements InputAsker{
 
-    //maybe this will be gone
-    private Inventory inventory;
-    private String title;
-    private Catalogue catalogue = new Catalogue(inventory);
-    private User user;
+    public boolean printSucessfullSession() {
+        String session = "User authenticated. New session created.";
+        System.out.println(session);
+        return true;
+    }
+
+    public boolean printUnSucessfullSession() {
+        String noSession = "User not authenticated. New session not created.";
+        System.out.println(noSession);
+        return false;
+    }
 
     public boolean newSession(UserFinder userFinder) throws Exception {
         System.out.println("Please, enter your library Number:");
@@ -18,31 +22,10 @@ public class Session implements InputAsker{
         System.out.println("Please, enter your password:");
         String passwordAsker = ask();
         if (userFinder.findUser(libraryNumberAsker, passwordAsker) == true) {
-            String session = "User authenticated. New session created.";
-            System.out.println(session);
-            return true;
+            return printSucessfullSession();
         }
-        String noSession = "User not authenticated. New session not created.";
-        System.out.println(noSession);
-        return false;
+        return printUnSucessfullSession();
     }
-
-//    public boolean logIn() throws Exception {
-//        if (newSession().equals("User authenticated. New session created.")) {
-//            user.isLogIn(true);
-//            return true;
-//        }
-//        return false;
-    //}
-
-//    public String whoHasReserved() throws Exception {
-//        if (logIn() == true) {
-//            if (catalogue.isACheckout(title, inventory) == true) {
-//                return userFinder.user.getName();
-//            }
-//        }
-//        return null;
-//    }
 
     @Override
     public String ask() {

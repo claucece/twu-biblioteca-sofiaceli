@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class ListOfBooksTest {
+public class ElementListTest {
 
     @Test
     public void shouldHaveExistanceOfBookElementInList() {
