@@ -171,8 +171,10 @@ public class DiffieHellmannProtocol {
         if (!java.util.Arrays.equals(cleartext, recovered))
             throw new Exception("DES in CBC mode recovered text is " +
                     "different from cleartext");
-        System.out.println("DES in ECB mode recovered text is " +
-                "same as cleartext");
+        System.out.println("Biblioteca uses Diffie-Hellman protocol with DES is CBC mode." +
+                "\nPublic and private keys, as well as an agreement with Biblioteca has been created." +
+                "\nThis ensures you a secure channel. " +
+                "\nCiphertext of your password now matches your password.");
         return recovered;
     }
 

@@ -34,8 +34,8 @@ public class Home implements Separator {
 
     @Override
     public String printSeparator() {
-        String breakLine = "===================================================";
+        String separator = color + breakLine + resetColor;
         System.out.println(color + breakLine + resetColor);
-        return breakLine;
+        return separator;
     }
 }

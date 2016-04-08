@@ -24,11 +24,11 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
 
     public String toLineColumn(Inventory inventory) {
         Column column = new Column();
-        System.out.println(returnCatalogue(inventory));
+        returnCatalogue(inventory);
         String color = ColorList.getColor("INVERT");
         String option1 = "--> Checkout " + inventory.getName();
         String option2 = "--> Return " + inventory.getName();
-        String option3 = "--> Return To Main Menu  ";
+        String option3 = "--> Return To Main AnonymousUserMenu  ";
         column.addLine(option1, option2, option3);
         String toBookMenu = column.toString();
         System.out.println(color + toBookMenu + resetColor);

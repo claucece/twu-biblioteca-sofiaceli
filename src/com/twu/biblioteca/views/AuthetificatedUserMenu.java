@@ -1,19 +1,22 @@
 package com.twu.biblioteca.views;
 
 import com.twu.biblioteca.controllers.Column;
-import com.twu.biblioteca.controllers.Session;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
+import com.twu.biblioteca.models.book.BookInventory;
+import com.twu.biblioteca.models.movie.MovieInventory;
 
-public class AuthetificationMenu implements ErrorPrinter, Separator, InputAsker {
+public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsker {
 
-    private Session session;
-    private Menu menu;
+    private MenuCatalogue menuCatalogue;
+    private BookInventory bookInventory;
+    private MovieInventory movieInventory;
 
-    public AuthetificationMenu() {
-        session = new Session();
-        menu = new Menu();
+    public AuthetificatedUserMenu() {
+        menuCatalogue = new MenuCatalogue();
+        bookInventory = new BookInventory();
+        movieInventory = new MovieInventory();
     }
 
     public String printLoggedUserMenu() throws Exception {
@@ -28,21 +31,29 @@ public class AuthetificationMenu implements ErrorPrinter, Separator, InputAsker 
         return toMenu;
     }
 
-    public String defineTypeOfUser() throws Exception {
+    public String defineUserOutput() throws Exception {
         String input = ask();
-        if (input.equals("log in")) {
+        if (input.equals("list books")) {
             printSeparator();
-            if (session.newSession() == true) {
-                printSeparator();
-                return printLoggedUserMenu();
-            }
-        } else if (input.equals("anonymous user")) {
+            menuCatalogue.toLineColumn(bookInventory);
+        } else if (input.equals("list movies")) {
             printSeparator();
-            menu.printUserMenu();
-            return menu.defineOutput();
+            menuCatalogue.toLineColumn(movieInventory);
+        } else if (input.equals("user info")) {
+            return logOut();
+        } else if (input.equals("log out")) {
+            return logOut();
+        } else {
+            printError();
         }
-        printError();
-        return defineTypeOfUser();
+        printLoggedUserMenu();
+        return defineUserOutput();
+    }
+
+    public String logOut() {
+        String bye = "You have been log out";
+        System.out.println(bye);
+        return bye;
     }
 
     @Override
@@ -61,8 +72,7 @@ public class AuthetificationMenu implements ErrorPrinter, Separator, InputAsker 
 
     @Override
     public String ask() {
-        out.println("Please, select a kind of user:");
-        out.println("1. Anonymous user      2.Log in");
+        out.println("Please, select a choice:");
         return scanner.nextLine().toLowerCase();
     }
 }

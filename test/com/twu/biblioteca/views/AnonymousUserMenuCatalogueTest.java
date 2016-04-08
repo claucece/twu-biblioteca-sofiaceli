@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class MenuCatalogueTest {
+public class AnonymousUserMenuCatalogueTest {
 
     private MenuCatalogue menuCatalogue;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -22,7 +22,7 @@ public class MenuCatalogueTest {
     ///not passing
     @Test
     public void shouldPrintMenuItems() {
-        String actual = "--> Checkout Book   --> Return Book   --> Return To Main Menu   \n";
+        String actual = "--> Checkout Book   --> Return Book   --> Return To Main AnonymousUserMenu   \n";
         assertEquals(menuCatalogue.toLineColumn(bookInventory), actual);
     }
 

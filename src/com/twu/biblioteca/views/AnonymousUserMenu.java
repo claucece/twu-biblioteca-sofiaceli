@@ -7,22 +7,20 @@ import com.twu.biblioteca.controllers.*;
 import com.twu.biblioteca.models.book.BookInventory;
 import com.twu.biblioteca.models.movie.MovieInventory;
 
-public class Menu implements InputAsker, ErrorPrinter, Separator {
+public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
 
     private MenuCatalogue menuCatalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
-    private Session session;
 
-    public Menu() {
+    public AnonymousUserMenu() {
         menuCatalogue = new MenuCatalogue();
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
-        session = new Session();
     }
 
 
-    public String printUserMenu() throws Exception {
+    public String printAnonymousUserMenu() throws Exception {
         Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> List movies  ";
@@ -41,18 +39,18 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
 
     public String defineOutput() throws Exception {
         String input = ask();
-            if (input.equals("list books")) {
-                printSeparator();
-                menuCatalogue.returnCatalogue(bookInventory);
-            } else if (input.equals("list movies")) {
-                printSeparator();
-                menuCatalogue.returnCatalogue(movieInventory);
-            } else if (input.equals("quit")) {
-                return exit();
-            } else {
-                printError();
-            }
-        printUserMenu();
+        if (input.equals("list books")) {
+            printSeparator();
+            menuCatalogue.returnCatalogue(bookInventory);
+        } else if (input.equals("list movies")) {
+            printSeparator();
+            menuCatalogue.returnCatalogue(movieInventory);
+        } else if (input.equals("quit")) {
+            return exit();
+        } else {
+            printError();
+        }
+        printAnonymousUserMenu();
         return defineOutput();
     }
 

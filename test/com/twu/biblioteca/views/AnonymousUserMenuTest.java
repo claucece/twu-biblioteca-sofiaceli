@@ -7,14 +7,14 @@ import java.io.*;
 
 import static org.junit.Assert.*;
 
-public class MenuTest {
+public class AnonymousUserMenuTest {
 
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private Menu menu;
+    private AnonymousUserMenu anonymousUserMenu;
 
     @Before
     public void setUp() {
-        menu = new Menu();
+        anonymousUserMenu = new AnonymousUserMenu();
     }
 
     @Test
@@ -22,7 +22,7 @@ public class MenuTest {
         System.setOut(new PrintStream(outContent));
         String actual = "--> List books   --> List movies   --> Log in   --> Quit   " +
                 "\n";
-        assertEquals(menu.printUserMenu(), actual);
+        assertEquals(anonymousUserMenu.printAnonymousUserMenu(), actual);
     }
 
 }
