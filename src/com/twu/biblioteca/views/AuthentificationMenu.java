@@ -20,19 +20,27 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
         userFinder = new UserFinder();
     }
 
+    public void generateAuthenticatedUserSession() throws Exception {
+        printSeparator();
+        authenticatedUserMenu.printLoggedUserMenu();
+        authenticatedUserMenu.defineUserOutput(userFinder);
+    }
+
+    public String generateAnonymousUserSession() throws Exception {
+        printSeparator();
+        anonymousUserMenu.printAnonymousUserMenu();
+        return anonymousUserMenu.defineOutput();
+    }
+
     public String defineTypeOfUser() throws Exception {
         String input = ask();
         if (input.equals("log in")) {
             printSeparator();
             if (session.newSession(userFinder) == true) {
-                printSeparator();
-                authenticatedUserMenu.printLoggedUserMenu();
-                authenticatedUserMenu.defineUserOutput(userFinder);
+                generateAuthenticatedUserSession();
             }
         } else if (input.equals("anonymous user")) {
-            printSeparator();
-            anonymousUserMenu.printAnonymousUserMenu();
-            return anonymousUserMenu.defineOutput();
+            return generateAnonymousUserSession();
         } else {
             printError();
         }

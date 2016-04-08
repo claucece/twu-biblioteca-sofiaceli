@@ -87,7 +87,6 @@ public class DiffieHellmannProtocol {
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
         return userEncondesAndSendsToBiblioteca(userKeys, hashPass, choice);
-        //return userKeyAgree;
     }
 
     public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
@@ -100,7 +99,6 @@ public class DiffieHellmannProtocol {
     public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, String hashPass, String choice) throws Exception {
         byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
         return instantiatesUserPubKey(userPubKeyEnc, hashPass, choice);
-        //return userPubKeyEnc;
     }
 
     public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws Exception {

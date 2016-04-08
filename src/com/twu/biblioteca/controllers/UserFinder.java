@@ -14,7 +14,7 @@ public class UserFinder {
                 currentUser = new User.Builder().libraryNumber(libraryNumber).password(user.getHashPassword().toString()).name(user.getName()).emailAdress(user.emailAdress).phoneNumber(user.getPhoneNumber()).build();
                 return this.currentUser.isLogIn(true);
             } else {
-                return this.currentUser.isLogIn(false);
+                return false;
             }
         }
         return false;
