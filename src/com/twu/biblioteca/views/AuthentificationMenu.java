@@ -10,13 +10,13 @@ import com.twu.biblioteca.models.color.ColorList;
 public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter {
 
     private Session session;
-    private AuthetificatedUserMenu authenticatedUserMenu;
+    private AuthentificatedUserMenu authenticatedUserMenu;
     private AnonymousUserMenu anonymousUserMenu;
     private UserFinder userFinder;
 
     public AuthentificationMenu() {
         session = new Session();
-        authenticatedUserMenu = new AuthetificatedUserMenu();
+        authenticatedUserMenu = new AuthentificatedUserMenu();
         anonymousUserMenu = new AnonymousUserMenu();
         userFinder = new UserFinder();
     }
@@ -28,7 +28,6 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
     }
 
     public String generateAnonymousUserSession() throws Exception {
-        printSeparator();
         anonymousUserMenu.printAnonymousUserMenu();
         return anonymousUserMenu.defineOutput();
     }

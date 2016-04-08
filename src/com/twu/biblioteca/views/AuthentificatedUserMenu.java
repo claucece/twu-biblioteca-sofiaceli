@@ -6,15 +6,16 @@ import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
 import com.twu.biblioteca.models.book.BookInventory;
+import com.twu.biblioteca.models.color.ColorList;
 import com.twu.biblioteca.models.movie.MovieInventory;
 
-public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsker {
+public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAsker {
 
     private MenuCatalogue menuCatalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
 
-    public AuthetificatedUserMenu() {
+    public AuthentificatedUserMenu() {
         menuCatalogue = new MenuCatalogue();
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
@@ -34,23 +35,30 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
 
     public String printUserInformation(UserFinder userFinder) throws Exception {
         Column column = new Column();
+        String color = ColorList.getColor("PURPLE");
         String option1 = "Name: " + userFinder.getCurrentUser().getName();
         String option2 = "Email: " + userFinder.getCurrentUser().getEmailAdress();
         String option3 = "Phone: " + userFinder.getCurrentUser().getPhoneNumber();
         column.addLine(option1, option2, option3);
         String toMenu = column.toString();
-        System.out.println(toMenu);
+        System.out.println(color + toMenu +resetColor);
         return toMenu;
+    }
+
+    public String logOut() {
+        String bye = "You have been log out.";
+        System.out.println(bye);
+        return bye;
     }
 
     public String defineUserOutput(UserFinder userFinder) throws Exception {
         String input = ask();
         if (input.equals("list books")) {
             printSeparator();
-            menuCatalogue.toLineColumn(bookInventory);
+            menuCatalogue.defineBookMenuOutcome(bookInventory);
         } else if (input.equals("list movies")) {
             printSeparator();
-            menuCatalogue.toLineColumn(movieInventory);
+            menuCatalogue.defineBookMenuOutcome(movieInventory);
         } else if (input.equals("user info")) {
             printUserInformation(userFinder);
             printSeparator();
@@ -61,12 +69,6 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
         }
         printLoggedUserMenu();
         return defineUserOutput(userFinder);
-    }
-
-    public String logOut() {
-        String bye = "You have been log out";
-        System.out.println(bye);
-        return bye;
     }
 
     @Override

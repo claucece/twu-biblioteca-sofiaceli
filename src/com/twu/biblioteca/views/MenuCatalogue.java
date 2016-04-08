@@ -28,11 +28,10 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
         String color = ColorList.getColor("INVERT");
         String option1 = "--> Checkout " + inventory.getName();
         String option2 = "--> Return " + inventory.getName();
-        String option3 = "--> Return To Main AnonymousUserMenu  ";
+        String option3 = "--> Return To Main  ";
         column.addLine(option1, option2, option3);
         String toBookMenu = column.toString();
         System.out.println(color + toBookMenu + resetColor);
-        defineBookMenuOutcome(inventory);
         return toBookMenu;
     }
 
@@ -53,6 +52,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String defineBookMenuOutcome(Inventory inventory) {
+        toLineColumn(inventory);
         System.out.println("Please, select a choice from the menu above:");
         String input = ask();
         if (input.equals("checkout book") || (input.equals("checkout movie"))) {

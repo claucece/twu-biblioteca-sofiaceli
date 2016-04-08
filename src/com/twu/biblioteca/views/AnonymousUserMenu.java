@@ -19,9 +19,9 @@ public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
         movieInventory = new MovieInventory();
     }
 
-
     public String printAnonymousUserMenu() throws Exception {
         Column column = new Column();
+        printSeparator();
         String option1 = "--> List books  ";
         String option2 = "--> List movies  ";
         String option3 = "--> Quit  ";
@@ -40,10 +40,8 @@ public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
     public String defineOutput() throws Exception {
         String input = ask();
         if (input.equals("list books")) {
-            printSeparator();
             menuCatalogue.returnCatalogue(bookInventory);
         } else if (input.equals("list movies")) {
-            printSeparator();
             menuCatalogue.returnCatalogue(movieInventory);
         } else if (input.equals("quit")) {
             return exit();
