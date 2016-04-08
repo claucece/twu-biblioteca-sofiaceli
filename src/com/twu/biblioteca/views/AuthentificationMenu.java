@@ -5,6 +5,7 @@ import com.twu.biblioteca.controllers.UserFinder;
 import com.twu.biblioteca.helpers.ErrorPrinter;
 import com.twu.biblioteca.helpers.InputAsker;
 import com.twu.biblioteca.helpers.Separator;
+import com.twu.biblioteca.models.color.ColorList;
 
 public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter {
 
@@ -32,6 +33,12 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
         return anonymousUserMenu.defineOutput();
     }
 
+    public String exit() {
+        String bye = "Thanks for your visit. Bye!";
+        System.out.println(bye);
+        return bye;
+    }
+
     public String defineTypeOfUser() throws Exception {
         String input = ask();
         if (input.equals("log in")) {
@@ -41,6 +48,8 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
             }
         } else if (input.equals("anonymous user")) {
             return generateAnonymousUserSession();
+        }else if (input.equals("quit")) {
+            return exit();
         } else {
             printError();
         }
@@ -51,7 +60,8 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
     @Override
     public String ask() {
         out.println("Please, select a kind of user:");
-        out.println("1. Anonymous user      2.Log in");
+        String color = ColorList.getColor("INVERT");
+        out.println(color + "1. Anonymous user      2.Log in      3.Quit" + resetColor);
         return scanner.nextLine().toLowerCase();
     }
 
