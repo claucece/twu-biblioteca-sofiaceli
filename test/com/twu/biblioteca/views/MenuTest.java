@@ -18,11 +18,11 @@ public class MenuTest {
     }
 
     @Test
-    public void shouldPrintMenuItems() {
+    public void shouldPrintMenuItems() throws Exception {
         System.setOut(new PrintStream(outContent));
         String actual = "--> List books   --> List movies   --> Log in   --> Quit   " +
                 "\n";
-        assertEquals(menu.toLineColumn(), actual);
+        assertEquals(menu.printUserMenu(), actual);
     }
 
 }

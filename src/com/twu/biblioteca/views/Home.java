@@ -25,6 +25,7 @@ public class Home implements Separator {
         return logo;
     }
 
+    //probably this will be gone
     public void selectFromMenu() {
         String menu = "Please, select an option from the menu below:";
         System.out.println(menu);

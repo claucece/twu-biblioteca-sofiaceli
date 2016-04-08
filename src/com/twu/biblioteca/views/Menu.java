@@ -21,13 +21,13 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         session = new Session();
     }
 
-    public String toLineColumn() {
+
+    public String printUserMenu() throws Exception {
         Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> List movies  ";
-        String option3 = "--> Log in  ";
-        String option4 = "--> Quit  ";
-        column.addLine(option1, option2, option3, option4);
+        String option3 = "--> Quit  ";
+        column.addLine(option1, option2, option3);
         String toMenu = column.toString();
         System.out.println(toMenu);
         return toMenu;
@@ -39,40 +39,20 @@ public class Menu implements InputAsker, ErrorPrinter, Separator {
         return bye;
     }
 
-    public String defineTypeOfUser() throws Exception {
-        System.out.println("Please, enter the kind of user you are:");
-        System.out.println("1. Anonymous user      2.Log in");
-        String input = ask();
-        if (input.equals("log in")) {
-            printSeparator();
-            if (session.logIn() == true) {
-                toLineColumn();
-                defineOutput();
-            }
-        } else if (input.equals("anonymous user")) {
-            printSeparator();
-        }
-        printError();
-        return defineTypeOfUser();
-    }
-
     public String defineOutput() throws Exception {
         String input = ask();
             if (input.equals("list books")) {
                 printSeparator();
-                menuCatalogue.toLineColumn(bookInventory);
+                menuCatalogue.returnCatalogue(bookInventory);
             } else if (input.equals("list movies")) {
                 printSeparator();
-                menuCatalogue.toLineColumn(movieInventory);
-            //} else if (input.equals("log in")) {
-            //    printSeparator();
-            //    session.newSession();
+                menuCatalogue.returnCatalogue(movieInventory);
             } else if (input.equals("quit")) {
                 return exit();
             } else {
                 printError();
             }
-        toLineColumn();
+        printUserMenu();
         return defineOutput();
     }
 

@@ -18,6 +18,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
     }
 
     public String returnCatalogue(Inventory inventory) {
+        System.out.println(catalogue.putInformationInColumns(inventory));
         return catalogue.putInformationInColumns(inventory);
     }
 

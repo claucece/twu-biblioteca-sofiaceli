@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.views.AuthetificationMenu;
 import com.twu.biblioteca.views.Home;
 import com.twu.biblioteca.views.Menu;
 
@@ -13,9 +14,10 @@ class BibliotecaLauncher {
         System.out.println();
         //home.selectFromMenu();
         Menu menu = new Menu();
-        //menu.toLineColumn();
-        menu.defineTypeOfUser();
-        //menu.toLineColumn();
+        //menu.printUserMenu();
+        AuthetificationMenu authetificationMenu = new AuthetificationMenu();
+        authetificationMenu.defineTypeOfUser();
+        //menu.printUserMenu();
     }
 
 }

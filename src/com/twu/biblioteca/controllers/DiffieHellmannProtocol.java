@@ -67,7 +67,6 @@ public class DiffieHellmannProtocol {
 
 
     public byte[] generateUserKeyPair(String hashPass, String choice) throws Exception {
-        System.out.println("USER: Generate DH keypair ...");
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
@@ -77,7 +76,6 @@ public class DiffieHellmannProtocol {
 
     public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
         dhSkipParamSpec1 = ((DHPublicKey) userPubKey).getParams();
-        System.out.println("BIBLIOTECA: Generate DH keypair ...");
         KeyPairGenerator bibliotecaKpairGen = KeyPairGenerator.getInstance("DH");
         bibliotecaKpairGen.initialize(dhSkipParamSpec1);
         KeyPair bibliotecaKpair = bibliotecaKpairGen.generateKeyPair();
@@ -86,7 +84,6 @@ public class DiffieHellmannProtocol {
     }
 
     public byte[] initializeUserAgreement(KeyPair userKeys, String hashPass, String choice) throws Exception {
-        System.out.println("USER: Initialization ...");
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
         return userEncondesAndSendsToBiblioteca(userKeys, hashPass, choice);
@@ -94,7 +91,6 @@ public class DiffieHellmannProtocol {
     }
 
     public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
-        System.out.println("BIBLIOTECA: Initialization ...");
         bibliotecaKeyAgree = KeyAgreement.getInstance("DH");
         bibliotecaKeyAgree.init(bibliotecaKeys.getPrivate());
         bibliotecaEncondesAndSendsToUser(bibliotecaKeys);
@@ -142,12 +138,10 @@ public class DiffieHellmannProtocol {
     }
 
     public Key executePhase1OnUser(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
-        System.out.println("USER: Execute PHASE1 ...");
         return userKeyAgree.doPhase(key, true);
     }
 
     public Key executePhase1OnBiblioteca(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
-        System.out.println("BIBLIOTECA: Execute PHASE1 ...");
         return bibliotecaKeyAgree.doPhase(key, true);
     }
 

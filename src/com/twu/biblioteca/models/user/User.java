@@ -9,6 +9,8 @@ import java.util.Scanner;
 
 public class User {
 
+    private boolean isLogIn;
+
     private DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
 
     @Format (message = "Should have this format: '000-0000'")
@@ -106,6 +108,11 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public boolean isLogIn(boolean isLogIn) {
+        this.isLogIn = isLogIn;
+        return isLogIn;
     }
 
 }
