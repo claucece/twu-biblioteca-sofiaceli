@@ -24,14 +24,16 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
             if (session.newSession() == true) {
                 printSeparator();
                 authenticatedUserMenu.printLoggedUserMenu();
-                return authenticatedUserMenu.defineUserOutput();
+                authenticatedUserMenu.defineUserOutput();
             }
         } else if (input.equals("anonymous user")) {
             printSeparator();
             anonymousUserMenu.printAnonymousUserMenu();
             return anonymousUserMenu.defineOutput();
+        } else {
+            printError();
         }
-        printError();
+        printSeparator();
         return defineTypeOfUser();
     }
 
