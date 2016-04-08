@@ -32,6 +32,17 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
         return toMenu;
     }
 
+    public String printUserInformation(UserFinder userFinder) throws Exception {
+        Column column = new Column();
+        String option1 = "Name: " + userFinder.getCurrentUser().getName();
+        String option2 = "Email: " + userFinder.getCurrentUser().getEmailAdress();
+        String option3 = "Phone: " + userFinder.getCurrentUser().getPhoneNumber();
+        column.addLine(option1, option2, option3);
+        String toMenu = column.toString();
+        System.out.println(toMenu);
+        return toMenu;
+    }
+
     public String defineUserOutput(UserFinder userFinder) throws Exception {
         String input = ask();
         if (input.equals("list books")) {
@@ -41,8 +52,8 @@ public class AuthetificatedUserMenu implements ErrorPrinter, Separator, InputAsk
             printSeparator();
             menuCatalogue.toLineColumn(movieInventory);
         } else if (input.equals("user info")) {
-            System.out.println(userFinder.getCurrentUser().getName());
-            return logOut();
+            printUserInformation(userFinder);
+            printSeparator();
         } else if (input.equals("log out")) {
             return logOut();
         } else {

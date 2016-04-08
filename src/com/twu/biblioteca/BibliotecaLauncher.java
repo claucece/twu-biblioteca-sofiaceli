@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.controllers.Session;
-import com.twu.biblioteca.controllers.UserFinder;
 import com.twu.biblioteca.views.AuthentificationMenu;
 import com.twu.biblioteca.views.Home;
 
@@ -14,9 +13,9 @@ class BibliotecaLauncher {
         home.printHomeLogo();
         System.out.println();
         Session session = new Session();
-        UserFinder userFinder = new UserFinder();
+        //UserFinder userFinder = new UserFinder();
         AuthentificationMenu authentificationMenu = new AuthentificationMenu();
-        authentificationMenu.defineTypeOfUser(userFinder);
+        authentificationMenu.defineTypeOfUser();
     }
 
 }

@@ -11,16 +11,16 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
     private Session session;
     private AuthetificatedUserMenu authenticatedUserMenu;
     private AnonymousUserMenu anonymousUserMenu;
-    //private UserFinder userFinder;
+    private UserFinder userFinder;
 
     public AuthentificationMenu() {
         session = new Session();
         authenticatedUserMenu = new AuthetificatedUserMenu();
         anonymousUserMenu = new AnonymousUserMenu();
-        //userFinder = new UserFinder();
+        userFinder = new UserFinder();
     }
 
-    public String defineTypeOfUser(UserFinder userFinder) throws Exception {
+    public String defineTypeOfUser() throws Exception {
         String input = ask();
         if (input.equals("log in")) {
             printSeparator();
@@ -37,7 +37,7 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
             printError();
         }
         printSeparator();
-        return defineTypeOfUser(userFinder);
+        return defineTypeOfUser();
     }
 
     @Override
