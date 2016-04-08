@@ -16,12 +16,18 @@ public class Session implements InputAsker{
         return false;
     }
 
-    public boolean newSession(UserFinder userFinder) throws Exception {
+    public String askForLibraryNumber() {
         System.out.println("Please, enter your library Number:");
-        String libraryNumberAsker = ask();
+        return ask();
+    }
+
+    public String askForPassword() {
         System.out.println("Please, enter your password:");
-        String passwordAsker = ask();
-        if (userFinder.findUser(libraryNumberAsker, passwordAsker) == true) {
+        return ask();
+    }
+
+    public boolean newSession(UserFinder userFinder) throws Exception {
+        if (userFinder.findUser(askForLibraryNumber(), askForPassword()) == true) {
             return printSucessfullSession();
         }
         return printUnSucessfullSession();
