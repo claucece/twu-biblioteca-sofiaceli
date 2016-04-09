@@ -13,4 +13,5 @@ public interface ElementSpec {
     String getGenre();
 
     String getRating();
+
 }
