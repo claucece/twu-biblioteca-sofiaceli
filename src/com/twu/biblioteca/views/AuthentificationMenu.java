@@ -74,7 +74,7 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
     @Override
     public StringBuilder printError() {
         StringBuilder error = new StringBuilder("Select a valid option!");
-        System.out.println(errorColor + error + resetErrorColor);
+        System.out.println(errorColor + error + resetErrorColor + "\n");
         return error;
     }
 }

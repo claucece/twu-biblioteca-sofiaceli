@@ -1,36 +1,43 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
+import com.twu.biblioteca.models.color.ColorList;
 
-public class Session implements InputAsker{
+public class Session implements InputAsker {
 
-    public boolean printSucessfullSession() {
-        String session = "User authenticated. New session created.";
-        System.out.println(session);
+    public String newLine = "\n";
+
+    public boolean printSucessfulSession() {
+        StringBuilder successfulSession = new StringBuilder("User authenticated. New session created.");
+        System.out.println(successfulSession + newLine);
         return true;
     }
 
-    public boolean printUnSucessfullSession() {
-        String noSession = "User not authenticated. New session not created.";
-        System.out.println(noSession);
+    public boolean printUnSucessfulSession() {
+        String color = ColorList.getColor("RED");
+        String resetColor = ColorList.getColor("RED");
+        StringBuilder unsuccessfulSession = new StringBuilder(color + "User not authenticated. New session not created." + resetColor);
+        System.out.println(unsuccessfulSession + newLine);
         return false;
     }
 
     public String askForLibraryNumber() {
-        System.out.println("Please, enter your library Number:");
+        StringBuilder libraryNumber = new StringBuilder("Please, enter your library number:");
+        System.out.println(libraryNumber);
         return ask();
     }
 
     public String askForPassword() {
-        System.out.println("Please, enter your password:");
+        StringBuilder password = new StringBuilder("Please, enter your password:");
+        System.out.println(password);
         return ask();
     }
 
     public boolean newSession(UserFinder userFinder) throws Exception {
         if (userFinder.findUser(askForLibraryNumber(), askForPassword()) == true) {
-            return printSucessfullSession();
+            return printSucessfulSession();
         }
-        return printUnSucessfullSession();
+        return printUnSucessfulSession();
     }
 
     @Override

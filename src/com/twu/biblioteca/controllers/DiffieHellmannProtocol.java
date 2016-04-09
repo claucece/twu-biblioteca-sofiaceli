@@ -1,5 +1,7 @@
 package com.twu.biblioteca.controllers;
 
+import com.twu.biblioteca.models.color.ColorList;
+
 import javax.crypto.Cipher;
 import javax.crypto.KeyAgreement;
 import javax.crypto.SecretKey;
@@ -162,15 +164,17 @@ public class DiffieHellmannProtocol {
     }
 
     public byte[] userDecryptsUsingDES(SecretKey userSecretKey, byte[] ciphertext) throws Exception {
+        String color = ColorList.getColor("BLUE");
+        String resetcolor = ColorList.getColor("RESET");
         Cipher userCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         userCipher.init(Cipher.DECRYPT_MODE, userSecretKey);
         byte[] recovered = userCipher.doFinal(ciphertext);
         if (!java.util.Arrays.equals(cleartext, recovered))
             throw new Exception("Ciphertext of your password does not match your password.");
-        System.out.println("Biblioteca uses Diffie-Hellman protocol with DES is CBC mode." +
+        System.out.println(color + "Biblioteca uses Diffie-Hellman protocol with DES is CBC mode." +
                 "\nPublic and private keys, as well as an agreement with Biblioteca has been created." +
                 "\nThis ensures you a secure channel. " +
-                "\nCiphertext of your password now matches your password.");
+                "\nCiphertext of your password now matches your password." + resetcolor);
         return recovered;
     }
 
