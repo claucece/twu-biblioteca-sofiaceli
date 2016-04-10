@@ -12,13 +12,14 @@ public class Session implements InputAsker {
     }
 
     private String askForLibraryNumber() {
-        StringBuilder libraryNumber = new StringBuilder("Please, enter your library number:");
+        StringBuilder libraryNumber = new StringBuilder("    So, you're a returning user... \n" +
+                "    Please, tell me your library number:");
         System.out.println(libraryNumber);
         return ask();
     }
 
     private String askForPassword() {
-        StringBuilder password = new StringBuilder("Please, enter your password:");
+        StringBuilder password = new StringBuilder("    Please, tell me your password:");
         System.out.println(password);
         return ask();
     }

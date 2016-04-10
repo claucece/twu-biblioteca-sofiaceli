@@ -10,7 +10,6 @@ public class UserMessagesHelper {
     private String inStockColor = ColorList.getColor("BLUE");
     private String notInStockColor = ColorList.getColor("RED");
     private String resetStockColor = ColorList.getColor("RESET");
-    private String newLine = "\n";
 
 
     public void printSucessfulCheckout(Inventory inventory) {
@@ -34,16 +33,16 @@ public class UserMessagesHelper {
     }
 
     public boolean printSucessfulSessionCreation() {
-        String successfulSession = "User authenticated. New session created.";
+        String successfulSession = "You're allowed to the great Library!. May you find the knowledge you seek. \n" +
+                "User authenticated. New session created. \n";
         printer.printSlowly(successfulSession, 40);
-        System.out.println(newLine);
         return true;
     }
 
     public boolean printUnSucessfulSessionCreation() {
-        String unsuccessfulSession = "User not authenticated. New session not created.";
+        String unsuccessfulSession = "    You're not allowed to the great Library! \n" +
+                "    User not authenticated. New session not created. \n";
         printer.printSlowly(unsuccessfulSession, 40);
-        System.out.println(newLine);
         return false;
     }
 }

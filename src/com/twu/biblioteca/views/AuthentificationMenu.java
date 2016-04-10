@@ -58,9 +58,10 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
 
     @Override
     public String ask() {
-        out.println("Please, select a kind of user:");
+        out.println("The librarian beetle folk Yith says:");
+        out.println("    Please, select the kind of user/prisoner you are: \n");
         String color = ColorList.getColor("INVERT");
-        out.println(color + "1. Anonymous user      2.Log in      3.Quit" + resetColor);
+        out.println(color + "    1. Anonymous user      2.Log in      3.Quit" + resetColor);
         return scanner.nextLine().toLowerCase();
     }
 
