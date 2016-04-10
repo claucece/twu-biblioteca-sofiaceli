@@ -15,7 +15,7 @@ public abstract class Inventory implements ErrorPrinter {
         return name;
     }
 
-    public List<Element> getList() {
+    protected List<Element> getList() {
         return elements;
     }
 
@@ -32,7 +32,7 @@ public abstract class Inventory implements ErrorPrinter {
         return elements;
     }
 
-    public List<Element> addElement() {
+    protected List<Element> addElement() {
         return elements;
     }
 

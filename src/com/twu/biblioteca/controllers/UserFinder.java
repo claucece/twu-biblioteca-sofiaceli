@@ -11,7 +11,7 @@ public class UserFinder {
         int hashCodePassword = password.hashCode();
         for (User user : UserList.VALUES) {
             if (libraryNumber.equals(user.getLibraryNumber()) && hashCodePassword == user.getPassword()) {
-                currentUser = new User.Builder().libraryNumber(libraryNumber).password(user.getHashPassword().toString()).name(user.getName()).emailAdress(user.emailAdress).phoneNumber(user.getPhoneNumber()).build();
+                currentUser = new User.Builder().libraryNumber(libraryNumber).password(user.getHashPassword().toString()).name(user.getName()).emailAdress(user.getEmailAdress()).phoneNumber(user.getPhoneNumber()).build();
                 return this.currentUser.isLogIn(true);
             }
         }

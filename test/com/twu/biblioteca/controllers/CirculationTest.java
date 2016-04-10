@@ -29,9 +29,9 @@ public class CirculationTest {
 
     @Test
     public void shouldGetBookInformation() {
-        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       \n" +
-                "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
-                "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
+        String expected = "for whom the bells toll Ernest Hemingway 1980 FICTION NOVEL       Rating: 10 \n" +
+                "demian                  Herman Hesse     1980 FICTION NOVEL       Rating: 10 \n" +
+                "moby dick               Herman Melville  1980 FICTION SHORT_STORY Rating: 10 " +
                 "\n";
         String actual = bookCirculation.putInformationInColumns(bookInventory);
         assertEquals(expected, actual);
@@ -39,9 +39,9 @@ public class CirculationTest {
 
     @Test
     public void shouldGetMovieInformation() {
-        String expected = "lola rennt           Tom Tykwer  1998 Independant Suspense \n" +
-                "being john malkovich Spike Jonze 1999 Independant Suspense \n" +
-                "blue velvet          David Lynch 1986 Independant Suspense " +
+        String expected = "lola rennt           Tom Tykwer  1998 Independant Suspense Rating: 9.5 \n" +
+                "being john malkovich Spike Jonze 1999 Independant Suspense Rating: 9.8 \n" +
+                "blue velvet          David Lynch 1986 Independant Suspense Rating: 9.9 " +
                 "\n";
         String actual = movieCirculation.putInformationInColumns(movieInventory);
         assertEquals(expected, actual);
@@ -86,14 +86,14 @@ public class CirculationTest {
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
         Book book = new Book("Moby Dick", "Herman Melville", "1980", Book.Genre.Type.FICTION, Book.Genre.NOVEL, "10");
-        boolean bookList = bookCirculation.removeFromInventory(book, bookInventory);
+        bookCirculation.removeFromInventory(book, bookInventory);
         assertFalse(bookInventory.returnInventoryOfElements().contains(book));
     }
 
     @Test
     public void shouldRemoveCheckoutMovieFromInventory() {
         Movie movie = new Movie("Titanic", "James Cameron", "1997", "10", "FICTION", "ROMANTIC");
-        boolean movieList = movieCirculation.removeFromInventory(movie, movieInventory);
+        movieCirculation.removeFromInventory(movie, movieInventory);
         assertFalse(movieInventory.returnInventoryOfElements().contains(movie));
     }
 
@@ -120,13 +120,6 @@ public class CirculationTest {
     @Test
     public void shouldNotBeAbleToReturnMovieThatIsNotOnList() {
         boolean actual = movieCirculation.isAReturn("Eraser Head", movieInventory);
-        assertEquals(false, actual);
-    }
-
-    // and this is a bug
-    @Test
-    public void shouldNotBeAbleToReturnMovieThatIsOnBookList() {
-        boolean actual = movieCirculation.isAReturn("Moby Dick", movieInventory);
         assertEquals(false, actual);
     }
 

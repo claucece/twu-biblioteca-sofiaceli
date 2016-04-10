@@ -48,7 +48,7 @@ public class Circulation implements ErrorPrinter {
         return false;
     }
 
-    public void addToInventory(Element element, Inventory inventory) {
+    private void addToInventory(Element element, Inventory inventory) {
         if (!(inventory.returnInventoryOfElements().contains(element))) {
             inventory.returnInventoryOfElements().add(element);
             userMessages.printSucessfulReturn(inventory);

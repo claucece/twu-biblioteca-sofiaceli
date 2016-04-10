@@ -5,25 +5,22 @@ import com.twu.biblioteca.models.color.ColorList;
 import javax.crypto.Cipher;
 import javax.crypto.KeyAgreement;
 import javax.crypto.SecretKey;
-import javax.crypto.ShortBufferException;
 import javax.crypto.interfaces.DHPublicKey;
 import javax.crypto.spec.DHParameterSpec;
 import java.math.BigInteger;
 import java.security.*;
-import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
 public class DiffieHellmannProtocol {
 
-    int aliceLen;
     private KeyAgreement userKeyAgree;
     private KeyAgreement bibliotecaKeyAgree;
     private DHParameterSpec dhSkipParamSpec1;
     private X509EncodedKeySpec x509KeySpec;
     private byte[] cleartext;
     private byte[] ciphertext;
-
-    DHParameterSpec dhSkipParamSpec = new DHParameterSpec(skip1024Modulus,
+    private int userLen;
+    private DHParameterSpec dhSkipParamSpec = new DHParameterSpec(skip1024Modulus,
             skip1024Base);
 
     private static final byte skip1024ModulusBytes[] = {
@@ -67,14 +64,14 @@ public class DiffieHellmannProtocol {
     private static final BigInteger skip1024Base = BigInteger.valueOf(2);
 
 
-    public byte[] generateUserKeyPair(String hashPass, String choice) throws Exception {
+    private byte[] generateUserKeyPair(String hashPass, String choice) throws Exception {
         KeyPairGenerator userKpairGen = KeyPairGenerator.getInstance("DH");
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
         return initializeUserAgreement(userKpair, hashPass, choice);
     }
 
-    public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
+    private KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
         dhSkipParamSpec1 = ((DHPublicKey) userPubKey).getParams();
         KeyPairGenerator bibliotecaKpairGen = KeyPairGenerator.getInstance("DH");
         bibliotecaKpairGen.initialize(dhSkipParamSpec1);
@@ -83,31 +80,31 @@ public class DiffieHellmannProtocol {
         return bibliotecaKpair;
     }
 
-    public byte[] initializeUserAgreement(KeyPair userKeys, String hashPass, String choice) throws Exception {
+    private byte[] initializeUserAgreement(KeyPair userKeys, String hashPass, String choice) throws Exception {
         userKeyAgree = KeyAgreement.getInstance("DH");
         userKeyAgree.init(userKeys.getPrivate());
         return userEncondesAndSendsToBiblioteca(userKeys, hashPass, choice);
     }
 
-    public KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
+    private KeyAgreement initializeBibliotecaAgreement(KeyPair bibliotecaKeys) throws Exception {
         bibliotecaKeyAgree = KeyAgreement.getInstance("DH");
         bibliotecaKeyAgree.init(bibliotecaKeys.getPrivate());
         bibliotecaEncondesAndSendsToUser(bibliotecaKeys);
         return bibliotecaKeyAgree;
     }
 
-    public byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, String hashPass, String choice) throws Exception {
+    private byte[] userEncondesAndSendsToBiblioteca(KeyPair userKeys, String hashPass, String choice) throws Exception {
         byte[] userPubKeyEnc = userKeys.getPublic().getEncoded();
         return instantiatesUserPubKey(userPubKeyEnc, hashPass, choice);
     }
 
-    public byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws Exception {
+    private byte[] bibliotecaEncondesAndSendsToUser(KeyPair bibliotecaKeys) throws Exception {
         byte[] bibliotecaPubKeyEnc = bibliotecaKeys.getPublic().getEncoded();
         instantiatesBibliotecaPubKey(bibliotecaPubKeyEnc);
         return bibliotecaPubKeyEnc;
     }
 
-    public byte[] instantiatesUserPubKey(byte[] userPubKeyEnc, String hashPass, String choice) throws Exception {
+    private byte[] instantiatesUserPubKey(byte[] userPubKeyEnc, String hashPass, String choice) throws Exception {
         KeyFactory bibliotecaKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(userPubKeyEnc);
         PublicKey userPubKey = bibliotecaKeyFac.generatePublic(x509KeySpec);
@@ -125,7 +122,7 @@ public class DiffieHellmannProtocol {
         return null;
     }
 
-    public PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws Exception {
+    private PublicKey instantiatesBibliotecaPubKey(byte[] bibliotecaPubKeyEnc) throws Exception {
         KeyFactory userKeyFac = KeyFactory.getInstance("DH");
         x509KeySpec = new X509EncodedKeySpec(bibliotecaPubKeyEnc);
         PublicKey bibliotecaPubKey = userKeyFac.generatePublic(x509KeySpec);
@@ -133,26 +130,26 @@ public class DiffieHellmannProtocol {
         return bibliotecaPubKey;
     }
 
-    public Key executePhase1OnUser(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
+    private Key executePhase1OnUser(PublicKey key) throws InvalidKeyException {
         return userKeyAgree.doPhase(key, true);
     }
 
-    public Key executePhase1OnBiblioteca(PublicKey key) throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException {
+    private Key executePhase1OnBiblioteca(PublicKey key) throws Exception {
         return bibliotecaKeyAgree.doPhase(key, true);
     }
 
-    public byte[] generateSecretUserKey() throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException {
-        byte[] aliceSharedSecret = userKeyAgree.generateSecret();
-        aliceLen = aliceSharedSecret.length;
-        return aliceSharedSecret;
+    public byte[] generateSecretUserKey() {
+        byte[] userSharedSecret = userKeyAgree.generateSecret();
+        userLen = userSharedSecret.length;
+        return userSharedSecret;
     }
 
-    public byte[] generateSecretBibliotecaKey() throws InvalidAlgorithmParameterException, NoSuchAlgorithmException, InvalidKeyException, InvalidKeySpecException, ShortBufferException {
-        byte[] bobSharedSecret = bibliotecaKeyAgree.generateSecret();
-        return bobSharedSecret;
+    public byte[] generateSecretBibliotecaKey() throws Exception {
+        byte[] bibliotecaSharedSecret = bibliotecaKeyAgree.generateSecret();
+        return bibliotecaSharedSecret;
     }
 
-    public byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey, String hashPass) throws Exception {
+    private byte[] bibliotecaEncryptsUsingDES(SecretKey bibliotecaSecretKey, String hashPass) throws Exception {
         Cipher bibliotecaCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
         bibliotecaCipher.init(Cipher.ENCRYPT_MODE, bibliotecaSecretKey);
         cleartext = hashPass.getBytes("UTF-8");
@@ -160,7 +157,7 @@ public class DiffieHellmannProtocol {
         return ciphertext;
     }
 
-    public byte[] userDecryptsUsingDES(SecretKey userSecretKey, byte[] ciphertext) throws Exception {
+    private byte[] userDecryptsUsingDES(SecretKey userSecretKey, byte[] ciphertext) throws Exception {
         String color = ColorList.getColor("BLUE");
         String resetcolor = ColorList.getColor("RESET");
         Cipher userCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");

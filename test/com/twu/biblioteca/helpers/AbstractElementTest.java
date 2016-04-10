@@ -14,7 +14,7 @@ public class AbstractElementTest {
         when(abstractspec.getTitle()).thenReturn("welcome");
         String message = "Welcome";
         String title = abstractspec.getTitle();
-        assertEquals(title, "welcome");
+        assertEquals(title, message);
     }
 
 }

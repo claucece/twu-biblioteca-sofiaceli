@@ -3,9 +3,6 @@ package com.twu.biblioteca.models.user;
 import com.twu.biblioteca.anotations.*;
 import com.twu.biblioteca.controllers.DiffieHellmannProtocol;
 
-import java.io.PrintStream;
-import java.util.Scanner;
-
 
 public class User {
 
@@ -14,27 +11,19 @@ public class User {
     private DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
 
     @LibraryNumber(message = "Should have this format: '000-0000'")
-    public final String libraryNumber;
+    private final String libraryNumber;
 
     private final String hashPassword;
 
     @NotNull (message = "Could not be assigned null")
     @Size(message = "Invalid size")
-    public final String name;
+    private final String name;
 
     @Email(message = "Should have this format: 'name@servicemail.com'")
-    public final String emailAdress;
+    private final String emailAdress;
 
     @Phone(message = "Should have this format: '000-000'")
-    public final String phoneNumber;
-
-    static Scanner scanner = new Scanner(System.in);
-    static PrintStream out = new PrintStream(System.out);
-
-    public static String ask() {
-        out.println("Please, enter a new password:");
-        return scanner.nextLine().toLowerCase();
-    }
+    private final String phoneNumber;
 
     public static class Builder {
         private String libraryNumber;

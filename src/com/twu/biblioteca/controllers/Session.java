@@ -11,20 +11,20 @@ public class Session implements InputAsker {
         userMessages = new UserMessagesHelper();
     }
 
-    public String askForLibraryNumber() {
+    private String askForLibraryNumber() {
         StringBuilder libraryNumber = new StringBuilder("Please, enter your library number:");
         System.out.println(libraryNumber);
         return ask();
     }
 
-    public String askForPassword() {
+    private String askForPassword() {
         StringBuilder password = new StringBuilder("Please, enter your password:");
         System.out.println(password);
         return ask();
     }
 
     public boolean newSession(UserFinder userFinder) throws Exception {
-        if (userFinder.findUser(askForLibraryNumber(), askForPassword()) == true) {
+        if (userFinder.findUser(askForLibraryNumber(), askForPassword())) {
             return userMessages.printSucessfulSessionCreation();
         }
         return userMessages.printUnSucessfulSessionCreation();

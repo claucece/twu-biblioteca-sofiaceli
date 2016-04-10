@@ -21,18 +21,18 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
         userFinder = new UserFinder();
     }
 
-    public void generateAuthenticatedUserSession() throws Exception {
+    private void generateAuthenticatedUserSession() throws Exception {
         printSeparator();
         authenticatedUserMenu.printLoggedUserMenu();
         authenticatedUserMenu.defineUserOutput(userFinder);
     }
 
-    public String generateAnonymousUserSession() throws Exception {
+    private String generateAnonymousUserSession() throws Exception {
         anonymousUserMenu.printAnonymousUserMenu();
         return anonymousUserMenu.defineOutput();
     }
 
-    public String exit() {
+    private String exit() {
         String bye = "Thanks for your visit. Bye!";
         System.out.println(bye);
         return bye;
@@ -42,7 +42,7 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
         String input = ask();
         if (input.equals("log in")) {
             printSeparator();
-            if (session.newSession(userFinder) == true) {
+            if (session.newSession(userFinder)) {
                 generateAuthenticatedUserSession();
             }
         } else if (input.equals("anonymous user")) {

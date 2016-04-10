@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ValidationChecker {
 
-    public List<String> validateSize(Object obj) throws IllegalAccessException {
+    public List<String> validateSize(Object obj) {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
             for (int i = 0; i < fields.length; i++) {
@@ -24,7 +24,7 @@ public class ValidationChecker {
         return errors;
     }
 
-    public List<String> validateNotNull(Object obj) throws IllegalAccessException {
+    public List<String> validateNotNull(Object obj) {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {
@@ -42,7 +42,7 @@ public class ValidationChecker {
         return errors;
     }
 
-    public List<String> validateFormat(Object obj) throws IllegalAccessException {
+    public List<String> validateFormat(Object obj) {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {
@@ -60,7 +60,7 @@ public class ValidationChecker {
         return errors;
     }
 
-    public List<String> validateEmail(Object obj) throws IllegalAccessException {
+    public List<String> validateEmail(Object obj) {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {
@@ -78,7 +78,7 @@ public class ValidationChecker {
         return errors;
     }
 
-    public List<String> validatePhone(Object obj) throws IllegalAccessException {
+    public List<String> validatePhone(Object obj) {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {

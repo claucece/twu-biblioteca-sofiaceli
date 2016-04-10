@@ -9,17 +9,17 @@ import com.twu.biblioteca.models.movie.MovieInventory;
 
 public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
 
-    private MenuCatalogue menuCatalogue;
+    private Catalogue catalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
 
     public AnonymousUserMenu() {
-        menuCatalogue = new MenuCatalogue();
+        catalogue = new Catalogue();
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
     }
 
-    public String printAnonymousUserMenu() throws Exception {
+    public String printAnonymousUserMenu() {
         Column column = new Column();
         printSeparator();
         String option1 = "--> List books  ";
@@ -40,9 +40,9 @@ public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
     public String defineOutput() throws Exception {
         String input = ask();
         if (input.equals("list books")) {
-            menuCatalogue.returnCatalogue(bookInventory);
+            catalogue.returnCatalogue(bookInventory);
         } else if (input.equals("list movies")) {
-            menuCatalogue.returnCatalogue(movieInventory);
+            catalogue.returnCatalogue(movieInventory);
         } else if (input.equals("quit")) {
             return exit();
         } else {

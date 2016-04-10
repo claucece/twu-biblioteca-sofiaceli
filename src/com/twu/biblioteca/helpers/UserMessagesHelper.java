@@ -7,34 +7,30 @@ import static com.twu.biblioteca.helpers.Separator.printer;
 
 public class UserMessagesHelper {
 
-    String inStockColor = ColorList.getColor("BLUE");
-    String notInStockColor = ColorList.getColor("RED");
-    String resetStockColor = ColorList.getColor("RESET");
-    String newLine = "\n";
+    private String inStockColor = ColorList.getColor("BLUE");
+    private String notInStockColor = ColorList.getColor("RED");
+    private String resetStockColor = ColorList.getColor("RESET");
+    private String newLine = "\n";
 
 
-    public StringBuilder printSucessfulCheckout(Inventory inventory) {
+    public void printSucessfulCheckout(Inventory inventory) {
         StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the " + inventory.getName());
         System.out.println(inStockColor + successfullCheckOut + resetStockColor);
-        return successfullCheckOut;
     }
 
-    public StringBuilder printUnsucessfulCheckout(Inventory inventory) {
+    public void printUnsucessfulCheckout(Inventory inventory) {
         StringBuilder error = new StringBuilder(inventory.getName() + " not found. Please, select a " + inventory.getName() + " from the list.");
         System.out.println(notInStockColor + error + resetStockColor);
-        return error;
     }
 
-    public StringBuilder printSucessfulReturn(Inventory inventory) {
+    public void printSucessfulReturn(Inventory inventory) {
         StringBuilder successfullReturn = new StringBuilder("Thank you for returning the " + inventory.getName());
         System.out.println(inStockColor + successfullReturn + resetStockColor);
-        return successfullReturn;
     }
 
-    public StringBuilder printUnsucessfulReturn(Inventory inventory) {
+    public void printUnsucessfulReturn(Inventory inventory) {
         StringBuilder error = new StringBuilder("That is not a valid " + inventory.getName() + " to return.");
         System.out.println(notInStockColor + error + resetStockColor);
-        return error;
     }
 
     public boolean printSucessfulSessionCreation() {

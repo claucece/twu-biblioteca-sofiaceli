@@ -11,18 +11,18 @@ import com.twu.biblioteca.models.movie.MovieInventory;
 
 public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAsker {
 
-    private MenuCatalogue menuCatalogue;
+    private Catalogue catalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
-    public String newLine = "\n";
+    private String newLine = "\n";
 
     public AuthentificatedUserMenu() {
-        menuCatalogue = new MenuCatalogue();
+        catalogue = new Catalogue();
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
     }
 
-    public String printLoggedUserMenu() throws Exception {
+    public String printLoggedUserMenu() {
         Column column = new Column();
         String option1 = "--> List books  ";
         String option2 = "--> List movies  ";
@@ -34,7 +34,7 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
         return toMenu;
     }
 
-    public String printUserInformation(UserFinder userFinder) throws Exception {
+    public String printUserInformation(UserFinder userFinder) {
         Column column = new Column();
         String color = ColorList.getColor("PURPLE");
         String option1 = "Name: " + userFinder.getCurrentUser().getName();
@@ -46,7 +46,7 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
         return toMenu;
     }
 
-    public String logOut() {
+    private String logOut() {
         String logOut = "You have been log out.";
         printer.printSlowly(logOut, 40);
         System.out.println(newLine);
@@ -57,10 +57,10 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
         String input = ask();
         if (input.equals("list books")) {
             printSeparator();
-            menuCatalogue.defineBookMenuOutcome(bookInventory);
+            catalogue.defineBookMenuOutcome(bookInventory);
         } else if (input.equals("list movies")) {
             printSeparator();
-            menuCatalogue.defineBookMenuOutcome(movieInventory);
+            catalogue.defineBookMenuOutcome(movieInventory);
         } else if (input.equals("user info")) {
             printUserInformation(userFinder);
             printSeparator();

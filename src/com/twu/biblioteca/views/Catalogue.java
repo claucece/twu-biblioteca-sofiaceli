@@ -8,12 +8,12 @@ import com.twu.biblioteca.models.color.ColorList;
 import com.twu.biblioteca.models.Inventory;
 
 
-public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
+public class Catalogue implements InputAsker, ErrorPrinter, Separator {
 
     private Circulation circulation;
     private Inventory inventory;
 
-    public MenuCatalogue() {
+    public Catalogue() {
         circulation = new Circulation(inventory);
     }
 
