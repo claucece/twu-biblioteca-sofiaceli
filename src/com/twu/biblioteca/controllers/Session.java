@@ -1,25 +1,14 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
-
-import static com.twu.biblioteca.helpers.Separator.printer;
+import com.twu.biblioteca.helpers.UserMessagesHelper;
 
 public class Session implements InputAsker {
 
-    public String newLine = "\n";
+    private UserMessagesHelper userMessages;
 
-    public boolean printSucessfulSession() {
-        String successfulSession = "User authenticated. New session created.";
-        printer.printSlowly(successfulSession, 40);
-        System.out.println(newLine);
-        return true;
-    }
-
-    public boolean printUnSucessfulSession() {
-        String unsuccessfulSession = "User not authenticated. New session not created.";
-        printer.printSlowly(unsuccessfulSession, 40);
-        System.out.println(newLine);
-        return false;
+    public Session(){
+        userMessages = new UserMessagesHelper();
     }
 
     public String askForLibraryNumber() {
@@ -36,9 +25,9 @@ public class Session implements InputAsker {
 
     public boolean newSession(UserFinder userFinder) throws Exception {
         if (userFinder.findUser(askForLibraryNumber(), askForPassword()) == true) {
-            return printSucessfulSession();
+            return userMessages.printSucessfulSessionCreation();
         }
-        return printUnSucessfulSession();
+        return userMessages.printUnSucessfulSessionCreation();
     }
 
     @Override

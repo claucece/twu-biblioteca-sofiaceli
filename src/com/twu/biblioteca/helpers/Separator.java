@@ -7,7 +7,7 @@ public interface Separator {
     SlowPrinter printer = new SlowPrinter();
     String resetColor = ColorList.getColor("RESET");
     String color = ColorList.getColor("CYAN");
-    StringBuilder breakLine = new StringBuilder("=========================================================================");
+    StringBuilder breakLine = new StringBuilder("================================================================================");
 
     String printSeparator();
 

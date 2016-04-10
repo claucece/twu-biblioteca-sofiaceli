@@ -12,18 +12,13 @@ public class Movie implements Element {
     private String type;
     private String genre;
 
-    public Movie(String title, String director, String year, String rating, String type, String genre) {
+    public Movie(String title, String director, String year, String type, String genre, String rating) {
         this.title = title;
         this.director = director;
         this.year = year;
         this.rating = rating;
         this.type = type;
         this.genre = genre;
-    }
-
-    @Override
-    public String getRating() {
-        return rating;
     }
 
     @Override
@@ -51,4 +46,8 @@ public class Movie implements Element {
         return genre;
     }
 
+    @Override
+    public String getRating() {
+        return rating;
+    }
 }

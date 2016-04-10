@@ -9,8 +9,8 @@ public class UserFinderTest {
 
     @Test
     public void shouldBeTrueIfUserNameAndPasswordMatches() throws Exception {
-        String name = "001-0001";
-        String password = "forloop";
+        String name = "001-0002";
+        String password = "foreachloop";
         UserFinder userFinder = new UserFinder();
         boolean matcher = userFinder.findUser(name, password);
         assertTrue(matcher);

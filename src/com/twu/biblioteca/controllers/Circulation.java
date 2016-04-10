@@ -2,16 +2,18 @@ package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.helpers.ErrorPrinter;
-import com.twu.biblioteca.helpers.UserCatalogueHelper;
-import com.twu.biblioteca.models.Inventory;
+import com.twu.biblioteca.helpers.UserMessagesHelper;
 import com.twu.biblioteca.models.ElementsList;
+import com.twu.biblioteca.models.Inventory;
 
-public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
+public class Circulation implements ErrorPrinter {
 
     private Inventory inventory;
+    private UserMessagesHelper userMessages;
 
-    public Catalogue(Inventory inventory) {
+    public Circulation(Inventory inventory) {
         this.inventory = inventory;
+        userMessages = new UserMessagesHelper();
     }
 
     public String putInformationInColumns(Inventory inventory) {
@@ -22,7 +24,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
             String published_year = element.getPublishedYear();
             String type = element.getType();
             String genre = element.getGenre();
-            column.addLine(title, author, published_year, type, genre);
+            String rating = element.getRating();
+            column.addLine(title, author, published_year, type, genre, rating);
         }
         return column.toString();
     }
@@ -35,20 +38,20 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
         for (Element element : inventory.returnInventoryOfElements()) {
             if (element.getTitle().matches(title.toLowerCase())) {
                 removeFromInventory(element, inventory);
-                printSucessfulCheckout(inventory);
+                userMessages.printSucessfulCheckout(inventory);
                 return true;
             } else if (title.equals("quit")) {
                 return true;
             }
         }
-        printUnsucessfulCheckout(inventory);
+        userMessages.printUnsucessfulCheckout(inventory);
         return false;
     }
 
     public void addToInventory(Element element, Inventory inventory) {
         if (!(inventory.returnInventoryOfElements().contains(element))) {
             inventory.returnInventoryOfElements().add(element);
-            printSucessfulReturn(inventory);
+            userMessages.printSucessfulReturn(inventory);
         } else {
             printError();
         }
@@ -64,36 +67,8 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
                 return true;
             }
         }
-        printUnsucessfulReturn(inventory);
+        userMessages.printUnsucessfulReturn(inventory);
         return false;
-    }
-
-    @Override
-    public StringBuilder printSucessfulCheckout(Inventory inventory) {
-        StringBuilder successfullCheckOut = new StringBuilder("Thank you! Enjoy the " + inventory.getName());
-        System.out.println(inStockColor + successfullCheckOut + resetStockColor);
-        return successfullCheckOut;
-    }
-
-    @Override
-    public StringBuilder printUnsucessfulCheckout(Inventory inventory) {
-        StringBuilder error = new StringBuilder(inventory.getName() + " not found. Please, select a " + inventory.getName() + " from the list.");
-        System.out.println(notInStockColor + error + resetStockColor);
-        return error;
-    }
-
-    @Override
-    public StringBuilder printSucessfulReturn(Inventory inventory) {
-        StringBuilder successfullReturn = new StringBuilder("Thank you for returning the " + inventory.getName());
-        System.out.println(inStockColor + successfullReturn + resetStockColor);
-        return successfullReturn;
-    }
-
-    @Override
-    public StringBuilder printUnsucessfulReturn(Inventory inventory) {
-        StringBuilder error = new StringBuilder("That is not a valid " + inventory.getName() + " to return.");
-        System.out.println(notInStockColor + error + resetStockColor);
-        return error;
     }
 
     @Override

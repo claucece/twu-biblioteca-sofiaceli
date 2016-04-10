@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class MenuCatalogueTest {
+public class Catalogue {
 
     private MenuCatalogue menuCatalogue;
     private ByteArrayOutputStream outContent = new ByteArrayOutputStream();

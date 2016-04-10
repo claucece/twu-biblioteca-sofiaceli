@@ -12,19 +12,19 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class CatalogueTest {
+public class CirculationTest {
 
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
-    private Catalogue bookCatalogue;
-    private Catalogue movieCatalogue;
+    private Circulation bookCirculation;
+    private Circulation movieCirculation;
 
     @Before
     public void setUp() {
         bookInventory = new BookInventory();
         movieInventory = new MovieInventory();
-        bookCatalogue = new Catalogue(bookInventory);
-        movieCatalogue = new Catalogue(movieInventory);
+        bookCirculation = new Circulation(bookInventory);
+        movieCirculation = new Circulation(movieInventory);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class CatalogueTest {
                 "demian                  Herman Hesse     1980 FICTION NOVEL       \n" +
                 "moby dick               Herman Melville  1980 FICTION SHORT_STORY " +
                 "\n";
-        String actual = bookCatalogue.putInformationInColumns(bookInventory);
+        String actual = bookCirculation.putInformationInColumns(bookInventory);
         assertEquals(expected, actual);
     }
 
@@ -43,98 +43,98 @@ public class CatalogueTest {
                 "being john malkovich Spike Jonze 1999 Independant Suspense \n" +
                 "blue velvet          David Lynch 1986 Independant Suspense " +
                 "\n";
-        String actual = movieCatalogue.putInformationInColumns(movieInventory);
+        String actual = movieCirculation.putInformationInColumns(movieInventory);
         assertEquals(expected, actual);
     }
 
     @Test
     public void shouldBeAbleToCheckoutBooks() {
-        boolean actual = bookCatalogue.isACheckout("Moby Dick", bookInventory);
+        boolean actual = bookCirculation.isACheckout("Moby Dick", bookInventory);
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldBeAbleToCheckoutMovies() {
-        boolean actual = bookCatalogue.isACheckout("Lola Rennt", movieInventory);
+        boolean actual = bookCirculation.isACheckout("Lola Rennt", movieInventory);
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutMovieThatIsNotOnBookInventory() {
-        boolean actual = bookCatalogue.isACheckout("Lola Rennt", bookInventory);
+        boolean actual = bookCirculation.isACheckout("Lola Rennt", bookInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnMovieInventory() {
-        boolean actual = movieCatalogue.isACheckout("Moby Dick", movieInventory);
+        boolean actual = movieCirculation.isACheckout("Moby Dick", movieInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutBookThatIsNotOnInventory() {
-        boolean actual = bookCatalogue.isACheckout("The Art Of Love", bookInventory);
+        boolean actual = bookCirculation.isACheckout("The Art Of Love", bookInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldNotBeAbleToCheckoutMovieThatIsNotOnInventory() {
-        boolean actual = bookCatalogue.isACheckout("Dodgeball", movieInventory);
+        boolean actual = bookCirculation.isACheckout("Dodgeball", movieInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
         Book book = new Book("Moby Dick", "Herman Melville", "1980", Book.Genre.Type.FICTION, Book.Genre.NOVEL, "10");
-        boolean bookList = bookCatalogue.removeFromInventory(book, bookInventory);
+        boolean bookList = bookCirculation.removeFromInventory(book, bookInventory);
         assertFalse(bookInventory.returnInventoryOfElements().contains(book));
     }
 
     @Test
     public void shouldRemoveCheckoutMovieFromInventory() {
         Movie movie = new Movie("Titanic", "James Cameron", "1997", "10", "FICTION", "ROMANTIC");
-        boolean movieList = movieCatalogue.removeFromInventory(movie, movieInventory);
+        boolean movieList = movieCirculation.removeFromInventory(movie, movieInventory);
         assertFalse(movieInventory.returnInventoryOfElements().contains(movie));
     }
 
     @Test
     public void shouldBeAbleToReturnBooks() {
-        bookCatalogue.isACheckout("Moby Dick", bookInventory);
-        boolean actual = bookCatalogue.isAReturn("Moby Dick", bookInventory);
+        bookCirculation.isACheckout("Moby Dick", bookInventory);
+        boolean actual = bookCirculation.isAReturn("Moby Dick", bookInventory);
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldBeAbleToReturnMovies() {
-        movieCatalogue.isACheckout("Lola Rennt", movieInventory);
-        boolean actual = movieCatalogue.isAReturn("Lola Rennt", movieInventory);
+        movieCirculation.isACheckout("Lola Rennt", movieInventory);
+        boolean actual = movieCirculation.isAReturn("Lola Rennt", movieInventory);
         assertEquals(true, actual);
     }
 
     @Test
     public void shouldNotBeAbleToReturnBookThatIsNotOnList() {
-        boolean actual = bookCatalogue.isAReturn("Hamlet", bookInventory);
+        boolean actual = bookCirculation.isAReturn("Hamlet", bookInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldNotBeAbleToReturnMovieThatIsNotOnList() {
-        boolean actual = movieCatalogue.isAReturn("Eraser Head", movieInventory);
+        boolean actual = movieCirculation.isAReturn("Eraser Head", movieInventory);
         assertEquals(false, actual);
     }
 
     // and this is a bug
     @Test
     public void shouldNotBeAbleToReturnMovieThatIsOnBookList() {
-        boolean actual = movieCatalogue.isAReturn("Moby Dick", movieInventory);
+        boolean actual = movieCirculation.isAReturn("Moby Dick", movieInventory);
         assertEquals(false, actual);
     }
 
     @Test
     public void shouldAddCheckoutBookFromInventory() {
         List<Element> startList = bookInventory.returnInventoryOfElements();
-        bookCatalogue.isACheckout("Moby Dick", bookInventory);
-        bookCatalogue.isAReturn("Moby Dick", bookInventory);
+        bookCirculation.isACheckout("Moby Dick", bookInventory);
+        bookCirculation.isAReturn("Moby Dick", bookInventory);
         List<Element> finishList = bookInventory.returnInventoryOfElements();
         assertEquals(startList.size(), finishList.size());
     }

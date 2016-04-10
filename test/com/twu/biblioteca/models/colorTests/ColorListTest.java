@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ColorInventoryTest {
+public class ColorListTest {
 
     @Test
     public void should() {

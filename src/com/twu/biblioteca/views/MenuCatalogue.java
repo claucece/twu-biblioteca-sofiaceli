@@ -10,16 +10,16 @@ import com.twu.biblioteca.models.Inventory;
 
 public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
 
-    private Catalogue catalogue;
+    private Circulation circulation;
     private Inventory inventory;
 
     public MenuCatalogue() {
-        catalogue = new Catalogue(inventory);
+        circulation = new Circulation(inventory);
     }
 
     public String returnCatalogue(Inventory inventory) {
-        System.out.println(catalogue.putInformationInColumns(inventory));
-        return catalogue.putInformationInColumns(inventory);
+        System.out.println(circulation.putInformationInColumns(inventory));
+        return circulation.putInformationInColumns(inventory);
     }
 
     public String toLineColumn(Inventory inventory) {
@@ -39,7 +39,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
         System.out.println("Please, write the title of the " + inventory.getName() + " you want to checkout." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToCheckout = ask();
-        String result = (catalogue.isACheckout(titleToCheckout, inventory)) ? printSeparator() : checkIfValidCheckOut(inventory);
+        String result = (circulation.isACheckout(titleToCheckout, inventory)) ? printSeparator() : checkIfValidCheckOut(inventory);
         return result;
     }
 
@@ -47,7 +47,7 @@ public class MenuCatalogue implements InputAsker, ErrorPrinter, Separator {
         System.out.println("Please, write the title of the " + inventory.getName() + " you want to return." +
                 "\nIf you want to quit, please enter 'quit'");
         String titleToReturn = ask();
-        String result = (catalogue.isAReturn(titleToReturn, inventory)) ? printSeparator() : checkIfValidReturn(inventory);
+        String result = (circulation.isAReturn(titleToReturn, inventory)) ? printSeparator() : checkIfValidReturn(inventory);
         return result;
     }
 

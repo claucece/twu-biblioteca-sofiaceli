@@ -41,10 +41,12 @@ public class Book extends AbstractElement {
         }
     }
 
+    @Override
     public String getType() {
         return type.toString();
     }
 
+    @Override
     public String getGenre() {
         return genre.toString();
     }

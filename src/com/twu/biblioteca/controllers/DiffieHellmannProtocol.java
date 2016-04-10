@@ -72,7 +72,6 @@ public class DiffieHellmannProtocol {
         userKpairGen.initialize(dhSkipParamSpec);
         KeyPair userKpair = userKpairGen.generateKeyPair();
         return initializeUserAgreement(userKpair, hashPass, choice);
-        //return userKpair;
     }
 
     public KeyPair generateBibliotecaKeyPair(PublicKey userPubKey) throws Exception {
@@ -131,8 +130,6 @@ public class DiffieHellmannProtocol {
         x509KeySpec = new X509EncodedKeySpec(bibliotecaPubKeyEnc);
         PublicKey bibliotecaPubKey = userKeyFac.generatePublic(x509KeySpec);
         executePhase1OnUser(bibliotecaPubKey);
-        //SecretKey bibliotecaDesKey = bibliotecaKeyAgree.generateSecret("DES");
-        //System.out.println(bibliotecaEncryptsUsingDES(bibliotecaDesKey));
         return bibliotecaPubKey;
     }
 
