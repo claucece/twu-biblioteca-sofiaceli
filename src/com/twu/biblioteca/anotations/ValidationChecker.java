@@ -46,7 +46,7 @@ public class ValidationChecker {
         List<String> errors = new ArrayList<String>();
         Field[] fields = obj.getClass().getFields();
         for (int i = 0; i < fields.length; i++) {
-            Format annotations = fields[i].getAnnotation(Format.class);
+            LibraryNumber annotations = fields[i].getAnnotation(LibraryNumber.class);
             if (annotations != null) {
                 try {
                     if (!(fields[i].get(obj).toString().matches("/d{3}-d{5}/"))) {

@@ -6,11 +6,11 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class AbstractElementSpecTest {
+public class AbstractElementTest {
 
     @Test
     public void shouldReturnTitleOnLowerCase() {
-        AbstractElementSpec abstractspec = mock(AbstractElementSpec.class);
+        AbstractElement abstractspec = mock(AbstractElement.class);
         when(abstractspec.getTitle()).thenReturn("welcome");
         String message = "Welcome";
         String title = abstractspec.getTitle();

@@ -1,19 +1,17 @@
 package com.twu.biblioteca.helpers;
 
-public abstract class Element {
+public interface Element {
 
-    private static String id;
-    private ElementSpec spec;
+    String getTitle();
 
-    public Element(ElementSpec spec) {
-        this.spec = spec;
-    }
+    String getAuthor();
 
-    public String getId() {
-        return id;
-    }
+    String getPublishedYear();
 
-    public ElementSpec getSpec() {
-        return spec;
-    }
+    String getType();
+
+    String getGenre();
+
+    String getRating();
+
 }

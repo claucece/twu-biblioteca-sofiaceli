@@ -13,7 +13,7 @@ public class User {
 
     private DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
 
-    @Format (message = "Should have this format: '000-0000'")
+    @LibraryNumber(message = "Should have this format: '000-0000'")
     public final String libraryNumber;
 
     private final String hashPassword;

@@ -17,11 +17,11 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
     public String putInformationInColumns(Inventory inventory) {
         Column column = new Column();
         for (Element element : inventory.returnInventoryOfElements()) {
-            String title = element.getSpec().getTitle();
-            String author = element.getSpec().getAuthor();
-            String published_year = element.getSpec().getPublishedYear();
-            String type = element.getSpec().getType();
-            String genre = element.getSpec().getGenre();
+            String title = element.getTitle();
+            String author = element.getAuthor();
+            String published_year = element.getPublishedYear();
+            String type = element.getType();
+            String genre = element.getGenre();
             column.addLine(title, author, published_year, type, genre);
         }
         return column.toString();
@@ -33,7 +33,7 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     public boolean isACheckout(String title, Inventory inventory) {
         for (Element element : inventory.returnInventoryOfElements()) {
-            if (element.getSpec().getTitle().matches(title.toLowerCase())) {
+            if (element.getTitle().matches(title.toLowerCase())) {
                 removeFromInventory(element, inventory);
                 printSucessfulCheckout(inventory);
                 return true;
@@ -56,7 +56,7 @@ public class Catalogue implements UserCatalogueHelper, ErrorPrinter {
 
     public boolean isAReturn(String title, Inventory inventory) {
         for (Element element : ElementsList.VALUES) {
-            String elementToReturn = element.getSpec().getTitle();
+            String elementToReturn = element.getTitle();
             if (elementToReturn.matches(title.toLowerCase())) {
                 addToInventory(element, inventory);
                 return true;

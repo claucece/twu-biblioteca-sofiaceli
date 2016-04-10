@@ -3,10 +3,8 @@ package com.twu.biblioteca.controllers;
 import com.twu.biblioteca.helpers.Element;
 import com.twu.biblioteca.models.book.BookInventory;
 import com.twu.biblioteca.models.book.Book;
-import com.twu.biblioteca.models.book.BookSpec;
 import com.twu.biblioteca.models.movie.Movie;
 import com.twu.biblioteca.models.movie.MovieInventory;
-import com.twu.biblioteca.models.movie.MovieSpec;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -87,14 +85,14 @@ public class CatalogueTest {
 
     @Test
     public void shouldRemoveCheckoutBookFromInventory() {
-        Book book = new Book(new BookSpec("Moby Dick", "Herman Melville", "1980", BookSpec.Genre.Type.FICTION, BookSpec.Genre.NOVEL, "10"));
+        Book book = new Book("Moby Dick", "Herman Melville", "1980", Book.Genre.Type.FICTION, Book.Genre.NOVEL, "10");
         boolean bookList = bookCatalogue.removeFromInventory(book, bookInventory);
         assertFalse(bookInventory.returnInventoryOfElements().contains(book));
     }
 
     @Test
     public void shouldRemoveCheckoutMovieFromInventory() {
-        Movie movie = new Movie(new MovieSpec("Titanic", "James Cameron", "1997", "10", "FICTION", "ROMANTIC"));
+        Movie movie = new Movie("Titanic", "James Cameron", "1997", "10", "FICTION", "ROMANTIC");
         boolean movieList = movieCatalogue.removeFromInventory(movie, movieInventory);
         assertFalse(movieInventory.returnInventoryOfElements().contains(movie));
     }

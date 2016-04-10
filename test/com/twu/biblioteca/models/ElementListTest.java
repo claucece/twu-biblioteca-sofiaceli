@@ -12,7 +12,7 @@ public class ElementListTest {
     @Test
     public void shouldHaveExistanceOfBookElementInList() {
         List<Element> elements = ElementsList.VALUES;
-        String expected = elements.get(0).getSpec().getTitle();
+        String expected = elements.get(0).getTitle();
         String actual = "for whom the bells toll";
         assertEquals(expected, actual);
     }
@@ -20,7 +20,7 @@ public class ElementListTest {
     @Test
     public void shouldHaveExistanceOfMovieElementInList() {
         List<Element> elements = ElementsList.VALUES;
-        String expected = elements.get(3).getSpec().getTitle();
+        String expected = elements.get(3).getTitle();
         String actual = "lola rennt";
         assertEquals(expected, actual);
     }
