@@ -14,6 +14,7 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
     private MenuCatalogue menuCatalogue;
     private BookInventory bookInventory;
     private MovieInventory movieInventory;
+    public String newLine = "\n";
 
     public AuthentificatedUserMenu() {
         menuCatalogue = new MenuCatalogue();
@@ -46,9 +47,10 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
     }
 
     public String logOut() {
-        String bye = "You have been log out.";
-        System.out.println(bye);
-        return bye;
+        String logOut = "You have been log out.";
+        printer.printSlowly(logOut, 40);
+        System.out.println(newLine);
+        return logOut;
     }
 
     public String defineUserOutput(UserFinder userFinder) throws Exception {

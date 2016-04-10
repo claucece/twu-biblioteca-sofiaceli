@@ -1,23 +1,24 @@
 package com.twu.biblioteca.controllers;
 
 import com.twu.biblioteca.helpers.InputAsker;
-import com.twu.biblioteca.models.color.ColorList;
+
+import static com.twu.biblioteca.helpers.Separator.printer;
 
 public class Session implements InputAsker {
 
     public String newLine = "\n";
 
     public boolean printSucessfulSession() {
-        StringBuilder successfulSession = new StringBuilder("User authenticated. New session created.");
-        System.out.println(successfulSession + newLine);
+        String successfulSession = "User authenticated. New session created.";
+        printer.printSlowly(successfulSession, 40);
+        System.out.println(newLine);
         return true;
     }
 
     public boolean printUnSucessfulSession() {
-        String color = ColorList.getColor("RED");
-        String resetColor = ColorList.getColor("RED");
-        StringBuilder unsuccessfulSession = new StringBuilder(color + "User not authenticated. New session not created." + resetColor);
-        System.out.println(unsuccessfulSession + newLine);
+        String unsuccessfulSession = "User not authenticated. New session not created.";
+        printer.printSlowly(unsuccessfulSession, 40);
+        System.out.println(newLine);
         return false;
     }
 
