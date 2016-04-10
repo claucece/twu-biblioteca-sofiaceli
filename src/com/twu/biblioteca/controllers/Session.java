@@ -7,7 +7,7 @@ public class Session implements InputAsker {
 
     private UserMessagesHelper userMessages;
 
-    public Session(){
+    public Session() {
         userMessages = new UserMessagesHelper();
     }
 

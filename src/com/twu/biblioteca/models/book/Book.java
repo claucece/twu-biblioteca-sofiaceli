@@ -25,7 +25,7 @@ public class Book extends AbstractElement {
 
             private final Genre[] genre;
 
-            Type(Genre ... genre) {
+            Type(Genre... genre) {
                 this.genre = genre;
             }
 

@@ -6,13 +6,9 @@ import com.twu.biblioteca.models.color.ColorList;
 public class Home implements Separator {
 
     public String printWelcomeMessage() {
-        String welcomeMessage = "Hello and welcome to 'Alexandros', the Library Management " +
+        String welcomeMessage = "Hello and welcome to 'Pnakotus', the Library Management " +
                 "System from The Bangalore Public Library! \n" +
-                "In reality, this is the library from the lost city of Pnakotus \n" +
-                "created by the Great Race of Yith. May knowledge be always by their side \n" +
-                "for their mind is older than its bodily form!\n" +
-                "We accept you, stanger, to dive into the knowledge of this library.\n" +
-                "Keep reading to see the lists of elements available";
+                "Keep reading to see the lists of elements available.";
         String color = ColorList.getColor("BOLD");
         System.out.print(color + welcomeMessage + resetColor);
         return welcomeMessage;

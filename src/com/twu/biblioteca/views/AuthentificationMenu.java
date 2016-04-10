@@ -47,7 +47,7 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
             }
         } else if (input.equals("anonymous user")) {
             return generateAnonymousUserSession();
-        }else if (input.equals("quit")) {
+        } else if (input.equals("quit")) {
             return exit();
         } else {
             printError();
@@ -58,8 +58,8 @@ public class AuthentificationMenu implements InputAsker, Separator, ErrorPrinter
 
     @Override
     public String ask() {
-        out.println("The librarian beetle folk Yith says:");
-        out.println("    Please, select the kind of user/prisoner you are: \n");
+        out.println("The librarian asks you:");
+        out.println("    Please, select the kind of user you are: \n");
         String color = ColorList.getColor("INVERT");
         out.println(color + "    1. Anonymous user      2.Log in      3.Quit" + resetColor);
         return scanner.nextLine().toLowerCase();

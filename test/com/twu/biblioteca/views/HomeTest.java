@@ -22,10 +22,10 @@ public class HomeTest {
     @Test
     public void shouldPrintWelcomeMessage() {
         System.setOut(new PrintStream(outContent));
-        String testWelcome = "\u001B[1mHello and welcome to 'Alexandros', the Library Management " +
-                "System from The Bangalore Public Library!" +
+        String testWelcome = "\u001B[1mHello and welcome to 'Pnakotus', the Library Management " +
+                "System from The Bangalore Public Library! " +
                 "\n" +
-                "Keep reading to see the lists of books available\u001B[0m";
+                "Keep reading to see the lists of elements available.\u001B[0m";
         home.printWelcomeMessage();
         assertEquals(testWelcome, outContent.toString());
     }

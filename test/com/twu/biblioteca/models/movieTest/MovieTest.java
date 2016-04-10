@@ -21,7 +21,7 @@ public class MovieTest {
         title = "American History X";
         type = "independant";
         genre = "drama";
-        movie = new Movie(title, author, publishedYear, rating, type, genre);
+        movie = new Movie(title, author, publishedYear, type, genre, rating);
     }
 
     @Test

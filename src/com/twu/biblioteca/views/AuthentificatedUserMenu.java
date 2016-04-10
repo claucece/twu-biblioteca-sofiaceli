@@ -42,7 +42,7 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
         String option3 = "Phone: " + userFinder.getCurrentUser().getPhoneNumber();
         column.addLine(option1, option2, option3);
         String toMenu = column.toString();
-        System.out.println(color + toMenu +resetColor);
+        System.out.println(color + toMenu + resetColor);
         return toMenu;
     }
 
@@ -89,7 +89,8 @@ public class AuthentificatedUserMenu implements ErrorPrinter, Separator, InputAs
 
     @Override
     public String ask() {
-        out.println("Please, select a choice:");
+        out.println("The librarian says: \n" +
+                "    Please, select a choice:");
         return scanner.nextLine().toLowerCase();
     }
 }

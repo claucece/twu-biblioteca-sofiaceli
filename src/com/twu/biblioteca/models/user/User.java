@@ -11,19 +11,19 @@ public class User {
     private DiffieHellmannProtocol keyAgree = new DiffieHellmannProtocol();
 
     @LibraryNumber(message = "Should have this format: '000-0000'")
-    private final String libraryNumber;
+    public final String libraryNumber;
 
     private final String hashPassword;
 
-    @NotNull (message = "Could not be assigned null")
+    @NotNull(message = "Could not be assigned null")
     @Size(message = "Invalid size")
-    private final String name;
+    public final String name;
 
     @Email(message = "Should have this format: 'name@servicemail.com'")
-    private final String emailAdress;
+    public final String emailAdress;
 
     @Phone(message = "Should have this format: '000-000'")
-    private final String phoneNumber;
+    public final String phoneNumber;
 
     public static class Builder {
         private String libraryNumber;

@@ -25,7 +25,7 @@ public class ColumnTest {
         List<List<String>> actual = Collections.singletonList(titleList);
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void shouldConvertToString() {
         String title = "For whom the bells toll";

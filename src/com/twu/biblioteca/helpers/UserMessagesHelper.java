@@ -33,14 +33,14 @@ public class UserMessagesHelper {
     }
 
     public boolean printSucessfulSessionCreation() {
-        String successfulSession = "You're allowed to the great Library!. May you find the knowledge you seek. \n" +
+        String successfulSession = "You're allowed to the Library!. May you find the knowledge you seek. \n" +
                 "User authenticated. New session created. \n";
         printer.printSlowly(successfulSession, 40);
         return true;
     }
 
     public boolean printUnSucessfulSessionCreation() {
-        String unsuccessfulSession = "    You're not allowed to the great Library! \n" +
+        String unsuccessfulSession = "    You're not allowed to the Library! \n" +
                 "    User not authenticated. New session not created. \n";
         printer.printSlowly(unsuccessfulSession, 40);
         return false;

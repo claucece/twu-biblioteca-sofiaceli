@@ -16,7 +16,7 @@ public class Column {
         numColumns = -1;
     }
 
-    public List<List<String>> addLine(String ... line) {
+    public List<List<String>> addLine(String... line) {
         if (numColumns == -1) {
             numColumns = line.length;
             for (int i = 0; i < numColumns; i++) {
@@ -48,7 +48,7 @@ public class Column {
 
     private String pad(String word, int newLength) {
         while (word.length() < newLength) {
-             word += " ";
+            word += " ";
         }
         return word;
     }

@@ -54,7 +54,8 @@ public class AnonymousUserMenu implements InputAsker, ErrorPrinter, Separator {
 
     @Override
     public String ask() {
-        out.println("Please, select a choice:");
+        out.println("The librarian says: \n" +
+                "    Please, select a choice:");
         return scanner.nextLine().toLowerCase();
     }
 

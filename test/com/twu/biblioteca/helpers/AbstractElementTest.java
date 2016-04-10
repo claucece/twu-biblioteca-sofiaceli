@@ -12,7 +12,7 @@ public class AbstractElementTest {
     public void shouldReturnTitleOnLowerCase() {
         AbstractElement abstractspec = mock(AbstractElement.class);
         when(abstractspec.getTitle()).thenReturn("welcome");
-        String message = "Welcome";
+        String message = "welcome";
         String title = abstractspec.getTitle();
         assertEquals(title, message);
     }
