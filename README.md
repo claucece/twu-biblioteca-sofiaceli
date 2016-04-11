@@ -2,32 +2,17 @@
 Biblioteca Ultimate Edition
 
 
-Instructions to push your code to code.google.com
-=================================================
-1. Sign into GitHub and create a new repository
-        Repository name: twu-biblioteca-yourname
-        Privacy level: Public
-        Don't check "Initialize this repository with a README"
-        Add .gitignore: None
-        Add a license: Apache License 2.0
+## Instructions
 
-2. Run 'git init' in the folder that was extracted from the downloaded .zip file, in order to
- initialize local repository.
+In order for Biblioteca to run, you need java 1.6 and two external libraries: mockito 1.10.19 and objenesis 2.2. 
+The .idea folder has been pushed to github as the instructions stated that should be. It will make opening the 
+project in Intellij easier.
 
-3. Make a local commit.
-    $ git add -A
-    $ git commit -m “Initial commit”
+## Some useful data
 
-(Dont forget to add the hidden .idea folder, as it will make opening your project in Intellij easier.)
+Biblioteca will ask you for two fields: library number and password. Please, use these:
+1. Library Number: 001-0001
+2. Password: forloop.
 
-4. After you are done with the local commit, you can share your code with "The World" by pushing it to your
- GitHub repository.
-    $ git remote add origin https://github.com/<YOUR-GITHUB-USERNAME>/twu-biblioteca-<YOURNAME>
-    $ git push origin master
-
-Instructions to open your code in Intellij
-==========================================
-1. Go to File -> Open (or Open Project)
-2. Select the directory containing the code
-DONE !
+In order to checkout or return an element, please select the title of one of them from the proper list. 
 
