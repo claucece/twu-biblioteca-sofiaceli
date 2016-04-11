@@ -11,8 +11,10 @@ project in Intellij easier.
 ## Some useful data
 
 Biblioteca will ask you for two fields: library number and password. Please, use these:
-1. Library Number: 001-0001
-2. Password: forloop.
+
+1. Library Number: `001-0001`
+
+2. Password: `forloop`.
 
 In order to checkout or return an element, please select the title of one of them from the proper list. 
 
